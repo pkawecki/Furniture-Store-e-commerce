@@ -76,6 +76,18 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .heart {
+    background-color: #2a2a2a;
+    color: white;
+  }
+
+  .arrows {
+    background-color: #2a2a2a;
+    color: white;
+  }
+
+
   &:hover {
     .buttons {
       visibility: visible;
