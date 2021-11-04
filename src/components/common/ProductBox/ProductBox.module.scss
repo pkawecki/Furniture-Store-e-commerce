@@ -92,4 +92,20 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .oldPrice {
+    color: #a5a5a5;
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: line-through #292929;
+    padding-right: 6px;
+  }
 }
+
+
