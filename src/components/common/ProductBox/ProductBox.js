@@ -1,25 +1,30 @@
+import { addProductToCompare, getAll, getCount } from '../../../redux/compareRedux';
 import {
   faExchangeAlt,
   faShoppingBasket,
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { addProductToCompare } from '../../../redux/compareRedux';
 import styles from './ProductBox.module.scss';
-import { useDispatch } from 'react-redux';
 
 const ProductBox = ({ name, price, promo, stars, image, oldPrice, id }) => {
+  const productCompareCount = useSelector(state => getCount(state));
+  const productCompareList = useSelector(state => getAll(state));
   const dispatch = useDispatch();
   const addToCompare = state => dispatch(addProductToCompare(state));
 
   const handleAddToCompare = (event, id) => {
+    const productInCompare = productCompareList.some(product => product.id === id);
     event.preventDefault();
-    addToCompare({ id });
+    if (productCompareCount < 4 && !productInCompare) {
+      addToCompare({ id });
+    }
   };
 
   return (
