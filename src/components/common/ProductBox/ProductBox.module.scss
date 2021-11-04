@@ -41,12 +41,14 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility: hidden;
       position: absolute;
       bottom: 0;
       left: 0;
       height: 40px;
       width: 100%;
       padding: 1px 5px;
+      
     }
   }
 
@@ -106,6 +108,19 @@
     text-decoration: line-through #292929;
     padding-right: 6px;
   }
+  
+  &:hover {
+    .buttons {
+      visibility: visible;
+    } 
+    .price .button {
+      color: white;
+      font-weight: bold;
+    }
+  
+    .price div {
+      background-color: $primary;
+    }
+  
+  }
 }
-
-
