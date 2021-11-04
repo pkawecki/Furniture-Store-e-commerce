@@ -1,10 +1,10 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import { faBars, faCaretDown, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
-
+import React from 'react';
 import styles from './TopBar.module.scss';
+
+// import PropTypes from 'prop-types';
 
 const TopBar = () => (
   <div className={styles.root}>
@@ -33,12 +33,14 @@ const TopBar = () => (
           <ul>
             <li>
               <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faUser} /> Login
+                <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                <span>Login</span>
               </a>
             </li>
             <li>
               <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} /> Register
+                <FontAwesomeIcon className={styles.icon} icon={faLock} />
+                <span>Register</span>
               </a>
             </li>
             <li>
