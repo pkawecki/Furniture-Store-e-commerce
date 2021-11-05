@@ -8,19 +8,7 @@ import BrandsSlider from '../../features/BrandsSlider/BrandsSlider';
 
 const Brands = ({ brands }) => {
   const [brand] = useState(6);
-  const [activePage, setActivePage] = useState(0);
-
-  const handleClickPrevious = event => {
-    event.preventDefault();
-
-    setActivePage(activePage === 0 ? brands.length / brand - 1 : activePage - 1);
-  };
-
-  const handleClickNext = event => {
-    event.preventDefault();
-
-    setActivePage(activePage === 0 ? brands.length / brand - 1 : activePage + 1);
-  };
+  const [activePage] = useState(0);
 
   return (
     <div className={styles.root}>
@@ -31,11 +19,7 @@ const Brands = ({ brands }) => {
           }
         >
           <div className={`col-1`}>
-            <Button
-              className={styles.button}
-              variant='carousel'
-              onClick={handleClickPrevious}
-            >
+            <Button className={styles.button} variant='carousel'>
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
             </Button>
           </div>
@@ -49,11 +33,7 @@ const Brands = ({ brands }) => {
             </div>
           </div>
           <div className={`col-1`}>
-            <Button
-              className={styles.button}
-              variant='carousel'
-              onClick={handleClickNext}
-            >
+            <Button className={styles.button} variant='carousel'>
               <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
             </Button>
           </div>
