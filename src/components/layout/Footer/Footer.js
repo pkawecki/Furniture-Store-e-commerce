@@ -22,16 +22,16 @@ const Footer = ({ children }) => (
               <h6>Information</h6>
               <ul>
                 <li>
-                  <a href='#'>About us</a>
+                  <a href='#top'>About us</a>
                 </li>
                 <li>
-                  <a href='#'>Policy</a>
+                  <a href='#top'>Policy</a>
                 </li>
                 <li>
-                  <a href='#'>Conditions</a>
+                  <a href='#top'>Conditions</a>
                 </li>
                 <li>
-                  <a href='#'>Online support</a>
+                  <a href='#top'>Online support</a>
                 </li>
               </ul>
             </div>
@@ -41,16 +41,16 @@ const Footer = ({ children }) => (
               <h6>My account</h6>
               <ul>
                 <li>
-                  <a href='#'>Login</a>
+                  <a href='#top'>Login</a>
                 </li>
                 <li>
-                  <a href='#'>My cart</a>
+                  <a href='#top'>My cart</a>
                 </li>
                 <li>
-                  <a href='#'>Wishlist</a>
+                  <a href='#top'>Wishlist</a>
                 </li>
                 <li>
-                  <a href='#'>Checkout</a>
+                  <a href='#top'>Checkout</a>
                 </li>
               </ul>
             </div>
@@ -60,16 +60,16 @@ const Footer = ({ children }) => (
               <h6>Information</h6>
               <ul>
                 <li>
-                  <a href='#'>Specials</a>
+                  <a href='#top'>Specials</a>
                 </li>
                 <li>
-                  <a href='#'>New products</a>
+                  <a href='#top'>New products</a>
                 </li>
                 <li>
-                  <a href='#'>Best Sellers</a>
+                  <a href='#top'>Best Sellers</a>
                 </li>
                 <li>
-                  <a href='#'>Out Stores</a>
+                  <a href='#top'>Out Stores</a>
                 </li>
               </ul>
             </div>
@@ -79,16 +79,16 @@ const Footer = ({ children }) => (
               <h6>Orders</h6>
               <ul>
                 <li>
-                  <a href='#'>Payment options</a>
+                  <a href='#top'>Payment options</a>
                 </li>
                 <li>
-                  <a href='#'>Shipping and delivery</a>
+                  <a href='#top'>Shipping and delivery</a>
                 </li>
                 <li>
-                  <a href='#'>Returns</a>
+                  <a href='#top'>Returns</a>
                 </li>
                 <li>
-                  <a href='#'>Shipping</a>
+                  <a href='#top'>Shipping</a>
                 </li>
               </ul>
             </div>
@@ -107,32 +107,32 @@ const Footer = ({ children }) => (
           <div className={'col text-right ' + styles.socialMedia}>
             <ul>
               <li>
-                <a href='#'>
+                <a href='#top'>
                   <FontAwesomeIcon icon={faTwitter}>Twitter</FontAwesomeIcon>
                 </a>
               </li>
               <li>
-                <a href='#'>
+                <a href='#top'>
                   <FontAwesomeIcon icon={faFacebookF}>Facebook</FontAwesomeIcon>
                 </a>
               </li>
               <li>
-                <a href='#'>
+                <a href='#top'>
                   <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
                 </a>
               </li>
               <li>
-                <a href='#'>
+                <a href='#top'>
                   <FontAwesomeIcon icon={faGooglePlusG}>Google Plus</FontAwesomeIcon>
                 </a>
               </li>
               <li>
-                <a href='#'>
+                <a href='#top'>
                   <FontAwesomeIcon icon={faLinkedinIn}>LinkedIn</FontAwesomeIcon>
                 </a>
               </li>
               <li>
-                <a href='#'>
+                <a href='#top'>
                   <FontAwesomeIcon icon={faPinterestP}>Pinterest</FontAwesomeIcon>
                 </a>
               </li>
