@@ -24,6 +24,7 @@
 
             &:hover {
               color: #ffffff;
+              @extend %hover;
             }
           }
         }
@@ -73,6 +74,7 @@
 
             &:hover {
               color: $primary;
+              @extend %hover;
             }
           }
         }
