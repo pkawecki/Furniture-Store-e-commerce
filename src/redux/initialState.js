@@ -251,6 +251,72 @@ const initialState = {
   cart: {
     products: [],
   },
+  brands: [
+    {
+      id: 'brand-1',
+      name: 'brand 1',
+      image:
+        'https://www.pexels.com/pl-pl/zdjecie/bialo-niebieskie-logo-route-66-1162361/',
+    },
+    {
+      id: 'brand-2',
+      name: 'brand 2',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/neon-signage-2235130/',
+    },
+    {
+      id: 'brand-3',
+      name: 'brand 3',
+      image:
+        'https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?cs=srgb&dl=pexels-mike-170809.jpg&fm=jpg',
+    },
+    {
+      id: 'brand-4',
+      name: 'brand 4',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/pierwszy-znak-fitness-1769735/',
+    },
+    {
+      id: 'brand-5',
+      name: 'brand 5',
+      image:
+        'https://www.pexels.com/pl-pl/zdjecie/bialo-czerwone-oznakowanie-budweisera-1808665/',
+    },
+    {
+      id: 'brand-6',
+      name: 'brand 6',
+      image:
+        'https://www.pexels.com/pl-pl/zdjecie/staroswiecki-technologia-muzyka-projekt-4153709/',
+    },
+    {
+      id: 'brand-7',
+      name: 'brand 7',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/drink-marka-logo-cola-4113685/',
+    },
+    {
+      id: 'brand-8',
+      name: 'brand 8',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/drink-marka-logo-cola-4113685/',
+    },
+    {
+      id: 'brand-9',
+      name: 'brand 9',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/drink-marka-logo-cola-4113685/',
+    },
+    {
+      id: 'brand-10',
+      name: 'brand 10',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/drink-marka-logo-cola-4113685/',
+    },
+    {
+      id: 'brand-11',
+      name: 'brand 11',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/drink-marka-logo-cola-4113685/',
+    },
+    {
+      id: 'brand-12',
+      name: 'brand 12',
+      image: 'https://www.pexels.com/pl-pl/zdjecie/drink-marka-logo-cola-4113685/',
+    },
+  ],
 };
 
 export default initialState;

@@ -1,0 +1,9 @@
+@import "../../../styles/settings.scss";
+
+.photoBrands {
+  display: inline-flex;
+
+  img{
+    object-fit: cover;
+  }
+}
