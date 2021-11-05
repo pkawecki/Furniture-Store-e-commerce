@@ -25,30 +25,34 @@ const Brands = ({ brands }) => {
   return (
     <div className={styles.root}>
       <div className='container'>
-        <div className={'row no-gutters justify-content-between' + styles.brands}>
-          <div className='col-1'>
+        <div
+          className={'row no-gutters justify-content-between ' + styles.sliderWrapper}
+        >
+          <div className={`col-1`}>
             <Button
               className={styles.button}
-              variant='carousel'
+              variant='bigCarousel'
               onClick={handleClickPrevious}
             >
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
             </Button>
           </div>
-          <div className={'col-10' + styles.photoBrands}>
-            {brands.slice(activePage * 6, (activePage + 1) * 6).map(item => (
-              <div key={item.id} className='col-2'>
-                <BrandsSlider {...item} />
-              </div>
-            ))}
+          <div className='col-10'>
+            <div className='row justify-content-between'>
+              {brands.slice(activePage * brand, (activePage + 1) * brand).map(item => (
+                <div key={item.id} className='col-2'>
+                  <BrandsSlider {...item} />
+                </div>
+              ))}
+            </div>
           </div>
-          <div className='col-1'>
+          <div className={`col-1`}>
             <Button
               className={styles.button}
-              variant='carousel'
+              variant='bigCarousel'
               onClick={handleClickNext}
             >
-              <FontAwesomeIcon icon={faChevronRight} />
+              <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
             </Button>
           </div>
         </div>
