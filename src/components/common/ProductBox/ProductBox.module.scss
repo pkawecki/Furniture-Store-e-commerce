@@ -95,6 +95,16 @@
     align-items: center;
   }
 
+  .heart {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  .arrows {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
   .price {
     display: flex;
     justify-content: space-between;
@@ -118,7 +128,7 @@
       visibility: visible;
     } 
     .price .button {
-      color: white;
+      color: #ffffff;
       font-weight: bold;
     }
   
