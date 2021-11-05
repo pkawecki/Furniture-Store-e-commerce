@@ -41,12 +41,14 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility: hidden;
       position: absolute;
       bottom: 0;
       left: 0;
       height: 40px;
       width: 100%;
       padding: 1px 5px;
+      
     }
   }
 
@@ -91,5 +93,62 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .oldPrice {
+    color: #a5a5a5;
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: line-through #292929;
+    padding-right: 6px;
+  }
+  
+  .newPrice{
+    font-size: 18px;
+  }
+  
+  &:hover {
+    .buttons {
+      visibility: visible;
+    } 
+    .price .button {
+      color: white;
+      font-weight: bold;
+    }
+  
+    .price {
+      .newPrice {
+        background-color: $primary;
+      }
+    }
+  
+  }
+}
+
+@media (max-width: 768px) {
+  .root{
+    .photo{
+      max-width: 360px;
+      max-height: 350px;
+    }
+    .actions {
+      .outlines{
+        .button{
+          font-size: 16px;
+        }
+      }
+      .price{
+        .newPrice{
+          font-size: 18px;
+          
+        }
+      }
+    }
   }
 }

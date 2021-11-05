@@ -1,5 +1,10 @@
 @import "../../../styles/settings.scss";
 
+#rowCompanyClaim {
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
 .root {
   background-color: $header-bg;
 
@@ -10,10 +15,11 @@
   .phoneNumber {
     p {
       margin: 0;
-      font-size: 17px;
+      font-size: 14px;
       line-height: 42px;
       color: $phone-number-font-color;
       font-weight: 500;
+      text-align: right;
 
       .icon {
         font-size: 32px;
@@ -74,6 +80,20 @@
           background-color: lighten($primary, $onhover-background-lighten-percentage);
         }
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #rowCompanyClaim {
+    align-items: center;
+  }
+
+  .root .phoneNumber {
+    order: -1;
+    p {
+      font-size: 17px;
+      text-align: left;
     }
   }
 }
