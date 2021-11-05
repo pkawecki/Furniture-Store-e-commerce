@@ -1,11 +1,9 @@
-import { addProductToCompare, getAll, getCount } from '../../../redux/compareRedux';
 import {
   faExchangeAlt,
   faShoppingBasket,
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,16 +11,22 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './ProductBox.module.scss';
 
-const ProductBox = ({ name, price, promo, stars, image, oldPrice, id }) => {
-  const productCompareCount = useSelector(state => getCount(state));
-  const productCompareList = useSelector(state => getAll(state));
-  const dispatch = useDispatch();
-  const addToCompare = state => dispatch(addProductToCompare(state));
-
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  image,
+  oldPrice,
+  id,
+  addToCompare,
+  compareCount,
+  compareList,
+}) => {
   const handleAddToCompare = (event, id) => {
-    const productInCompare = productCompareList.some(product => product.id === id);
+    const inCompare = compareList.some(product => product.id === id);
     event.preventDefault();
-    if (productCompareCount < 4 && !productInCompare) {
+    if (compareCount < 4 && !inCompare) {
       addToCompare({ id });
     }
   };
@@ -84,6 +88,8 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.string,
   addToCompare: PropTypes.func,
   id: PropTypes.string,
+  compareCount: PropTypes.number,
+  compareList: PropTypes.array,
 };
 
 export default ProductBox;

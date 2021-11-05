@@ -1,8 +1,8 @@
-import React from 'react';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductCompareBar from '../ProductCompareBar/ProductCompareBarContainer';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
 
 class NewFurniture extends React.Component {
   state = {
@@ -74,6 +74,7 @@ class NewFurniture extends React.Component {
             ))}
           </div>
         </div>
+        <ProductCompareBar />
       </div>
     );
   }
