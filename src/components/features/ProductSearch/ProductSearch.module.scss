@@ -68,6 +68,16 @@
     }
     .dropdownContainer {
       font-weight: bolder;
+      z-index: 1;
+      font-size: 14px;
+    }
+
+    select:hover {
+      color: $primary;
+    }
+
+    select:focus {
+      outline: none;
     }
   }
 
@@ -91,6 +101,27 @@
       border: 0;
       background-color: transparent;
       outline: none;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .root {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    .category {
+      border: 0;
+
+      select{
+        border: 1px solid $form-border-color;
+      }
+      .icon:last-child {
+        position: relative;
+        padding-right: 5px;
+      }
+    }
+    .searchField{
+      padding-top: 20px;
     }
   }
 }
