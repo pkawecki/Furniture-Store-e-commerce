@@ -22,6 +22,8 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
+  heart,
+  arrows,
 }) => {
   const handleAddToCompare = (event, id) => {
     const inCompare = compareList.some(product => product.id === id);
@@ -60,16 +62,20 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button variant='outline' className={heart ? styles.heart : ''}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' onClick={e => handleAddToCompare(e, id)}>
+          <Button
+            variant='outline'
+            onClick={e => handleAddToCompare(e, id)}
+            className={arrows ? styles.arrows : ''}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>
           <div className={styles.oldPrice}>{oldPrice}</div>
-          <Button noHover variant='small'>
+          <Button noHover variant='small' className={styles.newPrice}>
             $ {price}
           </Button>
         </div>
@@ -84,6 +90,8 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  heart: PropTypes.bool,
+  arrows: PropTypes.bool,
   image: PropTypes.node,
   oldPrice: PropTypes.string,
   addToCompare: PropTypes.func,

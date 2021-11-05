@@ -62,7 +62,7 @@
     }
   }
 
-  &.active {
+  &:hover, &.active {
     .iconWrapper {
       color: $feature-box-active-font;
 
