@@ -109,6 +109,10 @@
     padding-right: 6px;
   }
   
+  .newPrice{
+    font-size: 18px;
+  }
+  
   &:hover {
     .buttons {
       visibility: visible;
@@ -118,9 +122,33 @@
       font-weight: bold;
     }
   
-    .price div {
-      background-color: $primary;
+    .price {
+      .newPrice {
+        background-color: $primary;
+      }
     }
   
+  }
+}
+
+@media (max-width: 768px) {
+  .root{
+    .photo{
+      max-width: 360px;
+      max-height: 350px;
+    }
+    .actions {
+      .outlines{
+        .button{
+          font-size: 16px;
+        }
+      }
+      .price{
+        .newPrice{
+          font-size: 18px;
+          
+        }
+      }
+    }
   }
 }
