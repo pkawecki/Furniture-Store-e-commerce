@@ -26,12 +26,14 @@ const Brands = ({ brands }) => {
     <div className={styles.root}>
       <div className='container'>
         <div
-          className={'row no-gutters justify-content-between ' + styles.sliderWrapper}
+          className={
+            'row no-gutters justify-content-between ' + styles.topnbottSliderWrapper
+          }
         >
           <div className={`col-1`}>
             <Button
               className={styles.button}
-              variant='bigCarousel'
+              variant='carousel'
               onClick={handleClickPrevious}
             >
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
@@ -49,7 +51,7 @@ const Brands = ({ brands }) => {
           <div className={`col-1`}>
             <Button
               className={styles.button}
-              variant='bigCarousel'
+              variant='carousel'
               onClick={handleClickNext}
             >
               <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
