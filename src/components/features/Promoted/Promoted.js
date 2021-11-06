@@ -16,21 +16,23 @@ const Promoted = () => (
     <div className='container'>
       <div className='row'>
         <div className={'col-4 ' + styles.left}>
-          <div className={styles.hotDeals}>
-            <h3>HOT DEALS</h3>
-          </div>
-          <div className={'col-auto ' + styles.dots}>
-            <ul>
-              <li>
-                <a></a>
-              </li>
-              <li>
-                <a></a>
-              </li>
-              <li>
-                <a></a>
-              </li>
-            </ul>
+          <div className={styles.topper}>
+            <div className={'col-auto ' + styles.hotDeals}>
+              <h3>HOT DEALS</h3>
+            </div>
+            <div className={'col-4 ' + styles.dots}>
+              <ul>
+                <li>
+                  <a></a>
+                </li>
+                <li>
+                  <a></a>
+                </li>
+                <li>
+                  <a></a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className={styles.photo}>
             <img src={initialState.products[0].image} alt='promo bed' />
@@ -38,6 +40,7 @@ const Promoted = () => (
               <Button variant='small'>
                 <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
               </Button>
+              <h3 className={styles.timer}>TIMER</h3>
             </div>
           </div>
           <div className={styles.content}>
