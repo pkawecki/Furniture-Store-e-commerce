@@ -55,6 +55,7 @@ const Footer = ({ children }) => (
               </ul>
             </div>
           </div>
+          <div className='w-100 d-md-none'></div>
           <div className='col'>
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
