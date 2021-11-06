@@ -1,0 +1,154 @@
+@import "../../../styles//settings.scss";
+
+.root{
+  padding-top: 40px;
+  .left{
+    .photo {
+      position: relative;
+      height: 300px;
+      margin: 0 auto;
+      padding: 0;
+      background: {
+        color: $product-box-photo-background;
+        size: contain;
+        position: center;
+        repeat: no-repeat;
+      }
+      overflow: hidden;
+      align-items: flex-end;
+      width: auto;
+      max-width: 600px;
+  
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .button {
+        display: flex;
+        justify-content: space-between;
+        //visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 40px;
+        width: 100%;
+        padding: 1px 5px;
+        
+      }
+      &:hover {
+        .button{
+          visibility: visible;
+          z-index: 2;
+        }
+      }
+    }
+    .content {
+      text-align: center;
+      padding: 20px;
+      z-index: 1;
+  
+      h5 {
+        //color: $primary;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 1px;
+      }
+  
+      .stars {
+        a {
+          text-decoration: none;
+          color: $stars-color;
+        }
+      }
+    }
+  
+    .line {
+      margin: 0 10px;
+      border-bottom: 1px solid $under-stars-line-color;
+      position: relative;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        width: 30px;
+        border-bottom: 4px solid $under-stars-thick-line-color;
+        transform: translateX(-50%);
+      }
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: #ffffff;
+        transform: translateY(15px);
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $new-fur-inactive-dot;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              background-color: $new-fur-active-dot;
+            }
+          }
+        }
+      }
+    }
+    .actions {
+      padding: 15px 10px 10px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .oldPrice {
+        color: #a5a5a5;
+        font-weight: normal;
+        font-size: 16px;
+        text-decoration: line-through #292929;
+        padding-right: 6px;
+      }
+      
+      .newPrice{
+        font-size: 18px;
+      }
+      
+      &:hover {
+        .price .button {
+          color: #ffffff;
+          font-weight: bold;
+        }
+      
+        .price {
+          .newPrice {
+            background-color: $primary;
+          }
+        }
+      }
+    } 
+  }
+
+}
