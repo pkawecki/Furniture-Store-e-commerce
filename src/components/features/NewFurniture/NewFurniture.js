@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
+import SwipeableViews from 'react-swipeable-views';
+
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
@@ -67,11 +69,13 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
+            {/* <SwipeableViews enableMouseEvents> */}
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-3'>
                 <ProductBox {...item} />
               </div>
             ))}
+            {/* </SwipeableViews> */}
           </div>
         </div>
       </div>
