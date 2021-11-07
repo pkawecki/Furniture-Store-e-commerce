@@ -4,14 +4,14 @@
   padding-top: 40px;
   .left{
     .topper{
-      background-color: #292929;
+      background-color: $topper-background;
       height: 50px;
       
       .hotDeals{
         padding-top: 10px;
         font-size: 20px;
-        font-weight: 700;
-        color: #ffffff;
+        font-weight: 00;
+        color: $hotDeals-font-color;
       }
 
       .dots {
@@ -24,7 +24,6 @@
           margin: 0;
           padding: 0 0 0 1rem;
           list-style: none;
-          //background-color: #ffffff;
           transform: translateY(15px);
   
           li {
@@ -76,20 +75,47 @@
         justify-content: space-between;
         flex-direction: column;
         align-content: center;
-        //visibility: hidden;
+        text-align: center;
+        visibility: hidden;
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         height: 40px;
         padding: 1px 5px;
+  
         
-
-        .timer{
-          background-color: #a5a5a5;
-          margin-top: 60px;
+        .timer {
+          position: absolute;
+          padding: 0 50px;
+          margin-top: 80px;
+          height: 60px;
+          width: 100%;
+          z-index: 90;
+          background-color: transparent;
+          opacity: 90%;
+    
+         .timerItem {
+          display: block;
+          margin: 0;
+          height: 60px;
+          text-align: center;
+          color: $timer-font-color;
+          border-radius: 50%;
+          background-color: $timer-backgorund;
+    
+            .number {
+              margin: 7px 0 0;
+              font-size: 28px;
+              line-height: 1;
+            }
+    
+            .unit {
+              font-size: 12px;
+            }
+          }
         }
-        
       }
       &:hover {
         .button{
@@ -104,7 +130,6 @@
       z-index: 1;
   
       h5 {
-        //color: $primary;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: 1px;
@@ -147,10 +172,10 @@
       }
       
       .oldPrice {
-        color: #a5a5a5;
+        color: $old-price-color;
         font-weight: normal;
         font-size: 16px;
-        text-decoration: line-through #292929;
+        text-decoration: line-through $old-price-text-decoration;
         padding-right: 6px;
       }
       
@@ -160,17 +185,91 @@
       
       &:hover {
         .price .button {
-          color: #ffffff;
           font-weight: bold;
         }
       
         .price {
           .newPrice {
-            background-color: $primary;
+            background-color: $hover-price-color;
           }
         }
       }
     } 
   }
 
+  .right{
+    max-width: 750px;
+    max-height: 500px;
+    padding: 0;
+      .imgWrapper{
+      position: relative;
+      margin: 0 auto;
+      padding: 0;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .shadowWrapper {
+      position: absolute;
+      height: 200px;
+      width: 100%;
+      top: 100px;
+      opacity: 50%;
+      z-index: 90;
+      background-color: $footer-claim-bg;
+    }
+    .shadowTitle {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 150px;
+      opacity: 50%;
+      z-index: 90;
+      color: $shadow-title-color;
+      font-size: 50px;
+      opacity: 1;
+      span {
+        font-weight: 700;
+      }
+    }
+    .shadowSubtitle {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 60px;
+      z-index: 90;
+      color: $shadow-subtitle-color;
+      font-size: 20px;
+    }
+    .shadowButtonsWrapper {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      bottom: 0px;
+      z-index: 90;
+      overflow: hidden;
+
+      .buttonLong {
+        background-color: $button-long-background;
+        width: 50%;
+
+        a{
+          font-size: 30px;
+        }
+      }
+    }
+
+    .centerButton {
+      position: absolute;
+      text-align: center;
+      padding: 0;
+      width: 100%;
+      bottom: 190px;
+      z-index: 100;
+    }
+  }
 }

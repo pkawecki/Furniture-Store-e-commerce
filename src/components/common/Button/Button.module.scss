@@ -39,3 +39,24 @@
     color: $button-font-color-hover;
   }
 }
+
+.long {
+  @extend .main;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  line-height: 24px;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 400;
+}
+
+.big {
+  @extend .main;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 8px 30px;
+  font-weight: 500;
+  background-color: $button-backgound-big;
+  color: $button-color-big;
+}

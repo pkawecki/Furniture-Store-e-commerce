@@ -37,10 +37,48 @@ const Promoted = () => (
           <div className={styles.photo}>
             <img src={initialState.products[0].image} alt='promo bed' />
             <div className={styles.button}>
-              <Button variant='small'>
-                <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-              </Button>
-              <h3 className={styles.timer}>TIMER</h3>
+              <div>
+                <Button variant='small'>
+                  <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO
+                  CART
+                </Button>
+              </div>
+              <div className={styles.timer}>
+                <div className='row justify-content-around'>
+                  <div className={'col-3 ' + styles.timerItem}>
+                    <div className={styles.number}>
+                      <span>25</span>
+                    </div>
+                    <div className={styles.unit}>
+                      <span>DAYS</span>
+                    </div>
+                  </div>
+                  <div className={'col-3 ' + styles.timerItem}>
+                    <div className={styles.number}>
+                      <span>10</span>
+                    </div>
+                    <div className={styles.unit}>
+                      <span>HRS</span>
+                    </div>
+                  </div>
+                  <div className={'col-3 ' + styles.timerItem}>
+                    <div className={styles.number}>
+                      <span>45</span>
+                    </div>
+                    <div className={styles.unit}>
+                      <span>MIN</span>
+                    </div>
+                  </div>
+                  <div className={'col-3 ' + styles.timerItem}>
+                    <div className={styles.number}>
+                      <span>30</span>
+                    </div>
+                    <div className={styles.unit}>
+                      <span>SECS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className={styles.content}>
@@ -75,7 +113,27 @@ const Promoted = () => (
           </div>
         </div>
         <div className={'col-8 ' + styles.right}>
-          <h3> right </h3>
+          <div className={styles.imgWrapper}>
+            <img src={initialState.products[12].image} alt='right side image' />
+          </div>
+          <div className={styles.shadowWrapper}></div>
+          <div className={styles.shadowTitle}>
+            INDOOR <span>FURNITURE</span>
+            <div className={styles.shadowSubtitle}>SAVE UP TO 50% OF ALL FURNITURE</div>
+          </div>
+          <div className={styles.centerButton}>
+            <Button variant='big'>SHOP NOW</Button>
+          </div>
+          <div className={styles.shadowButtonsWrapper}>
+            <div className='row'>
+              <div className={styles.buttonLong}>
+                <Button variant='long'>{'<'}</Button>
+              </div>
+              <div className={styles.buttonLong}>
+                <Button variant='long'>{'>'}</Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
