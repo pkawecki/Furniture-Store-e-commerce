@@ -23,6 +23,7 @@ const ProductBox = ({
   favorites,
   compare,
 }) => (
+const ProductBox = ({ name, price, promo, stars, heart, arrows, image, oldPrice }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img src={image} alt='arb bed' />
@@ -38,13 +39,13 @@ const ProductBox = ({
       <h5>{name}</h5>
       <div className={styles.stars}>
         {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
+          <button key={i} href='#'>
             {i <= stars ? (
               <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
             ) : (
               <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
             )}
-          </a>
+          </button>
         ))}
       </div>
     </div>
@@ -62,11 +63,16 @@ const ProductBox = ({
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
         <Button variant='outline' active={compare}>
+        <Button variant='outline' className={heart ? styles.heart : ''}>
+          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+        </Button>
+        <Button variant='outline' className={arrows ? styles.arrows : ''}>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
       <div className={styles.price}>
-        <Button noHover variant='small'>
+        <div className={styles.oldPrice}>{oldPrice}</div>
+        <Button noHover variant='small' className={styles.newPrice}>
           $ {price}
         </Button>
       </div>
@@ -80,12 +86,15 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  heart: PropTypes.bool,
+  arrows: PropTypes.bool,
   image: PropTypes.node,
   favorites: PropTypes.bool,
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
   id: PropTypes.string,
   compare: PropTypes.bool,
+  oldPrice: PropTypes.string,
 };
 
 export default ProductBox;
