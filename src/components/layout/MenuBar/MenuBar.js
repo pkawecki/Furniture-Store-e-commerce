@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import styles from './MenuBar.module.scss';
 
 const MenuBar = ({ children }) => {

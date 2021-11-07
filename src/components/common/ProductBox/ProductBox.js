@@ -11,7 +11,7 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, image }) => (
+const ProductBox = ({ name, price, promo, stars, heart, arrows, image, oldPrice }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img src={image} alt='arb bed' />
@@ -40,15 +40,16 @@ const ProductBox = ({ name, price, promo, stars, image }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
+        <Button variant='outline' className={heart ? styles.heart : ''}>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button variant='outline' className={arrows ? styles.arrows : ''}>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
       <div className={styles.price}>
-        <Button noHover variant='small'>
+        <div className={styles.oldPrice}>{oldPrice}</div>
+        <Button noHover variant='small' className={styles.newPrice}>
           $ {price}
         </Button>
       </div>
@@ -62,7 +63,10 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  heart: PropTypes.bool,
+  arrows: PropTypes.bool,
   image: PropTypes.node,
+  oldPrice: PropTypes.string,
 };
 
 export default ProductBox;

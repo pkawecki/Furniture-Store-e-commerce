@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styles from './CompanyClaim.module.scss';
 
-// import PropTypes from 'prop-types';
-
 const CompanyClaim = () => (
   <div className={styles.root}>
     <div className='container'>
@@ -33,7 +31,5 @@ const CompanyClaim = () => (
     </div>
   </div>
 );
-
-// CompanyClaim.propTypes = {};
 
 export default CompanyClaim;
