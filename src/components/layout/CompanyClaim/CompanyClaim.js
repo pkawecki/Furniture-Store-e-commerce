@@ -4,19 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styles from './CompanyClaim.module.scss';
 
-// import PropTypes from 'prop-types';
-
 const CompanyClaim = () => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row' id={styles.rowCompanyClaim}>
         <div className='col-6 col-md-4 text-center'>
-          <a href='#'>
+          <a href='#top'>
             <img src='/images/logo.png' alt='Bazar' />
           </a>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <a href='#' className={styles.cartBox}>
+          <a href='#top' className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>
@@ -33,7 +31,5 @@ const CompanyClaim = () => (
     </div>
   </div>
 );
-
-// CompanyClaim.propTypes = {};
 
 export default CompanyClaim;
