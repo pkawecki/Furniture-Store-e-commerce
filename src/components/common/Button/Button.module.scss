@@ -59,4 +59,11 @@
   font-weight: 500;
   background-color: $button-backgound-big;
   color: $button-color-big;
+
+//brandsSliderComponent
+.carousel {
+  @extend .main;
+  align-items: center;
+  padding: 35px 10px;
+  line-height: 120px;
 }
