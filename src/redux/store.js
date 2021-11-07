@@ -1,8 +1,9 @@
 import { combineReducers, createStore } from 'redux';
-import initialState from './initialState';
 
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
+import compareReducer from './compareRedux';
+import initialState from './initialState';
 import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 
@@ -10,6 +11,7 @@ import brandsReducer from './brandsRedux';
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
+  compare: compareReducer,
   products: productsReducer,
   brands: brandsReducer,
 };
