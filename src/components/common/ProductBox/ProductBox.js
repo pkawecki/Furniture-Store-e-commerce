@@ -16,14 +16,14 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  arrows,
   image,
+  oldPrice,
   addToFavorites,
   removeFromFavorites,
   id,
   favorites,
-  compare,
 }) => (
-const ProductBox = ({ name, price, promo, stars, heart, arrows, image, oldPrice }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img src={image} alt='arb bed' />
@@ -62,10 +62,6 @@ const ProductBox = ({ name, price, promo, stars, heart, arrows, image, oldPrice 
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline' active={compare}>
-        <Button variant='outline' className={heart ? styles.heart : ''}>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
         <Button variant='outline' className={arrows ? styles.arrows : ''}>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
@@ -86,15 +82,14 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  heart: PropTypes.bool,
   arrows: PropTypes.bool,
   image: PropTypes.node,
   favorites: PropTypes.bool,
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
   id: PropTypes.string,
-  compare: PropTypes.bool,
   oldPrice: PropTypes.string,
 };
+
 
 export default ProductBox;
