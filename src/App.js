@@ -12,17 +12,15 @@ import React from 'react';
 import store from './redux/store';
 
 const App = () => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <MainLayout>
-        <Switch>
-          <Route exact path={'/'} component={Homepage} />
-          <Route exact path={'/shop/:categoryId'} component={ProductList} />
-          <Route exact path={'/product/:productId'} component={ProductPage} />
-        </Switch>
-      </MainLayout>
-    </BrowserRouter>
-  </Provider>
+  <BrowserRouter>
+    <MainLayout>
+      <Switch>
+        <Route exact path={'/'} component={Homepage} />
+        <Route exact path={'/shop/:categoryId'} component={ProductList} />
+        <Route exact path={'/product/:productId'} component={ProductPage} />
+      </Switch>
+    </MainLayout>
+  </BrowserRouter>
 );
 
 export default App;

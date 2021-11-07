@@ -321,6 +321,9 @@ const initialState = {
   cart: {
     products: [],
   },
+  compare: {
+    products: [],
+  },
   brands: [
     {
       id: 'brand-1',

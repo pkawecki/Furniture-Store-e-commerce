@@ -1,4 +1,5 @@
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductCompareBar from '../ProductCompareBar/ProductCompareBarContainer';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './NewFurniture.module.scss';
@@ -94,6 +95,7 @@ class NewFurniture extends React.Component {
               ))}
           </div>
         </div>
+        <ProductCompareBar />
       </div>
     );
   }

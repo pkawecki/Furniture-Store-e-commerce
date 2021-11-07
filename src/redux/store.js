@@ -11,6 +11,7 @@ import brandsReducer from './brandsRedux';
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
+  compare: compareReducer,
   products: productsReducer,
   mode: modeReducer,
   brands: brandsReducer,
