@@ -1,15 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import styles from './ProductBox.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faStar,
   faExchangeAlt,
   faShoppingBasket,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart, faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+
 import Button from '../Button/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styles from './ProductBox.module.scss';
+
+const handleAddToCompare = (event, id) => {
+    const inCompare = compareList.some(product => product.id === id);
+    event.preventDefault();
+    if (compareCount < 4 && !inCompare) {
+      addToCompare({ id });
+    }
+  };
 
 const ProductBox = ({
   name,
@@ -23,6 +31,9 @@ const ProductBox = ({
   removeFromFavorites,
   id,
   favorites,
+  addToCompare,
+  compareCount,
+  compareList,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -66,15 +77,30 @@ const ProductBox = ({
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
-      <div className={styles.price}>
-        <div className={styles.oldPrice}>{oldPrice}</div>
-        <Button noHover variant='small' className={styles.newPrice}>
-          $ {price}
-        </Button>
+      <div className={styles.line}></div>
+      <div className={styles.actions}>
+        <div className={styles.outlines}>
+          <Button variant='outline' className={heart ? styles.heart : ''}>
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
+          <Button
+            variant='outline'
+            onClick={e => handleAddToCompare(e, id)}
+            className={arrows ? styles.arrows : ''}
+          >
+            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+          </Button>
+        </div>
+        <div className={styles.price}>
+          <div className={styles.oldPrice}>{oldPrice}</div>
+          <Button noHover variant='small' className={styles.newPrice}>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 ProductBox.propTypes = {
   children: PropTypes.node,
@@ -89,6 +115,10 @@ ProductBox.propTypes = {
   removeFromFavorites: PropTypes.func,
   id: PropTypes.string,
   oldPrice: PropTypes.string,
+  addToCompare: PropTypes.func,
+  id: PropTypes.string,
+  compareCount: PropTypes.number,
+  compareList: PropTypes.array,
 };
 
 

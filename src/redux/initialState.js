@@ -345,6 +345,9 @@ const initialState = {
   cart: {
     products: [],
   },
+  compare: {
+    products: [],
+  },
   brands: [
     {
       id: 'brand-1',
@@ -397,6 +400,7 @@ const initialState = {
       image: 'https://i.imgur.com/spQ9tQf.jpg',
     },
   ],
+  mode: '',
 };
 
 export default initialState;
