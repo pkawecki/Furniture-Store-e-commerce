@@ -4,10 +4,12 @@ import './styles/global.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Homepage from './components/views/Homepage/Homepage';
-import MainLayout from './components/layout/MainLayout/MainLayout';
+import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import { Provider } from 'react-redux';
 import React from 'react';
+import store from './redux/store';
 
 const App = () => (
   <BrowserRouter>
