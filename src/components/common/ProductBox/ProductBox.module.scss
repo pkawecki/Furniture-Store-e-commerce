@@ -1,42 +1,61 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
-  border: 1px solid #e1e1e1;
+  background-color: $product-box-background;
+  border: 1px solid $product-box-border;
   margin-bottom: 2rem;
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
+    height: 250px;
+    margin: 0 auto;
+    padding: 0;
     background: {
-      color: #f4f5f7;
+      color: $product-box-photo-background;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
     overflow: hidden;
     align-items: flex-end;
+    width: auto;
+    max-width: 260px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
 
     .sale {
       position: absolute;
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #292929;
+      background-color: $product-box-sale-icon-background;
       border-radius: 50%;
-      color: #ffffff;
+      color: $product-box-sale-icon-font;
       padding: 30px 15px 5px 15px;
     }
 
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 40px;
+      width: 100%;
+      padding: 1px 5px;
+      
     }
   }
 
   .content {
     text-align: center;
     padding: 20px;
+    z-index: 1;
 
     h5 {
       color: $primary;
@@ -48,14 +67,14 @@
     .stars {
       a {
         text-decoration: none;
-        color: rgb(42, 42, 42);
+        color: $stars-color;
       }
     }
   }
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $under-stars-line-color;
     position: relative;
 
     &::before {
@@ -64,7 +83,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $primary;
+      border-bottom: 4px solid $under-stars-thick-line-color;
       transform: translateX(-50%);
     }
   }
@@ -74,5 +93,72 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .heart {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  .arrows {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .oldPrice {
+    color: #a5a5a5;
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: line-through #292929;
+    padding-right: 6px;
+  }
+  
+  .newPrice{
+    font-size: 18px;
+  }
+  
+  &:hover {
+    .buttons {
+      visibility: visible;
+    } 
+    .price .button {
+      color: #ffffff;
+      font-weight: bold;
+    }
+  
+    .price {
+      .newPrice {
+        background-color: $primary;
+      }
+    }
+  
+  }
+}
+
+@media (max-width: 768px) {
+  .root{
+    .photo{
+      max-width: 360px;
+      max-height: 350px;
+    }
+    .actions {
+      .outlines{
+        .button{
+          font-size: 16px;
+        }
+      }
+      .price{
+        .newPrice{
+          font-size: 18px;
+          
+        }
+      }
+    }
   }
 }
