@@ -39,3 +39,11 @@
     color: $button-font-color-hover;
   }
 }
+
+//brandsSliderComponent
+.carousel {
+  @extend .main;
+  align-items: center;
+  padding: 35px 10px;
+  line-height: 120px;
+}
