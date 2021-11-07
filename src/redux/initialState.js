@@ -376,6 +376,7 @@ const initialState = {
       image: 'https://i.imgur.com/spQ9tQf.jpg',
     },
   ],
+  mode: '',
 };
 
 export default initialState;
