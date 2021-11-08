@@ -13,13 +13,12 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $topbar-font-color;
         font-size: 13px;
 
         &:hover {
           color: $primary;
           text-decoration: none;
-          @extend %hover;
         }
       }
     }
@@ -39,5 +38,11 @@
     .icon {
       margin-right: 5px;
     }
+  }
+}
+
+@media (max-width: 575px) {
+  .topMenu a span {
+    display: none;
   }
 }

@@ -10,33 +10,69 @@
     border-right: 1px solid $form-border-color;
     display: flex;
     align-items: center;
-    position: relative;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    width: 230px;
 
     .icon:first-child {
       color: $primary;
-      position: absolute;
-      left: 10px;
-      z-index: 0;
     }
 
-    .icon:last-child {
-      position: absolute;
-      right: 10px;
-      z-index: 0;
-    }
-
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
+    .dropdown {
       position: relative;
+
+      .dropdownContainer {
+        color: $primary;
+        text-transform: capitalize;
+      }
+
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        top: 34px;
+        background: white;
+        width: 170px;
+        z-index: 1;
+      }
+
+      .dropdownContent li {
+        color: $primary;
+        padding: 12px 10px;
+        text-decoration: none;
+        display: block;
+        text-transform: uppercase;
+      }
+
+      .dropdownContent li ul {
+        display: none;
+      }
+
+      .dropdownContent li:hover ul {
+        display: block;
+      }
+
+      .dropdownContent li:hover {
+        background: $primary;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .category:hover {
+    .dropdownContent {
+      display: block;
+    }
+    .dropdownContainer {
+      font-weight: bolder;
       z-index: 1;
       font-size: 14px;
     }
 
     select:hover {
-      @extend %hover;
       color: $primary;
     }
 
@@ -65,6 +101,27 @@
       border: 0;
       background-color: transparent;
       outline: none;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .root {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    .category {
+      border: 0;
+
+      select{
+        border: 1px solid $form-border-color;
+      }
+      .icon:last-child {
+        position: relative;
+        padding-right: 5px;
+      }
+    }
+    .searchField{
+      padding-top: 20px;
     }
   }
 }
