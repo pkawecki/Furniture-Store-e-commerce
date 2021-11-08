@@ -1,0 +1,74 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin: 60px 0;
+
+  .heading {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 4px solid $mercury;
+
+    h3 {
+      color: $brandy-punch;
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 38px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 45px;
+      border-bottom: 4px solid $brandy-punch;
+    }
+  }
+}
+
+  .menu {
+    text-align: center;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          display: inline-block;
+          margin: 0;
+          font-weight: bold;
+          background-color: $white;
+          border: 1px solid $alto;
+          width: 25%;
+
+          span {
+            color: $darkGray;
+            padding: 15px;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            display: block;
+            cursor: pointer;
+
+            &.active,
+            &:hover {
+              background-color: $athens-gray;
+              color: $brandy-punch;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border-bottom: 4px solid $brandy-punch;
+            }
+          }
+        }
+      }
+    }
+  }
