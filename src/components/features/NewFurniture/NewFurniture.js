@@ -68,6 +68,7 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
+          {/* test comment */}
           <SwipeableViews
             enableMouseEvents
             onChangeIndex={(index, indexLatest, meta) => {
