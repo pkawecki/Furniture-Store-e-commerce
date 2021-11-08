@@ -68,15 +68,15 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          {/* test comment */}
           <SwipeableViews
             enableMouseEvents
-            onChangeIndex={(index, indexLatest, meta) => {
+            index={activePage}
+            onChangeIndex={index => {
               this.handlePageChange(index);
-              console.log(`index ${index}, ${indexLatest}, meta: ${meta}`);
             }}
+            slideStyle={{ overflow: 'hidden' }}
           >
-            <div className='row'>
+            <div className={'row'}>
               {categoryProducts.slice(0, 8).map(item => (
                 <div key={item.id} className='col-3'>
                   <ProductBox {...item} />
@@ -90,7 +90,6 @@ class NewFurniture extends React.Component {
                 </div>
               ))}
             </div>
-
             <div className='row'>
               {categoryProducts.slice(16).map(item => (
                 <div key={item.id} className='col-3'>
