@@ -1,8 +1,8 @@
-import React from 'react';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductCompareBar from '../ProductCompareBar/ProductCompareBarContainer';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
 
 class NewFurniture extends React.Component {
   state = {
@@ -19,19 +19,35 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, mode } = this.props;
     const { activeCategory, activePage } = this.state;
+    let productsPerPage;
+
+    switch (mode) {
+      case 'mobile':
+        productsPerPage = 1;
+        break;
+      case 'tablet':
+        productsPerPage = 2;
+        break;
+      case 'desktop':
+        productsPerPage = 8;
+        break;
+      default:
+        productsPerPage = 4;
+    }
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
+          {/* eslint-disable-next-line */}
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : undefined}
           >
             page {i}
           </a>
@@ -43,16 +59,19 @@ class NewFurniture extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
+            <div className={'row no-gutters align-items-end ' + styles.panelBarDiv}>
+              <div className={'col-md-3 col-sm-12 ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
               <div className={'col ' + styles.menu}>
                 <ul>
                   {categories.map(item => (
                     <li key={item.id}>
+                      {/* eslint-disable-next-line */}
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -67,13 +86,16 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
+              .map(item => (
+                <div key={item.id} className='col-lg-3 col-sm-6'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
+        <ProductCompareBar />
       </div>
     );
   }
@@ -98,6 +120,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  mode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {

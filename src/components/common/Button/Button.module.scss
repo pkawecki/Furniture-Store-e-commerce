@@ -2,18 +2,18 @@
 
 // .root {
 // }
-
+//asd
 .main {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $button-background-nohover;
+  color: $button-color-nohover;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
 
   &:not(.noHover):hover {
-    color: #ffffff !important;
-    background-color: $primary;
+    color: $button-color-hover !important;
+    background-color: $button-background-hover;
     text-decoration: none;
     @extend %hover;
   }
@@ -30,14 +30,43 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid $button-border-color-nohover;
+  color: $button-font-color-nohover;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
-    color: #ffffff;
+    background-color: $button-background-color-hover;
+    color: $button-font-color-hover;
     @extend %hover;
+
   }
+}
+
+.long {
+  @extend .main;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  line-height: 24px;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 400;
+}
+
+.big {
+  @extend .main;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 8px 30px;
+  font-weight: 500;
+  background-color: $button-backgound-big;
+  color: $button-color-big;
+
+//brandsSliderComponent
+.carousel {
+  @extend .main;
+  align-items: center;
+  padding: 35px 10px;
+  line-height: 120px;
 }
