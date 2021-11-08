@@ -49,14 +49,9 @@ class Feedback extends React.Component {
                 </div>
                 <div className='row justify-content-md-center'>
                   <div className='col col-lg-1'>
-                    <img
-                      src={feed.clientImage}
-                      width='60'
-                      height='60'
-                      alt='client avatar'
-                    />
+                    <img src={feed.clientImage} alt='client avatar' />
                   </div>
-                  <div className='col col-lg-2'>
+                  <div className={'col col-lg-2 ' + styles.desc}>
                     <h6>{feed.clientName}</h6>
                     <p>Satisfied Client</p>
                   </div>
