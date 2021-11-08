@@ -1,0 +1,41 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  width: 70%;
+}
+
+.account {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.header {
+  font-weight: 500;
+  font-size: 18px;
+  align-content: center;
+}
+
+.checkboxWrapper {
+
+  .checkboxLabel {
+    font-size: 16px;
+  }
+
+  span {
+    color: $brandy-punch;
+  }
+
+  .firstCheckbox {
+    font-weight: 500;
+  }
+}
+
+.row {
+  align-content: center;
+}
+
+.button {
+  background-color: $brandy-punch;
+  border-radius: 5px;
+  padding: 15px;
+}
