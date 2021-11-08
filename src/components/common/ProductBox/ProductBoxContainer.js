@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import ProductBox from './ProductBox';
 import {
-  getAll,
+  getAllProducts,
   createAction_addFavorites,
   createAction_removeFavorites,
 } from '../../../redux/productsRedux';
 import { addProductToCompare, getAll, getCount } from '../../../redux/compareRedux';
 
 const mapStateToProps = state => ({
-  products: getAll(state),
+  products: getAllProducts(state),
   compareList: getAll(state),
   compareCount: getCount(state),
 });
