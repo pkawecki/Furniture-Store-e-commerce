@@ -68,17 +68,36 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            <SwipeableViews enableMouseEvents>
-              {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
-                .map(item => (
-                  <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </SwipeableViews>
-          </div>
+          <SwipeableViews
+            enableMouseEvents
+            onChangeIndex={(index, indexLatest, meta) => {
+              this.handlePageChange(index);
+              console.log(`index ${index}, ${indexLatest}, meta: ${meta}`);
+            }}
+          >
+            <div className='row'>
+              {categoryProducts.slice(0, 8).map(item => (
+                <div key={item.id} className='col-3'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
+            </div>
+            <div className='row'>
+              {categoryProducts.slice(8, 16).map(item => (
+                <div key={item.id} className='col-3'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
+            </div>
+
+            <div className='row'>
+              {categoryProducts.slice(16).map(item => (
+                <div key={item.id} className='col-3'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
+            </div>
+          </SwipeableViews>
         </div>
       </div>
     );
