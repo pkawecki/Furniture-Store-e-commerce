@@ -8,8 +8,9 @@ import { faHeart, faStar as farStar } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductBox.module.scss';
+import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
 
 const ProductBox = ({
   name,
@@ -24,6 +25,7 @@ const ProductBox = ({
   compareList,
   heart,
   arrows,
+  category,
 }) => {
   const handleAddToCompare = (event, id) => {
     const inCompare = compareList.some(product => product.id === id);
@@ -33,18 +35,38 @@ const ProductBox = ({
     }
   };
 
+  const [showPopup, togglePopup] = useState(false);
+
+  const handlePopup = event => {
+    event.preventDefault();
+    return togglePopup(!showPopup);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
         <img src={image} alt='arb bed' />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button variant='small' onClick={event => handlePopup(event)}>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
       </div>
+      {showPopup ? (
+        <ProductPopup
+          id={id}
+          name={name}
+          category={category}
+          image={image}
+          closePopup={handlePopup}
+        />
+      ) : (
+        ''
+      )}
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
@@ -98,6 +120,7 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  category: PropTypes.string,
 };
 
 export default ProductBox;
