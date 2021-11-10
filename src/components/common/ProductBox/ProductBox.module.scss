@@ -94,9 +94,8 @@
     align-items: center;
   }
 
-  .heart {
-    background-color: #2a2a2a;
-    color: #ffffff;
+  .favorites {
+    background-color: $primary;
   }
 
   .arrows {
@@ -154,9 +153,9 @@
       .price{
         .newPrice{
           font-size: 18px;
-
         }
       }
     }
   }
 }
+
