@@ -28,47 +28,118 @@
   }
 }
 
-  .menu {
-    text-align: center;
-      ul {
+/* Gallery tabs */
+.menu {
+  text-align: center;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        display: inline-block;
         margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
+        font-weight: bold;
+        background-color: $white;
+        border: 1px solid $alto;
+        width: 25%;
 
-        li {
-          display: inline-block;
-          margin: 0;
-          font-weight: bold;
-          background-color: $white;
-          border: 1px solid $alto;
-          width: 25%;
+        span {
+          color: $darkGray;
+          padding: 15px;
+          position: relative;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 16px;
+          display: block;
+          cursor: pointer;
 
-          span {
-            color: $darkGray;
-            padding: 15px;
-            position: relative;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            display: block;
-            cursor: pointer;
-
-            &.active,
-            &:hover {
-              background-color: $athens-gray;
-              color: $brandy-punch;
-              &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                border-bottom: 4px solid $brandy-punch;
-            }
+          &.active,
+          &:hover {
+            background-color: $athens-gray;
+            color: $brandy-punch;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid $brandy-punch;
           }
         }
       }
     }
   }
+}
+
+  /*Rating*/
+.content {
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  right: 5px;
+  bottom:25px;
+  background-color: $white;
+  padding: 15px;
+  box-shadow: 0 6px 9px 1px rgba(0,0,0,0.35);
+
+  .cornerTopLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: $mine-shaft-light transparent transparent transparent;
+  }
+
+  .cornerBottomRight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px ;
+    border-color:  transparent transparent $mine-shaft-light transparent;
+  }
+
+  h5 {
+    color: $text-color;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+
+  .stars {
+    span {
+      text-decoration: none;
+      color: $darkGray;
+    }
+  }
+
+  .price {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50%, -90%);
+    background-color: $mine-shaft-light;
+    border-radius: 50%;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    opacity: 0.7;
+
+    s {
+      font-size: 20px;
+    }
+
+    h3, h5 {
+      margin: 0;
+      color: $alto;
+    }
+  }
+}
