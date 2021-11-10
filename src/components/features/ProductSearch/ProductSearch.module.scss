@@ -59,7 +59,7 @@
           color: white;
         }
       }
-    }    
+    }
   }
 
   .category:hover {
@@ -73,6 +73,7 @@
     }
 
     select:hover {
+      @extend %hover;
       color: $primary;
     }
 

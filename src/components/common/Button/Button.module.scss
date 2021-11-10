@@ -1,8 +1,5 @@
 @import "../../../styles/settings.scss";
 
-// .root {
-// }
-//asd
 .main {
   background-color: $button-background-nohover;
   color: $button-color-nohover;
@@ -15,6 +12,7 @@
     color: $button-color-hover !important;
     background-color: $button-background-hover;
     text-decoration: none;
+    @extend %hover;
   }
 }
 
@@ -37,6 +35,8 @@
   &:not(.noHover):hover {
     background-color: $button-background-color-hover;
     color: $button-font-color-hover;
+    @extend %hover;
+
   }
 }
 
@@ -60,6 +60,7 @@
   background-color: $button-backgound-big;
   color: $button-color-big;
 }
+
 //brandsSliderComponent
 .carousel {
   @extend .main;

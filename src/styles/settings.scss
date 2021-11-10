@@ -123,3 +123,9 @@ $form-border-color: $mine-shaft-light;
 $text-color: $darkGray;
 $transition: .3s ease;
 $base-padding: 24px;
+
+/* Global hover animations*/
+%hover {
+  transition: 0.25s;
+}
+
