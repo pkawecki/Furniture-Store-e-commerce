@@ -26,6 +26,7 @@
 
             &:hover {
               color: $footer-link-font-color-hover;
+              @extend %hover;
             }
           }
         }
@@ -75,6 +76,7 @@
 
             &:hover {
               color: $social-media-icons-hover;
+              @extend %hover;
             }
           }
         }

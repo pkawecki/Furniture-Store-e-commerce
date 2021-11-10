@@ -73,6 +73,7 @@
     }
 
     select:hover {
+      @extend %hover;
       color: $primary;
     }
 

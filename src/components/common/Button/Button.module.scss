@@ -15,6 +15,7 @@
     color: $button-color-hover !important;
     background-color: $button-background-hover;
     text-decoration: none;
+    @extend %hover;
   }
 }
 
@@ -37,6 +38,8 @@
   &:not(.noHover):hover {
     background-color: $button-background-color-hover;
     color: $button-font-color-hover;
+    @extend %hover;
+
   }
 }
 

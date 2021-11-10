@@ -41,6 +41,7 @@
         background-color: $menu-bar-background-color-hover;
         color: $menu-bar-font-color-hover;
         border-color: $menu-bar-border-color-hover;
+        @extend %hover;
       }
 
       &.active {
