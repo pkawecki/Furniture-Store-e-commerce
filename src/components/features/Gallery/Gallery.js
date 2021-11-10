@@ -1,8 +1,12 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faStar } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 class Gallery extends React.Component {
   render() {
+    const { products } = this.props;
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -33,6 +37,26 @@ class Gallery extends React.Component {
               {/*Left side of the gallery*/}
 
               {/*Rating*/}
+              <div className={styles.content}>
+                <div className={styles.cornerTopLeft} />
+                <h5>{products[0].name}</h5>
+                <div className={styles.stars}>
+                  <span>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  </span>
+                </div>
+                <div className={styles.cornerBottomRight} />
+                <div className={styles.price}>
+                  <h3>${products[0].price}</h3>
+                  <h3>
+                    <s>${products[0].oldPrice}</s>
+                  </h3>
+                </div>
+              </div>
 
               {/*Slider*/}
 
@@ -45,5 +69,12 @@ class Gallery extends React.Component {
     );
   }
 }
+
+Gallery.propTypes = {
+  products: PropTypes.arrayOf,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  oldPrice: PropTypes.number,
+};
 
 export default Gallery;
