@@ -59,11 +59,21 @@
   font-weight: 500;
   background-color: $button-backgound-big;
   color: $button-color-big;
-
+}
 //brandsSliderComponent
 .carousel {
   @extend .main;
   align-items: center;
   padding: 35px 10px;
   line-height: 120px;
+}
+
+.greenBtn {
+  background-color: #69c831;
+  color: $white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $brandy-punch;
+  }
 }
