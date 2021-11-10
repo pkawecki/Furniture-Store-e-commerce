@@ -16,14 +16,16 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  arrows,
   image,
   oldPrice,
+  addToFavorites,
+  removeFromFavorites,
   id,
+  favorites,
   addToCompare,
   compareCount,
   compareList,
-  heart,
-  arrows,
 }) => {
   const handleAddToCompare = (event, id) => {
     const inCompare = compareList.some(product => product.id === id);
@@ -32,7 +34,6 @@ const ProductBox = ({
       addToCompare({ id });
     }
   };
-
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -49,20 +50,27 @@ const ProductBox = ({
         <h5>{name}</h5>
         <div className={styles.stars}>
           {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
+            <button key={i} href='#'>
               {i <= stars ? (
                 <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
               ) : (
                 <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
               )}
-            </a>
+            </button>
           ))}
         </div>
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={heart ? styles.heart : ''}>
+          <Button
+            className={favorites ? styles.favorites : styles.outlines}
+            onClick={e => {
+              e.preventDefault();
+              favorites ? removeFromFavorites({ id }) : addToFavorites({ id });
+            }}
+            variant='outline'
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
@@ -84,20 +92,25 @@ const ProductBox = ({
   );
 };
 
+
 ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  heart: PropTypes.bool,
   arrows: PropTypes.bool,
   image: PropTypes.node,
+  favorites: PropTypes.bool,
+  addToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func,
+  id: PropTypes.string,
   oldPrice: PropTypes.string,
   addToCompare: PropTypes.func,
   id: PropTypes.string,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
 };
+
 
 export default ProductBox;
