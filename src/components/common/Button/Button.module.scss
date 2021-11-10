@@ -36,7 +36,6 @@
     background-color: $button-background-color-hover;
     color: $button-font-color-hover;
     @extend %hover;
-
   }
 }
 
@@ -76,4 +75,13 @@
   padding: 8px 30px;
   font-weight: 500;
   @extend %hover;
+}
+.greenBtn {
+  background-color: #69c831;
+  color: $white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $brandy-punch;
+  }
 }
