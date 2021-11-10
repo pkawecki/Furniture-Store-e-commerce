@@ -48,7 +48,6 @@
       height: 40px;
       width: 100%;
       padding: 1px 5px;
-      
     }
   }
 
@@ -95,9 +94,8 @@
     align-items: center;
   }
 
-  .heart {
-    background-color: #2a2a2a;
-    color: #ffffff;
+  .favorites {
+    background-color: $primary;
   }
 
   .arrows {
@@ -110,7 +108,7 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .oldPrice {
     color: #a5a5a5;
     font-weight: normal;
@@ -118,26 +116,25 @@
     text-decoration: line-through #292929;
     padding-right: 6px;
   }
-  
+
   .newPrice{
     font-size: 18px;
   }
-  
+
   &:hover {
     .buttons {
       visibility: visible;
-    } 
+    }
     .price .button {
       color: #ffffff;
       font-weight: bold;
     }
-  
+
     .price {
       .newPrice {
         background-color: $primary;
       }
     }
-  
   }
 }
 
@@ -156,9 +153,9 @@
       .price{
         .newPrice{
           font-size: 18px;
-          
         }
       }
     }
   }
 }
+

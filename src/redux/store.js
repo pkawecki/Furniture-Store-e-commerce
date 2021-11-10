@@ -1,8 +1,11 @@
 import { combineReducers, createStore } from 'redux';
-import initialState from './initialState';
 
+import brandsReducer from './brandsRedux';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
+import compareReducer from './compareRedux';
+import initialState from './initialState';
+import modeReducer from './modeRedux';
 import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import feedbacksReducer from './feedbacksRedux';
@@ -11,7 +14,9 @@ import feedbacksReducer from './feedbacksRedux';
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
+  //compare: compareReducer,
   products: productsReducer,
+  mode: modeReducer,
   brands: brandsReducer,
   feedbacks: feedbacksReducer,
 };

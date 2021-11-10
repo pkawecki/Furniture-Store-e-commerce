@@ -20,27 +20,27 @@ const MenuBar = ({ children }) => {
           <div className={'col ' + styles.menu + (open ? ' ' + styles.activeMenu : '')}>
             <ul>
               <li>
-                <a href='#top' className={styles.active}>
+                <a href='/home' className={styles.active}>
                   Home
                 </a>
               </li>
               <li>
-                <a href='#top'>Furniture</a>
+                <a href='/shop/furniture'>Furniture</a>
               </li>
               <li>
-                <a href='#top'>Chair</a>
+                <a href='/shop/chair'>Chair</a>
               </li>
               <li>
-                <a href='#top'>Table</a>
+                <a href='/shop/table'>Table</a>
               </li>
               <li>
-                <a href='#top'>Sofa</a>
+                <a href='/shop/sofa'>Sofa</a>
               </li>
               <li>
-                <a href='#top'>Bedroom</a>
+                <a href='/shop/bedroom'>Bedroom</a>
               </li>
               <li>
-                <a href='#top'>Blog</a>
+                <a href='/blog'>Blog</a>
               </li>
             </ul>
           </div>
