@@ -12,14 +12,18 @@
   align-items: center;
   background-color: rgba(0,0,0, 0.5);
 
+  div{
+    padding: 0;
+  }
   .popupPhoto{
     position: relative;
-    height: 350px;
+    height: 450px;
     margin: 0 auto;
     padding: 0;
     align-items: flex-end;
     width: auto;
-    max-width: 350px;
+    max-width: 500px;
+
 
     img {
       object-fit: cover;
@@ -39,6 +43,38 @@
   }
 
   .popupProduct {
-    background-color: rgb(255, 255, 255);
+    background-color: $popup-background-color;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .popupProductName{
+      padding-top: 30px;
+      text-align: center;
+      h3{
+        color: $popup-name-color;
+        font-size: 36px;
+      }
+    }
+
+    .popupDescription{
+      p{
+        color: $popup-description-color;
+        font-size: 20px;
+        span{
+          color: $popup-span-description-color;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .popupProductPrice{
+      height: 50px;
+      text-align: center;
+      a{
+        font-size: 50px;
+      }
+    }
   }
 }

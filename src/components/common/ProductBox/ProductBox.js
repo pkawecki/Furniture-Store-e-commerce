@@ -60,6 +60,7 @@ const ProductBox = ({
         <ProductPopup
           id={id}
           name={name}
+          price={price}
           category={category}
           image={image}
           closePopup={handlePopup}
