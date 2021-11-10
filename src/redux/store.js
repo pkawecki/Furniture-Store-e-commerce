@@ -7,7 +7,6 @@ import compareReducer from './compareRedux';
 import initialState from './initialState';
 import modeReducer from './modeRedux';
 import productsReducer from './productsRedux';
-import brandsReducer from './brandsRedux';
 import feedbacksReducer from './feedbacksRedux';
 
 // define reducers
