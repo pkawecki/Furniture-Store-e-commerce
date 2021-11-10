@@ -5,7 +5,7 @@
     background-color: $footer-bg;
     padding: 3rem 0;
 
-    
+
 
     .menuWrapper {
       h6 {
@@ -43,7 +43,7 @@
       }
     }
   }
- 
+
   .bottomBar {
     background-color: $footer-claim-bg;
 
@@ -87,15 +87,15 @@
   @media (max-width: 768px) {
     .bottomBar{
       .copyright{
-        left: -250px;        
+        left: -250px;
       }
     }
   }
 
   @media (max-width: 426px) {
-      
+
     .bottomBar{
-      display: block;      
+      display: block;
       .copyright{
         flex-basis: content;
         left: 0;      }
@@ -105,22 +105,22 @@
         }
       }
     }
-       
+
   }
 
   @media (max-width: 376px) {
-    .footerMenu {      
-      .menuWrapper {        
+    .footerMenu {
+      .menuWrapper {
         padding: 40px;
-        text-align: center;        
+        text-align: center;
       }
       img{
         display: block;
         margin: 0 auto;
-      } 
+      }
     }
     .bottomBar{
-      display: block;      
+      display: block;
       .copyright{
         flex-basis: content;
         left: 0;
@@ -132,5 +132,5 @@
       }
     }
   }
-  
+
 }

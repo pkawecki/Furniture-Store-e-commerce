@@ -348,6 +348,13 @@ const initialState = {
   compare: {
     products: [],
   },
+  chairs: [
+    {
+      id: 'chair-1',
+      name: 'chair 1',
+      image: 'src=../../images/chairs.jpg',
+    },
+  ],
   brands: [
     {
       id: 'brand-1',

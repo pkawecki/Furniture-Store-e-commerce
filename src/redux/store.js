@@ -12,7 +12,7 @@ import productsReducer from './productsRedux';
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
-  compare: compareReducer,
+  //compare: compareReducer,
   products: productsReducer,
   mode: modeReducer,
   brands: brandsReducer,
