@@ -6,7 +6,7 @@
     .topper{
       background-color: $topper-background;
       height: 50px;
-      
+
       .hotDeals{
         padding-top: 10px;
         font-size: 20px;
@@ -18,18 +18,18 @@
         position: absolute;
         right: 0;
         top: 0;
-  
-  
+
+
         ul {
           margin: 0;
           padding: 0 0 0 1rem;
           list-style: none;
           transform: translateY(15px);
-  
+
           li {
             display: inline-block;
             margin-left: 0.5rem;
-  
+
             a {
               display: block;
               width: 13px;
@@ -37,7 +37,7 @@
               border-radius: 6px;
               background-color: $new-fur-inactive-dot;
               font-size: 0;
-  
+
               &.active,
               &:hover {
                 background-color: $new-fur-active-dot;
@@ -64,7 +64,7 @@
       align-items: flex-end;
       width: auto;
       max-width: 600px;
-  
+
       img {
         object-fit: cover;
         width: 100%;
@@ -84,8 +84,8 @@
         transform: translate(-50%, -50%);
         height: 40px;
         padding: 1px 5px;
-  
-        
+
+
         .timer {
           position: absolute;
           padding: 0 50px;
@@ -95,7 +95,7 @@
           z-index: 90;
           background-color: transparent;
           opacity: 90%;
-    
+
          .timerItem {
           display: block;
           margin: 0;
@@ -104,13 +104,13 @@
           color: $timer-font-color;
           border-radius: 50%;
           background-color: $timer-backgorund;
-    
+
             .number {
               margin: 7px 0 0;
               font-size: 28px;
               line-height: 1;
             }
-    
+
             .unit {
               font-size: 12px;
             }
@@ -128,13 +128,13 @@
       text-align: center;
       padding: 20px;
       z-index: 1;
-  
+
       h5 {
         font-size: 16px;
         line-height: 24px;
         letter-spacing: 1px;
       }
-  
+
       .stars {
         a {
           text-decoration: none;
@@ -142,12 +142,12 @@
         }
       }
     }
-  
+
     .line {
       margin: 0 10px;
       border-bottom: 1px solid $under-stars-line-color;
       position: relative;
-  
+
       &::before {
         content: "";
         position: absolute;
@@ -164,13 +164,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      
+
       .price {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      
+
       .oldPrice {
         color: $old-price-color;
         font-weight: normal;
@@ -178,23 +178,23 @@
         text-decoration: line-through $old-price-text-decoration;
         padding-right: 6px;
       }
-      
+
       .newPrice{
         font-size: 18px;
       }
-      
+
       &:hover {
         .price .button {
           font-weight: bold;
         }
-      
+
         .price {
           .newPrice {
             background-color: $hover-price-color;
           }
         }
       }
-    } 
+    }
   }
 
   .right{
@@ -211,65 +211,6 @@
         width: 100%;
         height: 100%;
       }
-    }
-
-    .shadowWrapper {
-      position: absolute;
-      height: 200px;
-      width: 100%;
-      top: 100px;
-      opacity: 50%;
-      z-index: 90;
-      background-color: $footer-claim-bg;
-    }
-    .shadowTitle {
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      top: 150px;
-      opacity: 50%;
-      z-index: 90;
-      color: $shadow-title-color;
-      font-size: 50px;
-      opacity: 1;
-      span {
-        font-weight: 700;
-      }
-    }
-    .shadowSubtitle {
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      top: 60px;
-      z-index: 90;
-      color: $shadow-subtitle-color;
-      font-size: 20px;
-    }
-    .shadowButtonsWrapper {
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      bottom: 0px;
-      z-index: 90;
-      overflow: hidden;
-
-      .buttonLong {
-        background-color: $button-long-background;
-        width: 50%;
-
-        a{
-          font-size: 30px;
-        }
-      }
-    }
-
-    .centerButton {
-      position: absolute;
-      text-align: center;
-      padding: 0;
-      width: 100%;
-      bottom: 190px;
-      z-index: 100;
     }
   }
 }
