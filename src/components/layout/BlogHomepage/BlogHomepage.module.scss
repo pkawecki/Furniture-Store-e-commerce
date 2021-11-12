@@ -1,0 +1,73 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding;
+
+  .panelBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    :global(.row) > * {
+      border-bottom: 4px solid $new-fur-border-bottom;
+    }
+
+    .heading {
+      position: relative;
+
+      h3 {
+        color: $new-fur-header;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $new-fur-underscore;
+      }
+    }
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: #ffffff;
+        transform: translateY(15px);
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $new-fur-inactive-dot;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              background-color: $new-fur-active-dot;
+              @extend %hover;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .blogArticle{
+    background-color: aqua;
+  }
+}
