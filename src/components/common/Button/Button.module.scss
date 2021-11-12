@@ -16,6 +16,15 @@
   }
 }
 
+.floating {
+  @extend .main;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
 .small {
   @extend .main;
   font-size: 13px;
