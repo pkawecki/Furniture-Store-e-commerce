@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
-const setColor = (hoverRating, value, rating, stars) => {
+const setColor = (hoverRating, value, rating, stars, userRating) => {
   if (hoverRating >= value) {
     return '#d58e32';
+  } else if (userRating === value) {
+    return '#2a2a2a';
   } else if (!hoverRating && rating >= value) {
     return '#d58e32';
   } else if (!hoverRating && !rating && stars >= value) {
