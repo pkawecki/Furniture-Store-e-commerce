@@ -41,6 +41,7 @@
         background-color: $menu-bar-background-color-hover;
         color: $menu-bar-font-color-hover;
         border-color: $menu-bar-border-color-hover;
+        @extend %hover;
       }
 
       &.active {
@@ -187,7 +188,7 @@
 
     }
   }
- 
+
 }
 
 @media (max-width: 400px) {
@@ -201,7 +202,7 @@
         button {
           padding-left: 0;
         }
-        
+
         svg {
           transform: scale(0.8);
         }
