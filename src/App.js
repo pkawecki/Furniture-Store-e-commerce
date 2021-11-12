@@ -8,6 +8,7 @@ import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import Blog from './components/views/Blog/Blog';
+import Search from './components/views/Search/Search';
 import { Provider } from 'react-redux';
 import React from 'react';
 import store from './redux/store';
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path={'/shop/:categoryId'} component={ProductList} />
         <Route exact path={'/product/:productId'} component={ProductPage} />
         <Route exact path={'/blog'} component={Blog} />
+        <Route exact path={'/search'} component={Search} />
       </Switch>
     </MainLayout>
   </BrowserRouter>
