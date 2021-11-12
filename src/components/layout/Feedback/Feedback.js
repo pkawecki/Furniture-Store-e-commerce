@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './Feedback.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import styles from './Feedback.module.scss';
 
 class Feedback extends React.Component {
   state = {
@@ -49,7 +49,11 @@ class Feedback extends React.Component {
                 </div>
                 <div className='row justify-content-md-center'>
                   <div className='col col-lg-1'>
-                    <img src={feed.clientImage} alt='client avatar' />
+                    <img
+                      className={styles.img}
+                      src={feed.clientImage}
+                      alt='client avatar'
+                    />
                   </div>
                   <div className={'col col-lg-2 ' + styles.desc}>
                     <h6>{feed.clientName}</h6>

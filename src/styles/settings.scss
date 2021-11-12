@@ -21,6 +21,7 @@ $button-background-hover: $brandy-punch;
 
 $button-backgound-big: $white;
 $button-color-big: $darkGray;
+$button-border: $nobel;
 
 /* Button outline */
 $button-border-color-nohover: $darkGray;
@@ -102,12 +103,16 @@ $menu-bar-background-color-hover: $brandy-punch;
 $menu-bar-border-color-hover: $brandy-punch;
 $menu-bar-font-color-hover: $white;
 
+/* Chatbox */
+$chatbox-bg: $mine-shaft;
+
 /*Topbar*/
 $topbar-font-color: $white;
 
 /*General variables*/
 $header-topbar-bg: $tundora;
 $header-bg: $mine-shaft;
+$footer-bg: $mine-shaft;
 $footer-bg: $mine-shaft;
 
 $footer-claim-bg: $darkGray;
