@@ -6,12 +6,11 @@ $mine-shaft: #363636;
 $brandy-punch: #d58e32;
 $white: #ffffff;
 $nobel: #b6b6b6;
-$mercury:#e1e1e1;
+$mercury: #e1e1e1;
 $athens-gray: #f4f5f7;
 $alto: #d8d8d8;
 $mystic: #e0e3ed;
 $silver-chalice: #a9a9a9;
-
 
 /*Button*/
 $button-color-nohover: $white;
@@ -20,6 +19,9 @@ $button-color-hover: $white;
 $button-background-nohover: $darkGray;
 $button-background-hover: $brandy-punch;
 
+$button-backgound-big: $white;
+$button-color-big: $darkGray;
+
 /* Button outline */
 $button-border-color-nohover: $darkGray;
 $button-font-color-nohover: $darkGray;
@@ -27,14 +29,15 @@ $button-font-color-nohover: $darkGray;
 $button-background-color-hover: $darkGray;
 $button-font-color-hover: $white;
 
+/* Compare bar */
+$compare-bar-bg: $darkGray;
 
 /*Feature box*/
 $feature-box-border: $nobel;
 $feature-box-background: $white;
-$feature-box-noactive-font: $darkGray; 
+$feature-box-noactive-font: $darkGray;
 $feature-box-active-font: $white;
 $feature-box-active-outline: $brandy-punch;
-
 
 /*Product Box*/
 $product-box-background: $white;
@@ -48,6 +51,18 @@ $stars-color: $mine-shaft-light;
 $under-stars-line-color: $mine-shaft-light;
 $under-stars-thick-line-color: $brandy-punch;
 
+/* Promotion Product*/
+$topper-background: $darkGray;
+$hotDeals-font-color: $white;
+$timer-font-color: $white;
+$timer-backgorund: $darkGray;
+$old-price-color: $nobel;
+$old-price-text-decoration: $darkGray;
+$hover-price-color: $brandy-punch;
+
+$button-long-background: $darkGray;
+$shadow-title-color: $white;
+$shadow-subtitle-color: $white;
 
 /*New Furniture */
 $new-fur-border-bottom: $mercury;
@@ -60,10 +75,8 @@ $new-fur-link-hover: $brandy-punch;
 $new-fur-inactive-dot: $mercury;
 $new-fur-active-dot: $brandy-punch;
 
-
 /*Company Claim  */
 $phone-number-font-color: $alto;
-
 
 /*Cart*/
 $cart-icon-color: $white;
@@ -71,7 +84,6 @@ $cart-icon-background: $brandy-punch;
 $cart-counter-font: $mystic;
 
 $onhover-background-lighten-percentage: 10%;
-
 
 /*Footer*/
 $footer-header-font-color: $white;
@@ -82,7 +94,6 @@ $copyright: $silver-chalice;
 $social-media-icons-nohover: $silver-chalice;
 $social-media-icons-hover: $brandy-punch;
 
-
 /*Menu Bar*/
 $menu-bar-background-color: $white;
 $menu-bar-top-border-color: $white;
@@ -91,10 +102,8 @@ $menu-bar-background-color-hover: $brandy-punch;
 $menu-bar-border-color-hover: $brandy-punch;
 $menu-bar-font-color-hover: $white;
 
-
 /*Topbar*/
 $topbar-font-color: $white;
-
 
 /*General variables*/
 $header-topbar-bg: $tundora;
@@ -106,5 +115,11 @@ $primary: $brandy-punch;
 
 $form-border-color: $mine-shaft-light;
 $text-color: $darkGray;
-
+$transition: .3s ease;
 $base-padding: 24px;
+
+/* Global hover animations*/
+%hover {
+  transition: 0.25s;
+}
+

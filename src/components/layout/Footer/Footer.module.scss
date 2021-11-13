@@ -5,6 +5,8 @@
     background-color: $footer-bg;
     padding: 3rem 0;
 
+
+
     .menuWrapper {
       h6 {
         color: $footer-header-font-color;
@@ -24,6 +26,7 @@
 
             &:hover {
               color: $footer-link-font-color-hover;
+              @extend %hover;
             }
           }
         }
@@ -73,10 +76,61 @@
 
             &:hover {
               color: $social-media-icons-hover;
+              @extend %hover;
             }
           }
         }
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .bottomBar{
+      .copyright{
+        left: -250px;
+      }
+    }
+  }
+
+  @media (max-width: 426px) {
+
+    .bottomBar{
+      display: block;
+      .copyright{
+        flex-basis: content;
+        left: 0;      }
+      .socialMedia{
+        ul{
+          text-align: center;
+        }
+      }
+    }
+
+  }
+
+  @media (max-width: 376px) {
+    .footerMenu {
+      .menuWrapper {
+        padding: 40px;
+        text-align: center;
+      }
+      img{
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .bottomBar{
+      display: block;
+      .copyright{
+        flex-basis: content;
+        left: 0;
+      }
+      .socialMedia{
+        ul{
+          text-align: center;
+        }
+      }
+    }
+  }
+
 }

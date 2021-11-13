@@ -15,7 +15,7 @@ const FeatureBoxes = () => (
     <div className='container'>
       <div className='row'>
         <div className={`col-6 col-md-3 ${styles.featureCol}`}>
-          <a href='#'>
+          <a href='#top'>
             <FeatureBox icon={faTruck}>
               <h5>Free shipping</h5>
               <p>All orders</p>
@@ -23,7 +23,7 @@ const FeatureBoxes = () => (
           </a>
         </div>
         <div className={`col-6 col-md-3 ${styles.featureCol}`}>
-          <a href='#'>
+          <a href='#top'>
             <FeatureBox icon={faHeadphones}>
               <h5>24/7 customer</h5>
               <p>support</p>
