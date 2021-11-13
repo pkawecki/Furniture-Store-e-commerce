@@ -78,6 +78,8 @@
       &:hover {
         .cartIcon {
           background-color: lighten($primary, $onhover-background-lighten-percentage);
+          @extend %hover;
+
         }
       }
     }

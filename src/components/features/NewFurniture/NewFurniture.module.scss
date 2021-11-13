@@ -58,6 +58,7 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $new-fur-link-hover;
+                @extend %hover;
               }
             }
           }
@@ -92,6 +93,7 @@
             &.active,
             &:hover {
               background-color: $new-fur-active-dot;
+              @extend %hover;
             }
           }
         }
