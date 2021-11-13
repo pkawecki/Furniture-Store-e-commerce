@@ -22,6 +22,9 @@ $button-background-hover: $brandy-punch;
 $button-backgound-big: $white;
 $button-color-big: $darkGray;
 
+$button-backgound-blog: $darkGray;
+$button-backgound-blog: $white;
+
 /* Button outline */
 $button-border-color-nohover: $darkGray;
 $button-font-color-nohover: $darkGray;
@@ -123,6 +126,16 @@ $form-border-color: $mine-shaft-light;
 $text-color: $darkGray;
 $transition: .3s ease;
 $base-padding: 24px;
+
+
+/* LATEST BLOG */
+$lastest-blog-border-bottom: $mercury;
+$lastest-blog-header: $brandy-punch;
+$lastest-blog-underscore: $brandy-punch;
+$lastest-blog-inactive-dot: $mercury;
+$lastest-blog-active-dot: $brandy-punch;
+$lastest-blog-background: $white;
+$lastest-blog-title: $brandy-punch;
 
 /* Global hover animations*/
 %hover {
