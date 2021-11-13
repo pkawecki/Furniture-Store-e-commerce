@@ -29,6 +29,7 @@ const initialState = {
       price: 30,
 
       stars: 2,
+      userRating: 4,
       promo: 'sale',
       newFurniture: true,
       favorites: true,
@@ -43,6 +44,7 @@ const initialState = {
       price: 30,
 
       stars: 2,
+      userRating: 3,
       promo: 'sale',
       newFurniture: true,
       favorites: false,
@@ -57,6 +59,7 @@ const initialState = {
       price: 30,
 
       stars: 2,
+      userRating: 5,
       promo: 'sale',
       newFurniture: true,
       favorites: 1,
