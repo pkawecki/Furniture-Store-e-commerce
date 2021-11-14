@@ -1,0 +1,38 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  height: 180px;
+  background-color: $banner-background;
+  
+  .title{
+    color: $banner-title;
+    text-align: center;
+    margin-top: 40px;
+    
+    p{
+      font-weight: 300;
+      font-size: 50px;
+      margin: 0;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .subtitle{
+    color: $banner-subtitle;
+    text-align: center;
+
+    p{
+      font-size: 24px;
+      font-weight: 200;
+      letter-spacing: 10px;
+      margin-top: -15px;
+
+      span {
+        color: $banner-discount;
+        font-weight: 400;
+      }
+    }
+  }
+}
