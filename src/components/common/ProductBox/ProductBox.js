@@ -24,6 +24,8 @@ const ProductBox = ({
   compareList,
   heart,
   arrows,
+  viewPromoted,
+  isHovered = () => null,
 }) => {
   const handleAddToCompare = (event, id) => {
     const inCompare = compareList.some(product => product.id === id);
@@ -34,12 +36,18 @@ const ProductBox = ({
   };
 
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => isHovered(true)}
+      onMouseLeave={() => isHovered(false)}
+    >
       <div className={styles.photo}>
         <img src={image} alt='arb bed' />
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+        <div
+          className={`${styles.buttons} ${viewPromoted ? styles.hotDealButtons : null}`}
+        >
+          {!viewPromoted ? <Button variant='small'>Quick View</Button> : null}
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -98,6 +106,8 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  isHovered: PropTypes.func,
+  viewPromoted: PropTypes.bool,
 };
 
 export default ProductBox;

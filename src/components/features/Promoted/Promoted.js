@@ -9,20 +9,38 @@ class Promoted extends React.Component {
     this.state = {
       settings: {
         sliderLeft: {
+          id: 'left',
           dots: true,
           infinite: true,
           autoplay: true,
-          autoplaySpeed: 3000,
+          autoplaySpeed: 300000,
           pauseTime: 10000,
           arrowButtons: false,
-          promoCountdown: true,
+          slideContent: 'productBox',
+          dotsClass: styles.sliderdots,
+          appendDots: dots => (
+            <div className={styles.sliderdots}>
+              <ul>{dots}</ul>
+            </div>
+          ),
+          customPaging: () => {
+            return <a> </a>;
+          },
+          afterChange: index => {
+            const activeDot = document.querySelectorAll(`.${styles.sliderdots} li`)[
+              index
+            ];
+            activeDot.classList.add(styles.activeDot);
+          },
         },
         sliderRight: {
+          id: 'right',
           dots: false,
           autoplay: false,
           pauseTime: 0,
           arrowButtons: true,
-          promoCountdown: false,
+          slideContent: 'productImage',
+          fade: true,
         },
       },
     };
@@ -38,11 +56,6 @@ class Promoted extends React.Component {
         <div className='container'>
           <div className='row'>
             <div className={'col-4 ' + styles.left}>
-              <div className={styles.topper}>
-                <div className={'col-auto ' + styles.hotDeals}>
-                  <h3>HOT DEALS</h3>
-                </div>
-              </div>
               <ProductSlider
                 promotedProducts={this.props.promotedProducts}
                 settings={this.state.settings.sliderLeft}

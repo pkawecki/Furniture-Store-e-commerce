@@ -1,25 +1,16 @@
 @import '../../../styles/settings.scss';
 
-.customdots {
-  top: -35px;
-  right: 0;
-}
-
-.customdots li button:before {
-  color: $new-fur-inactive-dot;
-  font-size: 13px;
-  opacity: 1;
-}
-
-li.customdots__active button:before {
-  color: $new-fur-active-dot;
-}
-
-.customdots__bg {
+.topper{
   background-color: $topper-background;
-  height: 2rem;
-}
+  height: 62px;
 
+  .hotDeals{
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: 00;
+    color: $hotDeals-font-color;
+  }
+}
 .shadowWrapper {
   position: absolute;
   height: 200px;
@@ -70,11 +61,17 @@ li.customdots__active button:before {
   }
 }
 
+img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 463px;
+}
+
 .centerButton {
   position: absolute;
   text-align: center;
   padding: 0;
   width: 100%;
   bottom: 190px;
-  z-index: 100;
+  z-index: 90;
 }

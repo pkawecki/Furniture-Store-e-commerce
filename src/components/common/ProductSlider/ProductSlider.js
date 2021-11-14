@@ -13,15 +13,7 @@ class ProductSlider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      settings: {
-        fade: true,
-        dotsClass: `slick-dots ${styles.customdots}`,
-        afterChange: index => {
-          const activeDot = document.querySelectorAll('.slick-dots > li')[index];
-          activeDot.classList.add(styles.customdots__active);
-          activeDot.classList.remove(`slick-active`);
-        },
-      },
+      timerShown: false,
     };
   }
 
@@ -30,42 +22,65 @@ class ProductSlider extends React.Component {
     promotedProducts: PropTypes.array,
   };
 
+  /* Slider functionality */
   pause = () => {
     this.slider.slickPause();
-    setTimeout(() => {
-      this.slider.slickPlay();
-    }, this.props.settings.pauseTime);
-  };
-
-  next = event => {
-    event.preventDefault();
-    this.slider.slickNext();
+    if (this.props.settings.autoplay) {
+      setTimeout(() => {
+        this.slider.slickPlay();
+      }, this.props.settings.pauseTime);
+    }
   };
 
   prev = event => {
     event.preventDefault();
     this.slider.slickPrev();
+    this.pause();
+  };
+
+  next = event => {
+    event.preventDefault();
+    this.slider.slickNext();
+    this.pause();
   };
 
   render() {
     const { settings, promotedProducts } = this.props;
-    if (promotedProducts) {
-      return (
-        <div onClick={() => this.pause()}>
-          <div className={styles.customdots__bg} />
-          <Slider
-            ref={slider => (this.slider = slider)}
-            {...this.state.settings}
-            {...settings}
-          >
-            {promotedProducts.map(product => (
-              <div key={product.id}>
-                {settings.promoCountdown ? <PromoCountdownTimer /> : null}
-                <ProductBox {...product} />
-              </div>
-            ))}
-          </Slider>
-          <div className={settings.arrowButtons ? '' : 'd-none'}>
+
+    /* Rendering options */
+    function chooseSlideContent(product) {
+      if (settings.slideContent === 'productBox') {
+        return (
+          <ProductBox
+            {...product}
+            isHovered={bool => showOnHover(bool)}
+            viewPromoted={true}
+          />
+        );
+      } else if (settings.slideContent === 'productImage') {
+        return <img src={product.image} alt='any' />;
+      }
+    }
+
+    const showOnHover = bool => {
+      this.setState({ timerShown: bool });
+    };
+
+    const renderOverlay = sliderId => {
+      let overlay;
+      if (sliderId === 'left') {
+        overlay = (
+          <div className={styles.topper}>
+            <div className={'col-auto ' + styles.hotDeals}>
+              <h3>HOT DEALS</h3>
+            </div>
+            <div className={styles.customdots__bg} />
+            <PromoCountdownTimer isShown={this.state.timerShown} />
+          </div>
+        );
+      } else if (sliderId === 'right') {
+        overlay = (
+          <div className={styles.overlayLeft}>
             <div className={styles.shadowWrapper}></div>
             <div className={styles.shadowTitle}>
               INDOOR <span>FURNITURE</span>
@@ -91,6 +106,20 @@ class ProductSlider extends React.Component {
               </div>
             </div>
           </div>
+        );
+      }
+      return overlay;
+    };
+
+    if (promotedProducts) {
+      return (
+        <div onClick={() => this.pause()}>
+          {renderOverlay(settings.id)}
+          <Slider ref={slider => (this.slider = slider)} {...settings}>
+            {promotedProducts.map(product => (
+              <div key={product.id}>{chooseSlideContent(product)}</div>
+            ))}
+          </Slider>
         </div>
       );
     }
