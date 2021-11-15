@@ -77,13 +77,17 @@
 }
 
 .basket {
-  @extend .outline;
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 22px;
   background-color: $brandy-punch;
   color: #ffffff;
-  border-color: $mine-shaft-light;
+  border-color: none;
 
   &:not(.noHover):hover {
-    border-color: $brandy-punch;
+    background-color: $darkGray;
+    color: #ffffff;
   }
 }
 
@@ -109,9 +113,10 @@
   border-color: $mine-shaft-light;
 
   &:not(.noHover):hover {
-    background-color: $button-color-nohover;
+    background-color: blue;
     color: $text-color;
     border-color: $text-color;
+    color: $button-background-hover 
   }
 }
 
@@ -121,6 +126,7 @@
   &:not(.noHover):hover {
     background-color: $button-color-nohover;
     border-color: $mine-shaft-light;
+    color: $button-background-hover 
   }
 }
 
@@ -130,6 +136,7 @@
   &:not(.noHover):hover {
     background-color: $button-color-nohover;
     border-color: $mine-shaft-light;
+    color: $button-background-hover 
   }
 }
 
@@ -139,6 +146,7 @@
   &:not(.noHover):hover {
     background-color: $button-color-nohover;
     border-color: $mine-shaft-light;
+    color: $button-background-hover 
   }
 }
 
@@ -148,6 +156,7 @@
   &:not(.noHover):hover {
     background-color: $button-color-nohover;
     border-color: $mine-shaft-light;
+    color: $button-background-hover 
   }
 }
 
