@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './NewFurniture.module.scss';
 
+import SwipeableViews from 'react-swipeable-views';
+
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
@@ -85,15 +87,24 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
-              .map(item => (
-                <div key={item.id} className='col-lg-3 col-sm-6 mb-5'>
-                  <ProductBox {...item} />
-                </div>
-              ))}
-          </div>
+          <SwipeableViews
+            enableMouseEvents
+            index={activePage}
+            onChangeIndex={index => {
+              this.handlePageChange(index);
+            }}
+            slideStyle={{ overflow: 'hidden' }}
+          >
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
+                .map(item => (
+                  <div key={item.id} className='col-lg-3 col-sm-6 mb-5'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
+          </SwipeableViews>
         </div>
         <ProductCompareBar />
       </div>
