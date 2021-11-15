@@ -62,13 +62,6 @@
       line-height: 24px;
       letter-spacing: 1px;
     }
-
-    .stars {
-      a {
-        text-decoration: none;
-        color: $stars-color;
-      }
-    }
   }
 
   .line {
@@ -94,9 +87,8 @@
     align-items: center;
   }
 
-  .heart {
-    background-color: #2a2a2a;
-    color: #ffffff;
+  .favorites {
+    background-color: $primary;
   }
 
   .arrows {
@@ -154,9 +146,9 @@
       .price{
         .newPrice{
           font-size: 18px;
-
         }
       }
     }
   }
 }
+

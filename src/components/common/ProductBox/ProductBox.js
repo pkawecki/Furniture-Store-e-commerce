@@ -1,29 +1,33 @@
-import {
-  faExchangeAlt,
-  faShoppingBasket,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons';
-import { faHeart, faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductBox.module.scss';
+import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
+import { Link } from 'react-router-dom';
+import RatingStars from '../RatingStars/RatingStarsContainer';
 
 const ProductBox = ({
   name,
   price,
   promo,
   stars,
+  arrows,
   image,
   oldPrice,
+  addToFavorites,
+  removeFromFavorites,
   id,
+  favorites,
   addToCompare,
   compareCount,
   compareList,
   heart,
-  arrows,
+  category,
+  userRating,
 }) => {
   const handleAddToCompare = (event, id) => {
     const inCompare = compareList.some(product => product.id === id);
@@ -33,36 +37,60 @@ const ProductBox = ({
     }
   };
 
+  const [showPopup, togglePopup] = useState(false);
+
+  const handlePopup = event => {
+    event.preventDefault();
+    return togglePopup(!showPopup);
+  };
+  
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <img src={image} alt='arb bed' />
+        <Link to={`/product/${id}`}>
+          <img src={image} alt='arb bed' />
+        </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button variant='small' onClick={event => handlePopup(event)}>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
       </div>
+      {showPopup ? (
+        <ProductPopup
+          id={id}
+          name={name}
+          price={price}
+          category={category}
+          image={image}
+          closePopup={handlePopup}
+        />
+      ) : (
+        ''
+      )}
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <Link to={`/product/${id}`}>
+          <h5>{name}</h5>
+        </Link>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
+          <RatingStars stars={stars} id={id} userRating={userRating} />
         </div>
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={heart ? styles.heart : ''}>
+          <Button
+            className={favorites ? styles.favorites : styles.outlines}
+            onClick={e => {
+              e.preventDefault();
+              favorites ? removeFromFavorites({ id }) : addToFavorites({ id });
+            }}
+            variant='outline'
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
@@ -90,14 +118,18 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  heart: PropTypes.bool,
   arrows: PropTypes.bool,
   image: PropTypes.node,
+  favorites: PropTypes.bool,
+  addToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func,
+  id: PropTypes.string,
   oldPrice: PropTypes.string,
   addToCompare: PropTypes.func,
-  id: PropTypes.string,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  category: PropTypes.string,
+  userRating: PropTypes.number,
 };
 
 export default ProductBox;
