@@ -56,7 +56,7 @@
     }
 
     .pageColumnRight {
-      margin: 15px 0;
+      top: 0;
 
       .productInfoContainer {
         border-bottom: 2px solid $product-page-bg-photo;
@@ -110,17 +110,19 @@
         .quantityContainer {
           margin: 0;
           border: none;
-
+          
           p {
             margin: 0;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: 600;
           }
 
           .quantity {
-            padding: 5px 30px;
+            padding: 5px 40px;
             border: 1px solid $darkGray;
             margin-right: 3px;
-            margin-left: 25px;
+            margin-left: 18px;
+            max-width: 22px;
           }
         }
 
