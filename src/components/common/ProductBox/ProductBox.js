@@ -37,10 +37,22 @@ const ProductBox = ({
     }
   };
 
-  const isFavourite = favorites => {
+  const setFavorite = favorites => {
     favorites && localStorage.setItem(id + '.fav', true);
   };
-  isFavourite(favorites);
+  setFavorite(favorites);
+
+  const handleFavClick = e => {
+    e.preventDefault();
+    if (Object.keys(localStorage).indexOf(id + '.fav') > -1) {
+      console.log('been present, is removed', id);
+      removeFromFavorites({ id });
+      localStorage.removeItem(id + '.fav');
+    } else {
+      console.log('been absent, is added', id);
+      addToFavorites({ id });
+    }
+  };
 
   const [showPopup, togglePopup] = useState(false);
 
@@ -93,8 +105,7 @@ const ProductBox = ({
               localStorage.getItem(id + '.fav') ? styles.favorites : styles.outlines
             }
             onClick={e => {
-              e.preventDefault();
-              favorites ? removeFromFavorites({ id }) : addToFavorites({ id });
+              handleFavClick(e);
             }}
             variant='outline'
           >

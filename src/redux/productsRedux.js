@@ -39,7 +39,6 @@ export default function reducer(statePart = [], action = {}) {
         return product;
       });
     case REMOVE_FROM_FAVORITES:
-      localStorage.removeItem(action.payload.id + '.fav');
       return statePart.map(product => {
         if (product.id === action.payload.id) {
           product.favorites = false;
