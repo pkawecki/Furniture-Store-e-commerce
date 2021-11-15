@@ -46,3 +46,13 @@
 .slider.round:before {
   border-radius: 50%;
 }
+
+input:checked + .slider {
+  background-color: $brandy-punch;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(21px);
+  -ms-transform: translateX(21px);
+  transform: translateX(21px);
+}

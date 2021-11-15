@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Register.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import Button from '../../common/Button/Button';
 import ToggleButton from '../../common/ToggleButton/ToggleButton';
 
 const Register = () => {
@@ -64,9 +63,9 @@ const Register = () => {
             <span className='p-2'>wróć</span>
           </a>
           <a className='col-3'>
-            <Button variant='small' className={styles.button}>
+            <a href='/' className={styles.button}>
               Zarejestruj się
-            </Button>
+            </a>
           </a>
         </div>
       </div>
