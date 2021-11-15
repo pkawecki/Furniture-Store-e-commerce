@@ -16,7 +16,6 @@ const Homepage = () => (
     <Promotions />
     <NewFurniture />
     <BlogHomepage />
-    <Brands />
     <Feedback />
     <Chatbox />
   </div>
