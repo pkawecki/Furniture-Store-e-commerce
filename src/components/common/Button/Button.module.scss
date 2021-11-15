@@ -61,6 +61,96 @@
   color: $button-color-big;
 }
 
+//ProductPage
+
+.sideArrows {
+  @extend .outline;
+  background-color: #ffffff;
+  color: $mine-shaft-light;
+  border-color: $mine-shaft-light;
+
+  &:not(.noHover):hover {
+    background-color: $primary;
+    color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+  }
+}
+
+.basket {
+  @extend .outline;
+  background-color: $brandy-punch;
+  color: #ffffff;
+  border-color: $mine-shaft-light;
+
+  &:not(.noHover):hover {
+    border-color: $brandy-punch;
+  }
+}
+
+.quantityChange {
+  @extend .sideArrows;
+
+  &:last-of-type {
+    border-color: $brandy-punch;
+    font-size: 20px;
+  }
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    color: $darkGray;
+    border-color: $mine-shaft-light;
+  }
+}
+
+.facebook {
+  @extend .basket;
+  background-color: blue;
+  color: #ffffff;
+  border-color: $mine-shaft-light;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    color: $text-color;
+    border-color: $text-color;
+  }
+}
+
+.google {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+  }
+}
+
+.tweet {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+  }
+}
+
+.pinterest {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+  }
+}
+
+.linkedin {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+  }
+}
+
 //brandsSliderComponent
 .carousel {
   @extend .main;
