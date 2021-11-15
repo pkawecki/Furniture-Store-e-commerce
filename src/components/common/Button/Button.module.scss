@@ -158,3 +158,12 @@
   padding: 35px 10px;
   line-height: 120px;
 }
+
+.blog {
+  @extend .main;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 8px 30px;
+  font-weight: 500;
+  @extend %hover;
+}

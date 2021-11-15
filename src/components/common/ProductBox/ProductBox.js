@@ -1,9 +1,5 @@
-import {
-  faExchangeAlt,
-  faShoppingBasket,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons';
-import { faHeart, faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +7,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './ProductBox.module.scss';
 import { Link } from 'react-router-dom';
+import RatingStars from '../RatingStars/RatingStarsContainer';
 
 const ProductBox = ({
   name,
@@ -27,6 +24,7 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
+  userRating,
 }) => {
   const handleAddToCompare = (event, id) => {
     const inCompare = compareList.some(product => product.id === id);
@@ -54,15 +52,7 @@ const ProductBox = ({
           <h5>{name}</h5>
         </Link>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <button key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </button>
-          ))}
+          <RatingStars stars={stars} id={id} userRating={userRating} />
         </div>
       </div>
       <div className={styles.line}></div>
@@ -97,7 +87,6 @@ const ProductBox = ({
   );
 };
 
-
 ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
@@ -112,10 +101,9 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   oldPrice: PropTypes.string,
   addToCompare: PropTypes.func,
-  id: PropTypes.string,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  userRating: PropTypes.number,
 };
-
 
 export default ProductBox;
