@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -19,8 +19,9 @@ import {
   faPinterestP,
 } from '@fortawesome/free-brands-svg-icons';
 import Button from '../../common/Button/Button';
+import RatingStars from '../../common/RatingStars/RatingStarsContainer';
 
-const ProductPage = () => (
+const ProductPage = (id, stars, userRating) => (
   <div className={styles.root}>
     <div className={'container ' + styles.pageWrapper}>
       <div className='row'>
@@ -75,6 +76,7 @@ const ProductPage = () => (
               </div>
             </div>
             <div className={'row ' + styles.starsContainer}>
+              <RatingStars stars={stars} id={id} userRating={userRating} />
               <p>(0 reviews)</p>
               <p>Add Your Review</p>
             </div>
@@ -194,6 +196,10 @@ const ProductPage = () => (
   </div>
 );
 
-// ProductPage.propTypes = {};
+ProductPage.propTypes = {
+  stars: PropTypes.number,
+  id: PropTypes.string,
+  userRating: PropTypes.number,
+};
 
 export default ProductPage;
