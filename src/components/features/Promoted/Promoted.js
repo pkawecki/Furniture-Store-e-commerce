@@ -13,7 +13,7 @@ class Promoted extends React.Component {
           dots: true,
           infinite: true,
           autoplay: true,
-          autoplaySpeed: 300000,
+          autoplaySpeed: 3000,
           pauseTime: 10000,
           arrowButtons: false,
           slideContent: 'productBox',
