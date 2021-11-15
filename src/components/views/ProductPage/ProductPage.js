@@ -5,7 +5,7 @@ import NavBar from '../../features/NavBar/NavBar';
 import styles from './ProductPage.module.scss';
 
 const ProductPage = () => (
-  <div>
+  <div className={styles.root}>
     <Banner />
     <NavBar />
   </div>

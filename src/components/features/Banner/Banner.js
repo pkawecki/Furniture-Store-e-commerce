@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Banner.module.scss';
+import initialState from '../../../redux/initialState';
 
 const Banner = () => (
   <div className='container'>
@@ -7,12 +8,14 @@ const Banner = () => (
       <div className='row '>
         <div className={'col-12 ' + styles.title}>
           <p>
-            BEDROOM <span>FURNITURE</span>
+            {initialState.banner.title} <span> {initialState.banner.titleBold}</span>
           </p>
         </div>
         <div className={'col-12 ' + styles.subtitle}>
           <p>
-            ALWAYS <span>25% </span> OFF OR MORE
+            {initialState.banner.subtitle}{' '}
+            <span>{initialState.banner.subtitleColor} </span>{' '}
+            {initialState.banner.subtitleAfterColor}
           </p>
         </div>
       </div>

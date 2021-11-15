@@ -6390,9 +6390,9 @@
     "object.assign" "^4.1.0"
 
 "keycode@^2.1.7":
-  "integrity" "sha1-PQr1bce4uOXLqNCpfxByBO7CKwQ="
-  "resolved" "https://registry.npmjs.org/keycode/-/keycode-2.2.0.tgz"
-  "version" "2.2.0"
+  "integrity" "sha512-Rdgz9Hl9Iv4QKi8b0OlCRQEzp4AgVxyCtz5S/+VIHezDmrDhkp2N2TqBWOLz0/gbeREXOOiI9/4b8BY9uw2vFg=="
+  "resolved" "https://registry.npmjs.org/keycode/-/keycode-2.2.1.tgz"
+  "version" "2.2.1"
 
 "killable@^1.0.0":
   "integrity" "sha512-LzqtLKlUwirEUyl/nicirVmNiPvYs7l5n8wOPP7fyJVpUPkvCnW/vuiXGpylGUlnPDnB7311rARzAt3Mhswpjg=="
