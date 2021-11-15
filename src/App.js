@@ -4,6 +4,7 @@ import './styles/global.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Homepage from './components/views/Homepage/Homepage';
+import login from './components/views/Login/Login';
 import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
@@ -18,6 +19,7 @@ const App = () => (
       <Switch>
         <Route exact path={'/'} component={Homepage} />
         <Route exact path={'/shop/:categoryId'} component={ProductList} />
+        <Route exact path={'/login'} component={login} />
         <Route exact path={'/product/:productId'} component={ProductPage} />
         <Route exact path={'/blog'} component={Blog} />
       </Switch>
