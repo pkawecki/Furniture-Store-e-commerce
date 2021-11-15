@@ -1,4 +1,7 @@
 import {
+  faGreaterThan,
+  faHome,
+  faLessThan,
   faMobileAlt,
   faShoppingBasket,
   faTimesCircle,
@@ -19,6 +22,7 @@ const Button = styled.button`
   font-family: monospace;
 `;
 
+//dfg
 const CompanyClaim = () => (
   <div className={styles.root}>
     <div className={styles.containerWrapper}>
@@ -32,6 +36,13 @@ const CompanyClaim = () => (
       <div className='container'>
         <div className={`row ${styles.row} ${styles.rowsecond}`}>
           <p>Cart</p>
+          <span>
+            <a href='/'>
+              <FontAwesomeIcon className={styles.homeIcon} icon={faHome} />
+            </a>
+            <FontAwesomeIcon className={styles.greaterThanIcon} icon={faGreaterThan} />
+            Cart
+          </span>
         </div>
       </div>
     </div>
@@ -133,7 +144,7 @@ const CompanyClaim = () => (
                 onClick={() => {
                   console.log('Apply Coupon');
                 }}
-                className={styles.blueButton}
+                className={styles.orangeButton}
               >
                 Apply Coupon
               </button>
@@ -141,7 +152,7 @@ const CompanyClaim = () => (
                 onClick={() => {
                   console.log('Update Cart');
                 }}
-                className={styles.updateCart + ' ' + styles.blueButton}
+                className={styles.updateCart + ' ' + styles.orangeButton}
               >
                 Update Cart
               </button>
@@ -168,14 +179,16 @@ const CompanyClaim = () => (
                 </tr>
                 <tr>
                   <td colSpan='2'>
-                    <button
-                      onClick={() => {
-                        console.log('Proceed To checkout');
-                      }}
-                      className={styles.blueButton + ' ' + styles.proceedButton}
-                    >
-                      Proceed to Checkout
-                    </button>
+                    <a href='/'>
+                      <button
+                        onClick={() => {
+                          console.log('Proceed To checkout');
+                        }}
+                        className={styles.orangeButton + ' ' + styles.proceedButton}
+                      >
+                        Proceed to Checkout
+                      </button>
+                    </a>
                   </td>
                 </tr>
               </tbody>

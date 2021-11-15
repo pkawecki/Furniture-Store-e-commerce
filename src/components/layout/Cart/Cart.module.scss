@@ -9,8 +9,8 @@
   background-color: #ffffff;
   margin-top: 60px;
 
-  .blueButton {
-    background-color: #13aff0;
+  .orangeButton {
+    background-color: $brandy-punch;
     border: none;
     color: white;
     padding: 5px 10px;
@@ -50,6 +50,17 @@
 
   .rowsecond {
     padding: 25px 15px;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      font-size: 0.75rem;
+
+      .homeIcon,
+      .greaterThanIcon {
+        margin: 0 5px;
+      }
+    }
   }
 
   .priceTag {
