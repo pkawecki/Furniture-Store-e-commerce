@@ -4,11 +4,11 @@ import brandsReducer from './brandsRedux';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import compareReducer from './compareRedux';
+import feedbacksReducer from './feedbacksRedux';
 import initialState from './initialState';
 import modeReducer from './modeRedux';
 import compareReducer from './compareRedux';
 import productsReducer from './productsRedux';
-import feedbacksReducer from './feedbacksRedux';
 
 // define reducers
 const reducers = {

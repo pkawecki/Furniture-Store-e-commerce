@@ -26,7 +26,6 @@ const ProductBox = ({
   compareCount,
   compareList,
   heart,
-  arrows,
   category,
   userRating,
 }) => {
@@ -44,7 +43,7 @@ const ProductBox = ({
     event.preventDefault();
     return togglePopup(!showPopup);
   };
-
+  
   return (
     <div className={styles.root}>
       <div className={styles.photo}>

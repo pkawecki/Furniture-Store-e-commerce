@@ -21,6 +21,7 @@ $button-background-hover: $brandy-punch;
 
 $button-backgound-big: $white;
 $button-color-big: $darkGray;
+$button-border: $nobel;
 
 $button-backgound-blog: $darkGray;
 $button-backgound-blog: $white;
@@ -105,6 +106,9 @@ $menu-bar-background-color-hover: $brandy-punch;
 $menu-bar-border-color-hover: $brandy-punch;
 $menu-bar-font-color-hover: $white;
 
+/* Chatbox */
+$chatbox-bg: $mine-shaft;
+
 /*Topbar*/
 $topbar-font-color: $white;
 
@@ -118,6 +122,7 @@ $popup-span-description-color: $darkGray;
 $header-topbar-bg: $tundora;
 $header-bg: $mine-shaft;
 $footer-bg: $mine-shaft;
+$footer-bg: $mine-shaft;
 
 $footer-claim-bg: $darkGray;
 $primary: $brandy-punch;
@@ -126,7 +131,6 @@ $form-border-color: $mine-shaft-light;
 $text-color: $darkGray;
 $transition: .3s ease;
 $base-padding: 24px;
-
 
 /* LATEST BLOG */
 $lastest-blog-border-bottom: $mercury;
