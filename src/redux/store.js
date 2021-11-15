@@ -6,6 +6,7 @@ import categoriesReducer from './categoriesRedux';
 import compareReducer from './compareRedux';
 import initialState from './initialState';
 import modeReducer from './modeRedux';
+import compareReducer from './compareRedux';
 import productsReducer from './productsRedux';
 import feedbacksReducer from './feedbacksRedux';
 

@@ -4,8 +4,9 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductBox.module.scss';
+import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
 import { Link } from 'react-router-dom';
 import RatingStars from '../RatingStars/RatingStarsContainer';
 
@@ -24,6 +25,9 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
+  heart,
+  arrows,
+  category,
   userRating,
 }) => {
   const handleAddToCompare = (event, id) => {
@@ -33,6 +37,14 @@ const ProductBox = ({
       addToCompare({ id });
     }
   };
+
+  const [showPopup, togglePopup] = useState(false);
+
+  const handlePopup = event => {
+    event.preventDefault();
+    return togglePopup(!showPopup);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -41,12 +53,26 @@ const ProductBox = ({
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button variant='small' onClick={event => handlePopup(event)}>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
       </div>
+      {showPopup ? (
+        <ProductPopup
+          id={id}
+          name={name}
+          price={price}
+          category={category}
+          image={image}
+          closePopup={handlePopup}
+        />
+      ) : (
+        ''
+      )}
       <div className={styles.content}>
         <Link to={`/product/${id}`}>
           <h5>{name}</h5>
@@ -103,6 +129,7 @@ ProductBox.propTypes = {
   addToCompare: PropTypes.func,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  category: PropTypes.string,
   userRating: PropTypes.number,
 };
 
