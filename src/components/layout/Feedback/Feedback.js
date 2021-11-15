@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
 import React from 'react';
-import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 import styles from './Feedback.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 class Feedback extends React.Component {
   state = {
