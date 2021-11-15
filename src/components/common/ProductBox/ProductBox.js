@@ -25,7 +25,7 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
-  heart,
+  // heart,
   category,
   userRating,
 }) => {
@@ -37,13 +37,18 @@ const ProductBox = ({
     }
   };
 
+  const isFavourite = favorites => {
+    favorites && localStorage.setItem(id + '.fav', true);
+  };
+  isFavourite(favorites);
+
   const [showPopup, togglePopup] = useState(false);
 
   const handlePopup = event => {
     event.preventDefault();
     return togglePopup(!showPopup);
   };
-  
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -84,7 +89,9 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            className={favorites ? styles.favorites : styles.outlines}
+            className={
+              localStorage.getItem(id + '.fav') ? styles.favorites : styles.outlines
+            }
             onClick={e => {
               e.preventDefault();
               favorites ? removeFromFavorites({ id }) : addToFavorites({ id });
