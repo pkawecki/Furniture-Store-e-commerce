@@ -13,8 +13,8 @@ import productsReducer from './productsRedux';
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
-  products: productsReducer,
   compare: compareReducer,
+  products: productsReducer,
   mode: modeReducer,
   brands: brandsReducer,
   feedbacks: feedbacksReducer,

@@ -1,14 +1,14 @@
+import React, { useState } from 'react';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import styles from './ProductBox.module.scss';
-import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
 import { Link } from 'react-router-dom';
+import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
+import PropTypes from 'prop-types';
 import RatingStars from '../RatingStars/RatingStarsContainer';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import styles from './ProductBox.module.scss';
 
 const ProductBox = ({
   name,
@@ -25,7 +25,8 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
-  heart,
+  viewPromoted,
+  isHovered = () => null,
   category,
   userRating,
 }) => {
@@ -43,18 +44,22 @@ const ProductBox = ({
     event.preventDefault();
     return togglePopup(!showPopup);
   };
-  
+
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => isHovered(true)}
+      onMouseLeave={() => isHovered(false)}
+    >
       <div className={styles.photo}>
         <Link to={`/product/${id}`}>
           <img src={image} alt='arb bed' />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small' onClick={event => handlePopup(event)}>
-            Quick View
-          </Button>
+        <div
+          className={`${styles.buttons} ${viewPromoted ? styles.hotDealButtons : null}`}
+        >
+          {!viewPromoted ? <Button variant='small'>Quick View</Button> : null}
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -102,7 +107,7 @@ const ProductBox = ({
           </Button>
         </div>
         <div className={styles.price}>
-          <div className={styles.oldPrice}>{oldPrice}</div>
+          <div className={styles.oldPrice}>$ {oldPrice}</div>
           <Button noHover variant='small' className={styles.newPrice}>
             $ {price}
           </Button>
@@ -128,6 +133,8 @@ ProductBox.propTypes = {
   addToCompare: PropTypes.func,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  isHovered: PropTypes.func,
+  viewPromoted: PropTypes.bool,
   category: PropTypes.string,
   userRating: PropTypes.number,
 };
