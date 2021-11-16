@@ -10,19 +10,42 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    activeFade: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({
+      activePage: newPage,
+      activeFade: true,
+    });
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        500
+      );
+    }
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({
+      activeCategory: newCategory,
+      activeFade: true,
+    });
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        500
+      );
+    }
   }
 
   render() {
     const { categories, products, mode } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, activeFade } = this.state;
     let productsPerPage;
 
     switch (mode) {
@@ -100,11 +123,32 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
+<<<<<<< HEAD
           <Swipeable
             activePage={activePage}
             handlePageChange={this.handlePageChange.bind(this)}
             pages={pages}
           />
+=======
+          <SwipeableViews
+            enableMouseEvents
+            index={activePage}
+            onChangeIndex={index => {
+              this.handlePageChange(index);
+            }}
+            slideStyle={{ overflow: 'hidden' }}
+          >
+            <div className={`row ${activeFade ? styles.fadeIn : styles.fadeOut}`}>
+              {categoryProducts
+                .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
+                .map(item => (
+                  <div key={item.id} className='col-lg-3 col-sm-6 mb-5'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
+          </SwipeableViews>
+>>>>>>> 12a4bfa (Add animation to change category & page)
         </div>
         <ProductCompareBar />
       </div>
@@ -132,6 +176,7 @@ NewFurniture.propTypes = {
     })
   ),
   mode: PropTypes.string,
+  activeFade: PropTypes.bool,
 };
 
 NewFurniture.defaultProps = {
