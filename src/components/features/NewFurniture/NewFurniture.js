@@ -34,9 +34,9 @@ class NewFurniture extends React.Component {
     }
   }
 
-  handleCategoryChange(newCategory) {
+  handleCategoryChange(newActiveCategory) {
     this.setState({
-      activeCategory: newCategory,
+      activeCategory: newActiveCategory,
       activeFade: true,
     });
     if (this.state.activeFade === false) {
