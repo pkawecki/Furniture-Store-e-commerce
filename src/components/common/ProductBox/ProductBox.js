@@ -43,7 +43,7 @@ const ProductBox = ({
     event.preventDefault();
     return togglePopup(!showPopup);
   };
-  
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -130,6 +130,7 @@ ProductBox.propTypes = {
   compareList: PropTypes.array,
   category: PropTypes.string,
   userRating: PropTypes.number,
+  heart: PropTypes.node,
 };
 
 export default ProductBox;
