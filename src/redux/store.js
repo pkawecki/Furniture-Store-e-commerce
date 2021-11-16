@@ -7,14 +7,13 @@ import feedbacksReducer from './feedbacksRedux';
 import initialState from './initialState';
 import modeReducer from './modeRedux';
 import productsReducer from './productsRedux';
-import brandsReducer from './brandsRedux';
 import compareReducer from './compareRedux';
-
 
 // define reducers
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
+  compare: compareReducer,
   products: productsReducer,
   mode: modeReducer,
   brands: brandsReducer,

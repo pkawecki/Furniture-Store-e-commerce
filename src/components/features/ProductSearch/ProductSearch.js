@@ -43,9 +43,9 @@ const ProductSearch = () => (
     </div>
     <div className={styles.searchField}>
       <input placeholder='Search products...' type='text' />
-      <button>
+      <a href='/search'>
         <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-      </button>
+      </a>
     </div>
   </form>
 );
