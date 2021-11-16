@@ -1,4 +1,5 @@
 import React from 'react';
+import FilterByColor from '../../features/FilterByColor/FilterByColor';
 // import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 
@@ -19,6 +20,9 @@ const ProductList = () => (
         <div className='col-3'>
           <div className={styles.filters}>
             <span>Filters</span>
+            <div className='col-12'>
+              <FilterByColor />
+            </div>
           </div>
         </div>
         <div className='col-12'>
