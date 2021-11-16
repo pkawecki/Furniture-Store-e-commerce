@@ -1,0 +1,77 @@
+@import '../../../styles/settings.scss';
+
+.topper{
+  background-color: $topper-background;
+  height: 62px;
+
+  .hotDeals{
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: 00;
+    color: $hotDeals-font-color;
+  }
+}
+.shadowWrapper {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  top: 100px;
+  opacity: 50%;
+  z-index: 90;
+  background-color: $footer-claim-bg;
+}
+.shadowTitle {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 150px;
+  opacity: 50%;
+  z-index: 90;
+  color: $shadow-title-color;
+  font-size: 50px;
+  opacity: 1;
+  span {
+    font-weight: 700;
+  }
+}
+.shadowSubtitle {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 60px;
+  z-index: 90;
+  color: $shadow-subtitle-color;
+  font-size: 20px;
+}
+.shadowButtonsWrapper {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  z-index: 90;
+  overflow: hidden;
+
+  .buttonLong {
+    background-color: $button-long-background;
+    width: 50%;
+
+    a{
+      font-size: 30px;
+    }
+  }
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 463px;
+}
+
+.centerButton {
+  position: absolute;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  bottom: 190px;
+  z-index: 90;
+}
