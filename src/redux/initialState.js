@@ -437,6 +437,13 @@ const initialState = {
     },
   ],
   mode: '',
+  banner: {
+    title: 'BEDROOM',
+    titleBold: 'FURNITURE',
+    subtitle: 'ALWAYS',
+    subtitleColor: '25%',
+    subtitleAfterColor: 'OFF OR MORE',
+  },
 };
 
 export default initialState;
