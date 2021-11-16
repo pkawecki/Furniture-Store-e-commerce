@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Banner from '../../features/Banner/Banner';
+import NavBar from '../../features/NavBar/NavBar';
 import styles from './ProductPage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -23,6 +25,8 @@ import RatingStars from '../../common/RatingStars/RatingStarsContainer';
 
 const ProductPage = (id, stars, userRating) => (
   <div className={styles.root}>
+    <Banner />
+    <NavBar />
     <div className={'container ' + styles.pageWrapper}>
       <div className='row'>
         <div className={'col-5 ' + styles.pageColumnLeft}>
@@ -32,7 +36,6 @@ const ProductPage = (id, stars, userRating) => (
               <FontAwesomeIcon icon={faExpandArrowsAlt}></FontAwesomeIcon>
             </Button>
           </div>
-
           <div className={'row ' + styles.sliderBox}>
             <div className={'col ' + styles.photoContainerMini}>
               <img className={styles.photoMini} src={''} alt='' />

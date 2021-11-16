@@ -16,6 +16,27 @@
   }
 }
 
+.innerChatbox {
+  @extend .main;
+  width: fit-content;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: $text-color;
+  border: 2px solid $chatbox-bg;
+  padding: 5px 50px;
+  margin: 5px auto;
+}
+
+.floating {
+  @extend .main;
+  border-radius: 10px;
+  box-shadow: 0 0 4px $button-border;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
 .small {
   @extend .main;
   font-size: 13px;

@@ -14,7 +14,7 @@ const CompanyClaim = () => (
           </a>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <a href='#top' className={styles.cartBox}>
+          <a href='/cart' className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>

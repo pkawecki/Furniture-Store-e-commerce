@@ -99,7 +99,7 @@ class NewFurniture extends React.Component {
               {categoryProducts
                 .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
                 .map(item => (
-                  <div key={item.id} className='col-lg-3 col-sm-6'>
+                  <div key={item.id} className='col-lg-3 col-sm-6 mb-5'>
                     <ProductBox {...item} />
                   </div>
                 ))}
