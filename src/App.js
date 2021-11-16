@@ -10,10 +10,10 @@ import ProductPage from './components/views/ProductPage/ProductPage';
 import Blog from './components/views/Blog/Blog';
 import Cart from './components/layout/Cart/Cart';
 import Search from './components/views/Search/Search';
-import { Provider } from 'react-redux';
+//import { Provider } from 'react-redux';
 import React from 'react';
 import Register from './components/views/Register/Register';
-import store from './redux/store';
+//import store from './redux/store';
 
 const App = () => (
   <BrowserRouter>
