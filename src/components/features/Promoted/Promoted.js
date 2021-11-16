@@ -1,4 +1,4 @@
-import ProductSlider from '../../common/ProductSlider/ProductSlider';
+// import ProductSlider from '../../common/ProductSlider/ProductSlider';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './Promoted.module.scss';
@@ -56,16 +56,16 @@ class Promoted extends React.Component {
         <div className='container'>
           <div className='row'>
             <div className={'col-4 ' + styles.left}>
-              <ProductSlider
+              {/* <ProductSlider
                 promotedProducts={this.props.promotedProducts}
                 settings={this.state.settings.sliderLeft}
-              />
+              /> */}
             </div>
             <div className={'col-8 ' + styles.right}>
-              <ProductSlider
+              {/* <ProductSlider
                 promotedProducts={this.props.promotedProducts}
                 settings={this.state.settings.sliderRight}
-              />
+              /> */}
             </div>
           </div>
         </div>
