@@ -45,7 +45,7 @@ const ProductBox = ({
     event.preventDefault();
     return togglePopup(!showPopup);
   };
-  
+
   return (
     <div
       className={styles.root}
@@ -130,7 +130,7 @@ ProductBox.propTypes = {
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
   id: PropTypes.string,
-  oldPrice: PropTypes.string,
+  oldPrice: PropTypes.number,
   addToCompare: PropTypes.func,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
@@ -138,6 +138,7 @@ ProductBox.propTypes = {
   viewPromoted: PropTypes.bool,
   category: PropTypes.string,
   userRating: PropTypes.number,
+  heart: PropTypes.node,
 };
 
 export default ProductBox;

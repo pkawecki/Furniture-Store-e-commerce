@@ -62,7 +62,7 @@ const initialState = {
       userRating: 5,
       promo: 'sale',
       newFurniture: true,
-      favorites: 1,
+      favorites: true,
       heart: true,
       arrows: true,
     },
