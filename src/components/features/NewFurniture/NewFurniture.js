@@ -21,22 +21,36 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products, mode } = this.props;
+    const { categories, products, mode, subpage } = this.props;
     const { activeCategory, activePage } = this.state;
+    let columnNumber;
     let productsPerPage;
+    let styleMenu;
 
     switch (mode) {
       case 'mobile':
+        columnNumber = 'col-6';
         productsPerPage = 1;
         break;
       case 'tablet':
+        columnNumber = 'col-4';
         productsPerPage = 2;
         break;
       case 'desktop':
+        columnNumber = 'col-3';
         productsPerPage = 8;
         break;
       default:
         productsPerPage = 4;
+    }
+
+    if (subpage === 'homePage') {
+      columnNumber = 'col-lg-3 col-sm-6';
+      productsPerPage = 4;
+    } else if (subpage === 'pageShop') {
+      columnNumber = 'col-lg-4 col-sm-6';
+      productsPerPage = 12;
+      styleMenu = styles.hiddenMenu;
     }
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -60,7 +74,7 @@ class NewFurniture extends React.Component {
     return (
       <div className={styles.root}>
         <div className='container'>
-          <div className={styles.panelBar}>
+          <div className={styles.panelBar + styleMenu}>
             <div className={'row no-gutters align-items-end ' + styles.panelBarDiv}>
               <div className={'col-md-3 col-sm-12 ' + styles.heading}>
                 <h3>New furniture</h3>
@@ -99,7 +113,7 @@ class NewFurniture extends React.Component {
               {categoryProducts
                 .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
                 .map(item => (
-                  <div key={item.id} className='col-lg-3 col-sm-6'>
+                  <div key={item.id} className={columnNumber}>
                     <ProductBox {...item} />
                   </div>
                 ))}
@@ -114,6 +128,7 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  subpage: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
