@@ -26,6 +26,8 @@ const ProductBox = ({
   compareCount,
   compareList,
   heart,
+  viewPromoted,
+  isHovered = () => null,
   category,
   userRating,
 }) => {
@@ -45,16 +47,20 @@ const ProductBox = ({
   };
   
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => isHovered(true)}
+      onMouseLeave={() => isHovered(false)}
+    >
       <div className={styles.photo}>
         <Link to={`/product/${id}`}>
           <img src={image} alt='arb bed' />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small' onClick={event => handlePopup(event)}>
-            Quick View
-          </Button>
+        <div
+          className={`${styles.buttons} ${viewPromoted ? styles.hotDealButtons : null}`}
+        >
+          {!viewPromoted ? <Button variant='small'>Quick View</Button> : null}
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -102,7 +108,7 @@ const ProductBox = ({
           </Button>
         </div>
         <div className={styles.price}>
-          <div className={styles.oldPrice}>{oldPrice}</div>
+          <div className={styles.oldPrice}>$ {oldPrice}</div>
           <Button noHover variant='small' className={styles.newPrice}>
             $ {price}
           </Button>
@@ -128,6 +134,8 @@ ProductBox.propTypes = {
   addToCompare: PropTypes.func,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  isHovered: PropTypes.func,
+  viewPromoted: PropTypes.bool,
   category: PropTypes.string,
   userRating: PropTypes.number,
 };

@@ -112,6 +112,14 @@ $chatbox-bg: $mine-shaft;
 /*Topbar*/
 $topbar-font-color: $white;
 
+/* SEARCH */
+$search-border-bottom: $mercury;
+$search-header: $brandy-punch;
+$search-underscore: $brandy-punch;
+$search-inactive-dot: $mercury;
+$search-active-dot: $brandy-punch;
+$search-background: $white;
+
 /* POPUP */
 $popup-name-color: $brandy-punch;
 $popup-background-color: $mercury;
@@ -140,6 +148,17 @@ $lastest-blog-inactive-dot: $mercury;
 $lastest-blog-active-dot: $brandy-punch;
 $lastest-blog-background: $white;
 $lastest-blog-title: $brandy-punch;
+
+/* NAVBAR PRODUCT PAGE*/
+$navbar-backgroung: $mercury;
+$navbar-link: $darkGray;
+$navbar-active-link: $brandy-punch;
+
+/* BANNER PRODUCT PAGE */
+$banner-background: $tundora;
+$banner-title: $white;
+$banner-subtitle: $white;
+$banner-discount: $brandy-punch;
 
 /* Global hover animations*/
 %hover {
