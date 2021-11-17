@@ -1,16 +1,15 @@
+/* eslint-disable no-console */
+
 import {
   faGreaterThan,
   faHome,
-  faLessThan,
-  faMobileAlt,
-  faShoppingBasket,
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import styles from './Cart.module.scss';
 import styled from 'styled-components';
+import styles from './Cart.module.scss';
 
 const Button = styled.button`
   background: transparent;

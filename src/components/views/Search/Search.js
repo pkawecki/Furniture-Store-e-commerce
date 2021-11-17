@@ -1,6 +1,6 @@
+import ProductBox from '../../common/ProductBox/ProductBox';
 import React from 'react';
 import styles from './Search.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
 
 const Search = () => {
   return (
@@ -14,13 +14,13 @@ const Search = () => {
             <div className={'col-auto ' + styles.dots}>
               <ul>
                 <li>
-                  <a></a>
+                  <a href='#'></a>
                 </li>
                 <li>
-                  <a></a>
+                  <a href='#'></a>
                 </li>
                 <li>
-                  <a></a>
+                  <a href='#'></a>
                 </li>
               </ul>
             </div>

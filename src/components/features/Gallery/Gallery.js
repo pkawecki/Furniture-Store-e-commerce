@@ -81,7 +81,7 @@ class Gallery extends React.Component {
                   <div className={styles.price}>
                     <h3>${products[0].price}</h3>
                     <h3>
-                      <s>{products[0].oldPrice}</s>
+                      <s>${products[0].oldPrice}</s>
                     </h3>
                   </div>
                 </div>
