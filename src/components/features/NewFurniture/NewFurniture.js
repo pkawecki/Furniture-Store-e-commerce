@@ -23,7 +23,7 @@ class NewFurniture extends React.Component {
         function() {
           this.setState({ activeFade: false });
         }.bind(this),
-        500
+        1000
       );
     }
   }
@@ -38,7 +38,7 @@ class NewFurniture extends React.Component {
         function() {
           this.setState({ activeFade: false });
         }.bind(this),
-        500
+        1000
       );
     }
   }
