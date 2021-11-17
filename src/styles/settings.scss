@@ -143,7 +143,7 @@ $primary: $brandy-punch;
 
 $form-border-color: $mine-shaft-light;
 $text-color: $darkGray;
-$transition: .3s ease;
+$transition: 0.3s ease;
 $base-padding: 24px;
 
 /* LATEST BLOG */
@@ -171,3 +171,7 @@ $banner-discount: $brandy-punch;
   transition: 0.25s;
 }
 
+/*Global auto rendering setting (apply smooth edges when downscaling) */
+img {
+  image-rendering: auto !important;
+}
