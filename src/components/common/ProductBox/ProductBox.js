@@ -25,6 +25,7 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
+  // heart,
   viewPromoted,
   isHovered = () => null,
   category,
@@ -35,6 +36,23 @@ const ProductBox = ({
     event.preventDefault();
     if (compareCount < 4 && !inCompare) {
       addToCompare({ id });
+    }
+  };
+
+  const setFavorite = favorites => {
+    favorites && localStorage.setItem(id + '.fav', true);
+  };
+  setFavorite(favorites);
+
+  const handleFavClick = e => {
+    e.preventDefault();
+    if (Object.keys(localStorage).indexOf(id + '.fav') > -1) {
+      console.log('been present, is removed', id);
+      removeFromFavorites({ id });
+      localStorage.removeItem(id + '.fav');
+    } else {
+      console.log('been absent, is added', id);
+      addToFavorites({ id });
     }
   };
 
@@ -89,10 +107,11 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            className={favorites ? styles.favorites : styles.outlines}
+            className={
+              localStorage.getItem(id + '.fav') ? styles.favorites : styles.outlines
+            }
             onClick={e => {
-              e.preventDefault();
-              favorites ? removeFromFavorites({ id }) : addToFavorites({ id });
+              handleFavClick(e);
             }}
             variant='outline'
           >
