@@ -20,23 +20,16 @@ const Brands = ({ brands }) => {
     newRwd = 6;
   }
 
+  //sdf/sdfsfdsfds
+  const pagesCount = Math.ceil(brands.length / newRwd);
   const leftAction = e => {
     e.preventDefault();
-
-    ActivePage(activePage === 0 ? brands.length / brand - 1 : Math.ceil(brands.length / newRwd));
+    ActivePage(activePage < pagesCount - 1 ? activePage + 1 : activePage);
   };
 
   const rightAction = e => {
     e.preventDefault();
-
-    ActivePage(activePage === brands.length / brand - 1 ? 0 : activePage + 1);
-    // if(newActivePage === 0) {
-    //   newActivePage++;
-    // } else if (newActivePage >= pagesCount-1)
-    // { newActivePage = 0;
-    // } else if (newActivePage >= 0) {
-    //   newActivePage++;
-    // }
+    ActivePage(activePage > 0 ? activePage - 1 : activePage);
   };
 
   return (
@@ -48,7 +41,7 @@ const Brands = ({ brands }) => {
           }
         >
           <div className={`col-1`}>
-            <Button className={styles.button} variant='carousel'  onClick={leftAction}>
+            <Button className={styles.button} variant='carousel' onClick={leftAction}>
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
             </Button>
           </div>
@@ -56,15 +49,17 @@ const Brands = ({ brands }) => {
             <div className='row justify-content-between'>
               {/* {brands.slice(newActivePage * newRwd, (newActivePage + 1) * newRwd).map(item => (
                 <div key={item.id} className='col-2'> */}
-              {brands.slice(activePage * newRwd, (activePage + 1) * newRwd).map(item => (
-                <div key={item.id} className='col-2'>
-                  <BrandsSlider {...item} />
-                </div>
-              ))}
+              {brands
+                .slice(activePage * newRwd, (activePage + 1) * newRwd)
+                .map(item => (
+                  <div key={item.id} className='col-2'>
+                    <BrandsSlider {...item} />
+                  </div>
+                ))}
             </div>
           </div>
           <div className={`col-1`}>
-            <Button className={styles.button} variant='carousel'  onClick={rightAction}>
+            <Button className={styles.button} variant='carousel' onClick={rightAction}>
               <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
             </Button>
           </div>
