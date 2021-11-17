@@ -1,0 +1,34 @@
+@import "../../../styles//settings.scss";
+
+.timer {
+  pointer-events: none;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 110;
+  background-color: transparent;
+  opacity: 80%;
+  cursor: default;
+
+ .timerItem {
+  display: block;
+  margin: 0;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  color: $timer-font-color;
+  border-radius: 50%;
+  background-color: $timer-backgorund;
+
+    .number {
+      margin: 7px 0 0;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .unit {
+      font-size: 12px;
+    }
+  }
+}

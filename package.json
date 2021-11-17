@@ -45,11 +45,15 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "@material-ui/core": "^5.0.0-beta.5",
+    "@mui/material": "^5.1.0",
     "bootstrap": "^4.3.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -62,9 +66,15 @@
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
+    "react-swipeable": "^6.2.0",
+    "react-slick": "^0.28.1",
     "react-swipeable-views": "^0.14.0",
     "react-test-renderer": "^16.9.0",
-    "redux": "^4.0.4"
+    "react-tooltip": "^4.2.21",
+    "redux": "^4.0.4",
+    "slick-carousel": "^1.8.1",
+    "views": "^1.0.2",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "husky": "^3.1.0",
