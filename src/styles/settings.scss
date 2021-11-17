@@ -6,6 +6,7 @@ $mine-shaft: #363636;
 $brandy-punch: #d58e32;
 $white: #ffffff;
 $nobel: #b6b6b6;
+$blue: #4169E1;
 $mercury: #e1e1e1;
 $athens-gray: #f4f5f7;
 $alto: #d8d8d8;
@@ -54,6 +55,11 @@ $product-box-sale-icon-font: $white;
 $stars-color: $mine-shaft-light;
 $under-stars-line-color: $mine-shaft-light;
 $under-stars-thick-line-color: $brandy-punch;
+
+/*Product Page*/
+$product-page-bg-dark: $tundora;
+$product-page-bg-light: $mercury;
+$product-page-bg-photo: $nobel;
 
 /* Promotion Product*/
 $topper-background: $darkGray;
@@ -137,7 +143,7 @@ $primary: $brandy-punch;
 
 $form-border-color: $mine-shaft-light;
 $text-color: $darkGray;
-$transition: .3s ease;
+$transition: 0.3s ease;
 $base-padding: 24px;
 
 /* LATEST BLOG */
@@ -165,3 +171,7 @@ $banner-discount: $brandy-punch;
   transition: 0.25s;
 }
 
+/*Global auto rendering setting (apply smooth edges when downscaling) */
+img {
+  image-rendering: auto !important;
+}

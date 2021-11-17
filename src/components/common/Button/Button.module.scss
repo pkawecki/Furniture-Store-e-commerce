@@ -57,7 +57,6 @@
     background-color: $button-background-color-hover;
     color: $button-font-color-hover;
     @extend %hover;
-
   }
 }
 
@@ -82,12 +81,121 @@
   color: $button-color-big;
 }
 
+//ProductPage
+
+.sideArrows {
+  @extend .outline;
+  background-color: #ffffff;
+  color: $mine-shaft-light;
+  border-color: $mine-shaft-light;
+
+  &:not(.noHover):hover {
+    background-color: $primary;
+    color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+  }
+}
+
+.basket {
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 22px;
+  background-color: $brandy-punch;
+  color: #ffffff;
+  border-color: none;
+
+  &:not(.noHover):hover {
+    background-color: $darkGray;
+    color: #ffffff;
+  }
+}
+
+.quantityChange {
+  @extend .sideArrows;
+
+  &:last-of-type {
+    border-color: $brandy-punch;
+    font-size: 20px;
+  }
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    color: $darkGray;
+    border-color: $mine-shaft-light;
+  }
+}
+
+.facebook {
+  @extend .basket;
+  background-color: blue;
+  color: #ffffff;
+  border-color: $mine-shaft-light;
+
+  &:not(.noHover):hover {
+    background-color: blue;
+    color: $text-color;
+    border-color: $text-color;
+    color: $button-background-hover 
+  }
+}
+
+.google {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+    color: $button-background-hover 
+  }
+}
+
+.tweet {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+    color: $button-background-hover 
+  }
+}
+
+.pinterest {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+    color: $button-background-hover 
+  }
+}
+
+.linkedin {
+  @extend .sideArrows;
+
+  &:not(.noHover):hover {
+    background-color: $button-color-nohover;
+    border-color: $mine-shaft-light;
+    color: $button-background-hover 
+  }
+}
+
 //brandsSliderComponent
 .carousel {
   @extend .main;
   align-items: center;
   padding: 35px 10px;
   line-height: 120px;
+}
+
+.greenBtn {
+  background-color: #69c831;
+  color: $white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $brandy-punch;
+  }
 }
 
 .blog {
@@ -97,4 +205,14 @@
   padding: 8px 30px;
   font-weight: 500;
   @extend %hover;
+}
+
+.greenBtn {
+  background-color: #69c831;
+  color: $white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $brandy-punch;
+  }
 }
