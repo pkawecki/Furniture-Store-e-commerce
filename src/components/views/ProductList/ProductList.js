@@ -1,6 +1,6 @@
+import Brands from '../../layout/Brands/BrandsContainer';
 import React from 'react';
 import FilterByColor from '../../features/FilterByColor/FilterByColor';
-// import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 
 const ProductList = () => (
@@ -26,15 +26,11 @@ const ProductList = () => (
           </div>
         </div>
         <div className='col-12'>
-          <div className={styles.brands}>
-            <span>Brands</span>
-          </div>
+          <Brands />
         </div>
       </div>
     </div>
   </div>
 );
-
-// ProductList.propTypes = {};
 
 export default ProductList;

@@ -1,14 +1,14 @@
+import React, { useState } from 'react';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import styles from './ProductBox.module.scss';
-import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
 import { Link } from 'react-router-dom';
+import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
+import PropTypes from 'prop-types';
 import RatingStars from '../RatingStars/RatingStarsContainer';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import styles from './ProductBox.module.scss';
 
 const ProductBox = ({
   name,
@@ -25,7 +25,6 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
-  heart,
   viewPromoted,
   isHovered = () => null,
   category,

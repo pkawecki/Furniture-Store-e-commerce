@@ -1,4 +1,4 @@
-import Brands from '../../layout/Brands/BrandsContainer';
+import BlogHomepage from '../../layout/BlogHomepage/BlogHomepage';
 import Chatbox from '../../features/Chatbox/Chatbox';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import Feedback from '../../layout/Feedback/FeedbackContainer';
