@@ -13,7 +13,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_1.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -29,6 +29,7 @@ const initialState = {
       price: 30,
 
       stars: 2,
+      userRating: 4,
       promo: 'sale',
       newFurniture: true,
       favorites: true,
@@ -43,6 +44,7 @@ const initialState = {
       price: 30,
 
       stars: 2,
+      userRating: 3,
       promo: 'sale',
       newFurniture: true,
       favorites: false,
@@ -57,9 +59,10 @@ const initialState = {
       price: 30,
 
       stars: 2,
+      userRating: 5,
       promo: 'sale',
       newFurniture: true,
-      favorites: 1,
+      favorites: true,
       heart: true,
       arrows: true,
     },
@@ -69,7 +72,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_5.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -95,7 +98,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_7.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -123,7 +126,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_9.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -165,7 +168,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_12.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -221,7 +224,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_16.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -263,7 +266,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_19.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -305,7 +308,7 @@ const initialState = {
       category: 'bed',
       image: 'src=../../images/bed/arb_22.jpg',
       price: 30,
-      oldPrice: '$20',
+      oldPrice: 20,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -348,6 +351,13 @@ const initialState = {
   compare: {
     products: [],
   },
+  chairs: [
+    {
+      id: 'chair-1',
+      name: 'chair 1',
+      image: 'src=../../images/chairs.jpg',
+    },
+  ],
   brands: [
     {
       id: 'brand-1',
@@ -400,7 +410,40 @@ const initialState = {
       image: 'https://i.imgur.com/spQ9tQf.jpg',
     },
   ],
+  feedbacks: [
+    {
+      id: 'quote-1',
+      clientName: 'John Smith',
+      clientText:
+        'Vestibulum eu ante non enim malesuada vestibulum quis ac nisl. Nullam eget lacus iaculis, blandit augue in, pulvinar ipsum. Curabitur quis ligula tempus, tristique sapien pulvinar, dictum enim. Etiam tempor mollis tellus, id interdum ipsum condimentum id.',
+      clientImage:
+        'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'quote-2',
+      clientName: 'Mary Shelley',
+      clientText:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque quis tellus est. Sed sapien mi. Mauris diam quam, consequat vitae neque in, pretium efficitur mauris. Donec vulputate consectetur ipsum non dictum. Aenean enim dui.',
+      clientImage:
+        'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'quote-3',
+      clientName: 'Jane Doe',
+      clientText:
+        'Etiam accumsan dui a lacus pulvinar gravida. Duis eu congue urna. Pellentesque facilisis justo vitae enim viverra dictum. Proin non lacus. Phasellus in blandit leo, a maximus magna. Phasellus cursus eros sit amet lacus fermentum ultrices. Etiam eget sapien at erat.',
+      clientImage:
+        'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+  ],
   mode: '',
+  banner: {
+    title: 'BEDROOM',
+    titleBold: 'FURNITURE',
+    subtitle: 'ALWAYS',
+    subtitleColor: '25%',
+    subtitleAfterColor: 'OFF OR MORE',
+  },
 };
 
 export default initialState;
