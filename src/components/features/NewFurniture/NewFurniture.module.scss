@@ -102,6 +102,10 @@
   }
 }
 
+.hiddenMenu {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .root {
     .panelBar {

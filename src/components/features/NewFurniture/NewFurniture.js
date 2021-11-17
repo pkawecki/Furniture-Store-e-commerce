@@ -47,6 +47,7 @@ class NewFurniture extends React.Component {
     if (subpage === 'homePage') {
       columnNumber = 'col-lg-3 col-sm-6';
       productsPerPage = 4;
+      styleMenu = styles.panelBarDiv;
     } else if (subpage === 'pageShop') {
       columnNumber = 'col-lg-4 col-sm-6';
       productsPerPage = 12;
@@ -74,8 +75,8 @@ class NewFurniture extends React.Component {
     return (
       <div className={styles.root}>
         <div className='container'>
-          <div className={styles.panelBar + styleMenu}>
-            <div className={'row no-gutters align-items-end ' + styles.panelBarDiv}>
+          <div className={styles.panelBar}>
+            <div className={'row no-gutters align-items-end ' + styleMenu}>
               <div className={'col-md-3 col-sm-12 ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
@@ -109,7 +110,7 @@ class NewFurniture extends React.Component {
             }}
             slideStyle={{ overflow: 'hidden' }}
           >
-            <div className='row'>
+            <div className='row' >
               {categoryProducts
                 .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
                 .map(item => (
