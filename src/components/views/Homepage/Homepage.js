@@ -8,6 +8,7 @@ import React from 'react';
 import styles from './Homepage.module.scss';
 import Promotions from '../../features/Promotions/Promotions';
 import BlogHomepage from '../../layout/BlogHomepage/BlogHomepage';
+import Gallery from '../../features/Gallery/GalleryContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -16,6 +17,7 @@ const Homepage = () => (
     <Promotions />
     <NewFurniture />
     <BlogHomepage />
+    <Gallery />
     <Brands />
     <Feedback />
     <Chatbox />
