@@ -1,0 +1,10 @@
+@import "../../../styles/settings.scss";
+
+.starRate {
+  cursor: pointer;
+
+  .radio {
+    display: none;
+    cursor: pointer;
+  }
+}

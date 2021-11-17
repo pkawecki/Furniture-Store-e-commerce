@@ -1,0 +1,168 @@
+@import "../../../styles/settings.scss";
+
+$base-size: 3rem;
+.root {
+  background: #efefef;
+  position: fixed;
+  left: 1rem;
+  bottom: 4rem;
+  width: 300px;
+  max-width: 85vw;
+  max-height: 100vh;
+  z-index: 100;
+  border-radius: 5px;
+
+  #messageBox {
+    border: 2px solid $chatbox-bg;
+    border-radius: 5px 5px 5px 0;
+    z-index: 103;
+    position: relative;
+    box-shadow: 10px -5px 30px 0px #888;
+    &:after {
+      content: '';
+      display: block;
+      border-width: $base-size $base-size 0;
+      border-style: solid;
+      border-color: $chatbox-bg transparent transparent;
+      position: absolute;
+      left: -2px;
+      right: auto;
+      border-left-color: $chatbox-bg;
+      border-width: 0.5 * $base-size;
+      margin: 0;
+    }
+  }
+
+  #close {
+    z-index: 102;
+  }
+
+  #open {
+    border-radius: 10px;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 101;
+  }
+
+  .icon {
+    float: right;
+    margin: auto 8px;
+    cursor:pointer;
+  }
+
+  .header, .body, .form {
+    border: 1px solid lighten($chatbox-bg, 20%);
+  }
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    background: $chatbox-bg;
+    height: 50px;
+    color: $primary;
+    text-align:center;
+    font-size: 20px;
+    padding: 10px 5px;
+  }
+
+  .body {
+    position: relative;
+    height: 370px;
+    height: auto;
+    overflow: hidden;
+    .logs {
+      padding: 10px 20px;
+      height: 370px;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+    }
+    .logs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .logAnswer, .logQuestion {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $text-color;
+    }
+    .logQuestion {
+      flex-direction: row-reverse;
+    }
+    .log {
+      margin: 8px 0;
+      padding: 10px 15px;
+      width: 85%;
+      height: fit-content;
+      box-shadow: 0px 0px 5px $primary;
+      cursor: default;
+      &:hover {
+        box-shadow: 0px 0px 10px darken($primary, 20%);
+      }
+      &+.icon {
+        height: 2rem;
+      }
+    }
+    .logAnswer .log {
+      border-radius: 0 12px 12px 12px;
+      float: left;
+    }
+    .logQuestion .log {
+      border-radius: 12px 0px 12px 12px;
+      float: right;
+    }
+  }
+
+  .form {
+    height: 44px;
+    background: lighten($chatbox-bg, 60%);
+    width: 100%;
+    display: flex;
+    color: $text-color;
+    .input {
+      flex: 1;
+      padding: 10px 30px 10px 15px;
+      background: transparent;
+      outline: none;
+      border: 0;
+      color: $text-color;
+      &::placeholder {
+        color: lighten($text-color, 20%);
+      }
+    }
+    .submit {
+      & > .icon {
+        width: 100%;
+      }
+      &:focus {
+        outline: none;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      color: $text-color;
+      width: 42px;
+      height: 100%;
+    }
+  }
+
+  .footer {
+    height: $base-size;
+    background-color: $chatbox-bg;
+    width: 100%;
+    color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dialogIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
