@@ -1,0 +1,258 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin: 60px 0;
+
+  .heading {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 4px solid $mercury;
+
+    h3 {
+      color: $brandy-punch;
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 38px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 45px;
+      border-bottom: 4px solid $brandy-punch;
+    }
+  }
+}
+
+/* Gallery tabs */
+.menu {
+  text-align: center;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        display: inline-block;
+        margin: 0;
+        font-weight: bold;
+        background-color: $white;
+        border: 1px solid $alto;
+        width: 25%;
+
+        span {
+          color: $darkGray;
+          padding: 15px;
+          position: relative;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 16px;
+          display: block;
+          cursor: pointer;
+
+          &.active,
+          &:hover {
+            background-color: $athens-gray;
+            color: $brandy-punch;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid $brandy-punch;
+          }
+        }
+      }
+    }
+  }
+}
+
+.product {
+  position: relative;
+  height: 300px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    z-index: -5;
+  }
+
+  .buttons {
+    z-index: 1;
+    position: absolute;
+    margin-left: 10px;
+    width: 35px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /*Rating*/
+  .content {
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    right: 5px;
+    bottom:25px;
+    background-color: $white;
+    padding: 15px;
+    box-shadow: 0 6px 9px 1px rgba(0,0,0,0.35);
+
+    .cornerTopLeft {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 20px 0 0;
+      border-color: $mine-shaft-light transparent transparent transparent;
+    }
+
+    .cornerBottomRight {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 20px 20px ;
+      border-color:  transparent transparent $mine-shaft-light transparent;
+    }
+
+    h5 {
+      color: $text-color;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      span {
+        text-decoration: none;
+        color: $darkGray;
+      }
+    }
+
+    .price {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(50%, -90%);
+      background-color: $mine-shaft-light;
+      border-radius: 50%;
+      padding: 20px;
+      height: 100px;
+      width: 100px;
+      opacity: 0.7;
+
+      s {
+        font-size: 20px;
+      }
+
+      h3, h5 {
+        margin: 0;
+        color: $alto;
+      }
+    }
+  }
+}
+
+.slider {
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+    border: 1px solid $alto;
+
+    .preview, .next {
+      width: 45px;
+      background-color: black;
+      display: flex;
+      color: white;
+      font-size: bold;
+      text-align: center;
+      font-size: 20px;
+      padding-top: 15px;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: $brandy-punch;
+      }
+    }
+
+    .thumbnails {
+      width: 100%;
+      display: flex;
+      align-items: center;
+            justify-content: space-between;
+
+
+      .thumbnail {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+        margin: 2px;
+        position: relative;
+        overflow: hidden;
+        opacity : 0.5;
+
+        &.active {
+          opacity: 1;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .picture {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .details {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+
+      h3 {
+        text-transform: uppercase;
+
+        span {
+          color: #69c831;
+          font-size: 3rem;
+          font-weight: bold;
+        }
+      }
+
+      h1 {
+        color: $brandy-punch;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    }
+  }
