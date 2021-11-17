@@ -188,6 +188,16 @@
   line-height: 120px;
 }
 
+.greenBtn {
+  background-color: #69c831;
+  color: $white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $brandy-punch;
+  }
+}
+
 .blog {
   @extend .main;
   font-size: 20px;
@@ -196,6 +206,7 @@
   font-weight: 500;
   @extend %hover;
 }
+
 .greenBtn {
   background-color: #69c831;
   color: $white;
