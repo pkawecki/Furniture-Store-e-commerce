@@ -66,6 +66,7 @@
     "react-slick": "^0.28.1",
     "react-swipeable-views": "^0.14.0",
     "react-test-renderer": "^16.9.0",
+    "react-tooltip": "^4.2.21",
     "redux": "^4.0.4",
     "slick-carousel": "^1.8.1",
     "views": "^1.0.2",
