@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './Feedback.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import React from 'react';
+import SectionHeading from '../../common/SectionHeading/SectionHeading';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import styles from './Feedback.module.scss';
 
 class Feedback extends React.Component {
   state = {
@@ -27,19 +28,9 @@ class Feedback extends React.Component {
     return (
       <div className={styles.root}>
         <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>Client Feedback</h3>
-              </div>
-              <div className='col'></div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
-              </div>
-            </div>
-            <div className={styles.icon}>
-              <FontAwesomeIcon icon={faQuoteRight} />
-            </div>
+          <SectionHeading title={'client feedback'} pagesCount={pagesCount} />
+          <div className={styles.icon}>
+            <FontAwesomeIcon icon={faQuoteRight} />
           </div>
           <div className={styles.quoteArea}>
             {feedbacks.slice(activePage, activePage + 1).map(feed => (

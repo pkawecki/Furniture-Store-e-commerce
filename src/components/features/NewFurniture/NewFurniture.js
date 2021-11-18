@@ -2,9 +2,9 @@ import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import ProductCompareBar from '../ProductCompareBar/ProductCompareBarContainer';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './NewFurniture.module.scss';
-
+import SectionHeading from '../../common/SectionHeading/SectionHeading';
 import SwipeableViews from 'react-swipeable-views';
+import styles from './NewFurniture.module.scss';
 
 class NewFurniture extends React.Component {
   state = {
@@ -16,8 +16,8 @@ class NewFurniture extends React.Component {
     this.setState({ activePage: newPage });
   }
 
-  handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+  handleCategoryChange(newActiveCategory) {
+    this.setState({ activeCategory: newActiveCategory });
   }
 
   render() {
@@ -42,51 +42,16 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
-    const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
-      dots.push(
-        <li key={i}>
-          {/* eslint-disable-next-line */}
-          <a
-            onClick={() => this.handlePageChange(i)}
-            className={i === activePage ? styles.active : undefined}
-          >
-            page {i}
-          </a>
-        </li>
-      );
-    }
-
     return (
       <div className={styles.root}>
         <div className='container'>
-          <div className={styles.panelBar}>
-            <div className={'row no-gutters align-items-end ' + styles.panelBarDiv}>
-              <div className={'col-md-3 col-sm-12 ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      {/* eslint-disable-next-line */}
-                      <a
-                        className={
-                          item.id === activeCategory ? styles.active : undefined
-                        }
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
-              </div>
-            </div>
-          </div>
+          <SectionHeading
+            title={'New furniture'}
+            pagesCount={pagesCount}
+            buttonsData={categories}
+            handleChange={activeCategory => this.handleCategoryChange(activeCategory)}
+            activeButton={activeCategory}
+          />
           <SwipeableViews
             enableMouseEvents
             index={activePage}
