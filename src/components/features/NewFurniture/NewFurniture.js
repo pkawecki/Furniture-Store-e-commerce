@@ -2,9 +2,15 @@ import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import ProductCompareBar from '../ProductCompareBar/ProductCompareBarContainer';
 import PropTypes from 'prop-types';
 import React from 'react';
+<<<<<<< HEAD
 import styles from './NewFurniture.module.scss';
 
 import Swipeable from '../Swipeable/Swipeable';
+=======
+import SectionHeading from '../../common/SectionHeading/SectionHeading';
+import SwipeableViews from 'react-swipeable-views';
+import styles from './NewFurniture.module.scss';
+>>>>>>> ceebde9 (Fix css bugs in PC mode)
 
 class NewFurniture extends React.Component {
   state = {
@@ -65,6 +71,7 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
+<<<<<<< HEAD
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -130,6 +137,18 @@ class NewFurniture extends React.Component {
             pages={pages}
           />
 =======
+=======
+    return (
+      <div className={styles.root}>
+        <div className='container'>
+          <SectionHeading
+            title={'New furniture'}
+            pagesCount={pagesCount}
+            buttonsData={categories}
+            handleChange={activeCategory => this.handleCategoryChange(activeCategory)}
+            activeButton={activeCategory}
+          />
+>>>>>>> ceebde9 (Fix css bugs in PC mode)
           <SwipeableViews
             enableMouseEvents
             index={activePage}
