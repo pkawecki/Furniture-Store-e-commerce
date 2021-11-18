@@ -21,7 +21,7 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products, mode } = this.props;
+    const { categories, products, mode, productsPage } = this.props;
     const { activeCategory, activePage } = this.state;
     let productsPerPage;
 
@@ -39,6 +39,11 @@ class NewFurniture extends React.Component {
         productsPerPage = 4;
     }
 
+    if (productsPage === '4') {
+      productsPerPage = 4;
+    }
+
+    // {oldPrice ? '$ ' + oldPrice : ''}
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
@@ -114,6 +119,7 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  productsPage: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
