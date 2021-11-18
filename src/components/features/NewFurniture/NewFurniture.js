@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './NewFurniture.module.scss';
 
-import SwipeableViews from 'react-swipeable-views';
+import Swipeable from '../Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
@@ -57,6 +57,19 @@ class NewFurniture extends React.Component {
       );
     }
 
+    const pages = [];
+    for (let i = 0; i < pagesCount; i++) {
+      pages.push(
+        categoryProducts
+          .slice(i * productsPerPage, (i + 1) * productsPerPage)
+          .map(item => (
+            <div key={item.id} className='col-lg-3 col-sm-6'>
+              <ProductBox {...item} />
+            </div>
+          ))
+      );
+    }
+
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -87,24 +100,11 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <SwipeableViews
-            enableMouseEvents
-            index={activePage}
-            onChangeIndex={index => {
-              this.handlePageChange(index);
-            }}
-            slideStyle={{ overflow: 'hidden' }}
-          >
-            <div className='row'>
-              {categoryProducts
-                .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
-                .map(item => (
-                  <div key={item.id} className='col-lg-3 col-sm-6 mb-5'>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
-          </SwipeableViews>
+          <Swipeable
+            activePage={activePage}
+            handlePageChange={this.handlePageChange.bind(this)}
+            pages={pages}
+          />
         </div>
         <ProductCompareBar />
       </div>
