@@ -20,20 +20,15 @@ const Brands = ({ brands }) => {
     newRwd = 6;
   }
 
+  //sdf/sdfsfdsfds
   const pagesCount = Math.ceil(brands.length / newRwd);
-
   const leftAction = e => {
     e.preventDefault();
-    console.log('pagesCount', pagesCount);
-    console.log('activepage', activePage);
     ActivePage(activePage < pagesCount - 1 ? activePage + 1 : activePage);
   };
 
   const rightAction = e => {
     e.preventDefault();
-    console.log('pagesCount', pagesCount);
-    console.log('activepage', activePage);
-
     ActivePage(activePage > 0 ? activePage - 1 : activePage);
   };
 
@@ -58,8 +53,7 @@ const Brands = ({ brands }) => {
                 .slice(activePage * newRwd, (activePage + 1) * newRwd)
                 .map(item => (
                   <div key={item.id} className='col-2'>
-                    <p>Brand {item.id}</p>
-                    {/* <BrandsSlider {...item} /> */}
+                    <BrandsSlider {...item} />
                   </div>
                 ))}
             </div>
