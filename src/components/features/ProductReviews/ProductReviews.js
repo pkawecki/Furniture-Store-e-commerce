@@ -9,8 +9,8 @@ class ProductReviews extends React.Component {
     return (
       <div className={styles.root}>
         <div className='container'>
-          <div className={styles}>
-            <div className={styles}>
+          <div className={styles.wrapper}>
+            <div className={styles.tabs}>
               <ul>
                 <li>
                   <Button>DESCRIPTION</Button>
@@ -26,13 +26,13 @@ class ProductReviews extends React.Component {
                 </li>
               </ul>
             </div>
-            <div className={styles}>
+            <div className={styles.tabContent}>
               <p>There are no reviews fot this product.</p>
-              <p className={styles}>Add a review</p>
+              <p className={styles.add}>Add a review</p>
               <p>Your Rating</p>
-              <div className={styles}>
+              <div className={styles.rating}>
                 <p>Bad</p>
-                <div className={styles}>
+                <div className={styles.stars}>
                   {[1, 2, 3, 4, 5].map(i => (
                     <a key={i} href='/#'>
                       {i <= stars ? (
@@ -47,11 +47,11 @@ class ProductReviews extends React.Component {
               </div>
               <form>
                 <p>Your Review</p>
-                <textarea className={styles} rows='5' placeholder='' />
-                <div className={styles}>
+                <textarea className={styles.textArea} rows='5' placeholder='' />
+                <div className={styles.inputs}>
                   <input type='text' placeholder='Name*' />
                   <input type='email' placeholder='Email*' />
-                  <Button className={styles} variant='main'>
+                  <Button className={styles.continue} variant='main'>
                     CONTINUE
                   </Button>
                 </div>
