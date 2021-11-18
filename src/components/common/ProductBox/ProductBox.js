@@ -25,7 +25,6 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
-  // heart,
   viewPromoted,
   isHovered = () => null,
   category,
@@ -126,7 +125,7 @@ const ProductBox = ({
           </Button>
         </div>
         <div className={styles.price}>
-          <div className={styles.oldPrice}>$ {oldPrice}</div>
+          <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
           <Button noHover variant='small' className={styles.newPrice}>
             $ {price}
           </Button>
@@ -156,7 +155,6 @@ ProductBox.propTypes = {
   viewPromoted: PropTypes.bool,
   category: PropTypes.string,
   userRating: PropTypes.number,
-  heart: PropTypes.node,
 };
 
 export default ProductBox;
