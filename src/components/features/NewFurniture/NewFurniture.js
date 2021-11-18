@@ -45,7 +45,7 @@ class NewFurniture extends React.Component {
     }
 
     if (subpage === 'homePage') {
-      columnNumber = 'col-lg-3 col-sm-6';
+      columnNumber = 'col-lg-3 col-sm-6 mb-5';
       productsPerPage = 4;
       styleMenu = styles.panelBarDiv;
     } else if (subpage === 'pageShop') {
