@@ -45,7 +45,7 @@ class NewFurniture extends React.Component {
 
   render() {
     const { categories, products, mode, productsPage } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, activeFade } = this.state;
     let productsPerPage;
 
     switch (mode) {
