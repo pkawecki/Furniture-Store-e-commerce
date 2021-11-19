@@ -198,7 +198,7 @@ const ProductPage = (id, stars, userRating) => (
           </div>
         </div>
       </div>
-       <div>
+      <div>
         <NewFurniture productsPage='4' />
         <ProductReviews />
       </div>
