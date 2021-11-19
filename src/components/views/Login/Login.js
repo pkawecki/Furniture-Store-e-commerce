@@ -1,27 +1,43 @@
-import React from 'react';
-import styles from './Login.module.scss';
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
 
 const Login = () => {
+  const adminUser = {
+    email: 'admin',
+    password: 'pass',
+  };
+
+  const [user, setUser] = useState({ name: '', email: '' });
+  const [errorMail, setErrorMail] = useState('');
+  const [errorPass, setErrorPass] = useState('');
+
+  const Login = details => {
+    // console.log(details);
+
+    if (details.email === adminUser.email && details.password === adminUser.password) {
+      // console.log('Logged in');
+      setUser({
+        name: details.email,
+      });
+    } else if (details.email !== adminUser.email) {
+      // console.log('Details do not match!');
+
+      setErrorMail('Mail jest błędny!');
+    } else if (details.password !== adminUser.password) {
+      setErrorPass('Hasło jest błędne!');
+    }
+  };
+
+  const link = 'http://localhost:3000/';
+
   return (
-    <div className={styles.root + ' mx-auto'}>
-      <div className='container p-0'>
-        <form className='d-flex flex-column justify-content-center'>
-          <p className='m-2'>Email</p>
-          <input type='text' className='py-2 mx-2' />
-          <p className='m-2'>Hasło</p>
-          <input type='text' className='py-2 mx-2' />
-        </form>
-        <p className={'m-2 ' + styles.forgotPassword}>
-          Nie pamiętasz hasła? <a href='#'>Przypomnij hasło.</a>
-        </p>
-        <a
-          className={'d-flex justify-content-center mx-auto m-3 ' + styles.button}
-          href='/'
-        >
-          Zaloguj się
-        </a>
-      </div>
-    </div>
+    <>
+      {user.email !== '' ? (
+        window.open(link, '_self')
+      ) : (
+        <LoginForm Login={Login} errorMail={errorMail} errorPass={errorPass} />
+      )}
+    </>
   );
 };
 
