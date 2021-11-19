@@ -2,6 +2,7 @@ import Brands from '../../layout/Brands/BrandsContainer';
 import React from 'react';
 import FilterByColor from '../../features/FilterByColor/FilterByColor';
 import styles from './ProductList.module.scss';
+import FilterBySize from '../../features/FilterBySize/FilterBySize';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -22,6 +23,7 @@ const ProductList = () => (
             <span>Filters</span>
             <div className='col-12'>
               <FilterByColor />
+              <FilterBySize />
             </div>
           </div>
         </div>
