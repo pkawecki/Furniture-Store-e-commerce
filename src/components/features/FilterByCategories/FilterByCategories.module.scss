@@ -1,8 +1,18 @@
 @import "../../../styles/settings.scss";
 
+h4 {
+  border-bottom: 1px solid $mine-shaft-light;
+  line-height: 1.8;
+}
+
 .lineWrapper:hover {
   color: $brandy-punch;
   cursor: pointer;
+  padding-left: 10px;
+
+  .number {
+    background: $brandy-punch;
+  }
 }
 
 .number {
@@ -20,4 +30,5 @@
 
 .text {
   padding: 0 10px 0 10px;
+  text-align: left;
 }
