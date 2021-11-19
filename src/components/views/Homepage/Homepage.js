@@ -1,13 +1,14 @@
-import Brands from '../../layout/Brands/BrandsContainer';
+import BlogHomepage from '../../layout/BlogHomepage/BlogHomepage';
 import Chatbox from '../../features/Chatbox/Chatbox';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import Feedback from '../../layout/Feedback/FeedbackContainer';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
-import Promoted from '../../features/Promoted/Promoted';
+import Gallery from '../../features/Gallery/GalleryContainer';
+import Promoted from '../../features/Promoted/PromotedContainer';
 import React from 'react';
 import styles from './Homepage.module.scss';
 import Promotions from '../../features/Promotions/Promotions';
-import BlogHomepage from '../../layout/BlogHomepage/BlogHomepage';
+// import Brands from '../../layout/Brands/Brands';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -15,8 +16,9 @@ const Homepage = () => (
     <FeatureBoxes />
     <Promotions />
     <NewFurniture />
+    <Gallery />
     <BlogHomepage />
-    <Brands />
+    {/* <Brands />  nie działa poprawnie*/}
     <Feedback />
     <Chatbox />
   </div>
