@@ -110,7 +110,7 @@ class NewFurniture extends React.Component {
             }}
             slideStyle={{ overflow: 'hidden' }}
           >
-            <div className='row' >
+            <div className={`row ${styles.row}`} >
               {categoryProducts
                 .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
                 .map(item => (
