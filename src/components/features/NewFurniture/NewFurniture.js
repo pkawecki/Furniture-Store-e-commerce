@@ -3,6 +3,7 @@ import ProductCompareBar from '../ProductCompareBar/ProductCompareBarContainer';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './NewFurniture.module.scss';
+import variables from './NewFurniture.module.scss';
 
 import SwipeableViews from 'react-swipeable-views';
 
@@ -29,10 +30,17 @@ class NewFurniture extends React.Component {
   }
 
   handleCategoryChange(newCategory) {
+    console.log('variables', variables);
     this.setState({
-      activeCategory: newCategory,
       activeFade: true,
     });
+
+    setTimeout(() => {
+      this.setState({
+        activeCategory: newCategory,
+      });
+    }, 500);
+
     if (this.state.activeFade === false) {
       setTimeout(
         function() {
