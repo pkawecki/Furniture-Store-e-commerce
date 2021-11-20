@@ -19,12 +19,20 @@ const Login = () => {
       setUser({
         name: details.email,
       });
-    } else if (details.email !== adminUser.email) {
-      // console.log('Details do not match!');
-
-      setErrorMail('Mail jest błędny!');
-    } else if (details.password !== adminUser.password) {
-      setErrorPass('Hasło jest błędne!');
+    } else {
+      setErrorMail('');
+      setErrorPass('');
+      if (details.password !== adminUser.password) {
+        setErrorPass('Hasło jest błędne!');
+        if (details.email !== adminUser.email) {
+          setErrorMail('Mail jest błędny!');
+        }
+      } else if (details.email !== adminUser.email) {
+        setErrorMail('Mail jest błędny!');
+        if (details.password !== adminUser.password) {
+          setErrorPass('Hasło jest błędne!');
+        }
+      }
     }
   };
 
