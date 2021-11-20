@@ -7,8 +7,57 @@ import Button from '../../common/Button/Button';
 import ReactTooltip from 'react-tooltip';
 import initialState from '../../../redux/initialState';
 class Gallery extends React.Component {
+  state = {
+    activePage: 0,
+    activeCategory: 'topSeller',
+    activeFade: false,
+  };
+
+  handleCategoryChange(newCategory) {
+    this.setState({
+      activeCategory: newCategory,
+      activeFade: true,
+    });
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        1000
+      );
+    }
+  }
+
+  handlePageChange(newPage) {
+    this.setState({
+      activePage: newPage,
+      activeFade: true,
+    });
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        1000
+      );
+    }
+  }
+
+  next = event => {
+    event.preventDefault();
+    this.slider.slickNext();
+    this.pause();
+  };
+
   render() {
-    const { products } = this.props;
+    const { products} = this.props;
+    const { activeCategory } = this.state;
+    const categories = [
+      { id: 'featured', name: 'FEATURED' },
+      { id: 'topSeller', name: 'TOP SELLER' },
+      { id: 'saleOff', name: 'SALE OFF' },
+      { id: 'topRated', name: 'TOP RATED' },
+    ];
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -21,18 +70,19 @@ class Gallery extends React.Component {
               {/* Gallery tabs */}
               <div className={styles.menu}>
                 <ul>
-                  <li>
-                    <span>Featured</span>
-                  </li>
-                  <li>
-                    <span className={styles.active}>Top seller</span>
-                  </li>
-                  <li>
-                    <span>Sale off</span>
-                  </li>
-                  <li>
-                    <span>Top rated</span>
-                  </li>
+                  {categories.map(item => (
+                    <li key={item.id}>
+                      {/* eslint-disable-next-line */}
+                      <span
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
+                        onClick={() => this.handleCategoryChange(item.id)}
+                      >
+                        {item.name}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -108,7 +158,7 @@ class Gallery extends React.Component {
                   ))}
                 </div>
                 <div className={styles.next}>
-                  <p>{'>'}</p>
+                  <Button variant='carousel' onClick={this.next}>{'>'}</Button>
                 </div>
               </div>
             </div>
@@ -142,6 +192,16 @@ Gallery.propTypes = {
       oldPrice: PropTypes.number,
     })
   ),
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
+};
+Gallery.defaultProps = {
+  categories: [],
+  products: [],
 };
 
 export default Gallery;
