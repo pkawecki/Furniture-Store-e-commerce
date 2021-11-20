@@ -3,8 +3,8 @@
 .root {
   background-color: $product-box-background;
   border: 1px solid $product-box-border;
-  margin-bottom: 2rem;
   margin-top: 28px;
+
 
   .photo {
     position: relative;
@@ -49,6 +49,11 @@
       height: 40px;
       width: 100%;
       padding: 1px 5px;
+    }
+
+    .hotDealButtons {
+      margin-bottom: 110px;
+      justify-content: center;
     }
   }
 

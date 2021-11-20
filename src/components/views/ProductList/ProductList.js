@@ -1,5 +1,6 @@
+import Brands from '../../layout/Brands/BrandsContainer';
 import React from 'react';
-// import PropTypes from 'prop-types';
+import FilterByColor from '../../features/FilterByColor/FilterByColor';
 import styles from './ProductList.module.scss';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 
@@ -20,18 +21,17 @@ const ProductList = () => (
         <div className='col-3'>
           <div className={styles.filters}>
             <span>Filters</span>
+            <div className='col-12'>
+              <FilterByColor />
+            </div>
           </div>
         </div>
         <div className='col-12'>
-          <div className={styles.brands}>
-            <span>Brands</span>
-          </div>
+          <Brands />
         </div>
       </div>
     </div>
   </div>
 );
-
-// ProductList.propTypes = {};
 
 export default ProductList;

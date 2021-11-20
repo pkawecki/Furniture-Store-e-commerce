@@ -10,19 +10,42 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    activeFade: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({
+      activePage: newPage,
+      activeFade: true,
+    });
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        1000
+      );
+    }
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({
+      activeCategory: newCategory,
+      activeFade: true,
+    });
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        1000
+      );
+    }
   }
 
   render() {
     const { categories, products, mode, subpage } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, activeFade  } = this.state;
     let columnNumber;
     let productsPerPage;
     let styleMenu;
@@ -110,7 +133,7 @@ class NewFurniture extends React.Component {
             }}
             slideStyle={{ overflow: 'hidden' }}
           >
-            <div className={`row ${styles.row}`} >
+            <div className={`row ${styles.row} ${activeFade ? styles.fadeIn : styles.fadeOut}`} >
               {categoryProducts
                 .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
                 .map(item => (
@@ -148,6 +171,7 @@ NewFurniture.propTypes = {
     })
   ),
   mode: PropTypes.string,
+  activeFade: PropTypes.bool,
 };
 
 NewFurniture.defaultProps = {
