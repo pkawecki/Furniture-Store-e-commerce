@@ -49,6 +49,7 @@ class Feedback extends React.Component {
             title={'client feedback'}
             pagesCount={pagesCount}
             handlePageChange={activePage => this.setState({ activePage })}
+            activePage={activePage}
           />
           <div className={styles.icon}>
             <FontAwesomeIcon icon={faQuoteRight} />

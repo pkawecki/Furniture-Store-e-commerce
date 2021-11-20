@@ -52,10 +52,11 @@ class NewFurniture extends React.Component {
           <SectionHeading
             title={'New furniture'}
             pagesCount={pagesCount}
-            buttonsData={categories}
+            categories={categories}
             handleCategoryChange={activeCategory => this.setState({ activeCategory })}
             handlePageChange={activePage => this.setState({ activePage })}
-            activeButton={activeCategory}
+            activeCategory={activeCategory}
+            activePage={activePage}
           />
           <Swipeable
             activePage={activePage}

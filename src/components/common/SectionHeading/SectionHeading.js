@@ -7,10 +7,11 @@ import styles from './SectionHeading.module.scss';
 const SectionHeading = ({
   title,
   pagesCount,
-  buttonsData,
-  handlePageChange = () => null,
-  handleCategoryChange = () => null,
-  activeButton,
+  categories,
+  handlePageChange,
+  handleCategoryChange,
+  activeCategory,
+  activePage,
 }) => {
   function generateMenuButtons(inputArray = [], activeItem = null) {
     return (
@@ -38,12 +39,13 @@ const SectionHeading = ({
           <div className={'col-md-4 col-sm-12 ' + styles.title}>
             <h3>{title}</h3>
           </div>
-          {generateMenuButtons(buttonsData, activeButton)}
+          {generateMenuButtons(categories, activeCategory)}
         </div>
         <div className={styles.paginationWrapper}>
           <div className={'flex-shrink'}>
             <PaginationDots
               dotsCount={pagesCount}
+              activeDot={activePage}
               handleChange={pageIndex => handlePageChange(pageIndex)}
             />
           </div>
@@ -56,10 +58,21 @@ const SectionHeading = ({
 SectionHeading.propTypes = {
   pagesCount: PropTypes.number,
   title: PropTypes.string,
+  activePage: PropTypes.number,
   handleCategoryChange: PropTypes.func,
   handlePageChange: PropTypes.func,
-  activeButton: PropTypes.string,
-  buttonsData: PropTypes.array,
+  activeCategory: PropTypes.string,
+  categories: PropTypes.array,
+};
+
+SectionHeading.defaultProps = {
+  pagesCount: 1,
+  activePage: 0,
+  title: 'Default title',
+  categories: [],
+  activeCategory: 'Default category',
+  handleCategoryChange: () => null,
+  handlePageChange: () => null,
 };
 
 export default SectionHeading;
