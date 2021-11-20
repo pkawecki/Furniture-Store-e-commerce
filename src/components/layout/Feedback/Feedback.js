@@ -15,6 +15,32 @@ class Feedback extends React.Component {
     const { activePage } = this.state;
     const { feedbacks } = this.props;
     const pagesCount = Math.ceil(feedbacks.length);
+    const pages = [];
+
+    for (let i = 0; i < pagesCount; i++) {
+      pages.push(
+        feedbacks.slice(i, i + 1).map(feed => (
+          <div key={feed.id} className='col text-center'>
+            <div className='row justify-content-md-center'>
+              <p className={styles.quoteBox}>{feed.clientText}</p>
+            </div>
+            <div className='row justify-content-md-center'>
+              <div className='col col-lg-1'>
+                <img
+                  className={styles.img}
+                  src={feed.clientImage}
+                  alt='client avatar'
+                />
+              </div>
+              <div className={'col col-lg-2 ' + styles.desc}>
+                <h6>{feed.clientName}</h6>
+                <p>Satisfied Client</p>
+              </div>
+            </div>
+          </div>
+        ))
+      );
+    }
 
     return (
       <div className={styles.root}>
@@ -28,26 +54,11 @@ class Feedback extends React.Component {
             <FontAwesomeIcon icon={faQuoteRight} />
           </div>
           <div className={styles.quoteArea}>
-            {feedbacks.slice(activePage, activePage + 1).map(feed => (
-              <div key={feed.id} className='col text-center'>
-                <div className='row justify-content-md-center'>
-                  <p className={styles.quoteBox}>{feed.clientText}</p>
-                </div>
-                <div className='row justify-content-md-center'>
-                  <div className='col col-lg-1'>
-                    <img
-                      className={styles.img}
-                      src={feed.clientImage}
-                      alt='client avatar'
-                    />
-                  </div>
-                  <div className={'col col-lg-2 ' + styles.desc}>
-                    <h6>{feed.clientName}</h6>
-                    <p>Satisfied Client</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <Swipeable
+              activePage={activePage}
+              handlePageChange={activePage => this.setState({ activePage })}
+              pages={pages}
+            />
           </div>
         </div>
       </div>

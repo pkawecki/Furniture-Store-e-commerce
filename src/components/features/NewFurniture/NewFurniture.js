@@ -10,7 +10,6 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    activeFade: false,
   };
 
   render() {
@@ -34,7 +33,6 @@ class NewFurniture extends React.Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
-
     const pages = [];
     for (let i = 0; i < pagesCount; i++) {
       pages.push(
