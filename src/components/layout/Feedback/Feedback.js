@@ -2,33 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 import SectionHeading from '../../common/SectionHeading/SectionHeading';
+import Swipeable from '../../features/Swipeable/Swipeable';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './Feedback.module.scss';
 
 class Feedback extends React.Component {
   state = {
     activePage: 0,
-    activeFade: false,
   };
-
-  handlePageChange(newPage) {
-    this.setState({
-      activePage: newPage,
-      activeFade: true,
-    });
-    this.handleFade(this.state.activeFade);
-  }
-
-  handleFade(isFadeActive) {
-    if (!isFadeActive) {
-      setTimeout(
-        function() {
-          this.setState({ activeFade: false });
-        }.bind(this),
-        1000
-      );
-    }
-  }
 
   render() {
     const { activePage } = this.state;
@@ -41,7 +22,7 @@ class Feedback extends React.Component {
           <SectionHeading
             title={'client feedback'}
             pagesCount={pagesCount}
-            handleChange={activePage => this.handlePageChange(activePage)}
+            handlePageChange={activePage => this.setState({ activePage })}
           />
           <div className={styles.icon}>
             <FontAwesomeIcon icon={faQuoteRight} />

@@ -8,8 +8,8 @@ const SectionHeading = ({
   title,
   pagesCount,
   buttonsData,
-  handleChange = () => null,
-  handleCategoryChange,
+  handlePageChange = () => null,
+  handleCategoryChange = () => null,
   activeButton,
 }) => {
   function generateMenuButtons(inputArray = [], activeItem = null) {
@@ -44,7 +44,7 @@ const SectionHeading = ({
           <div className={'flex-shrink'}>
             <PaginationDots
               dotsCount={pagesCount}
-              handleChange={pageIndex => handleChange(pageIndex)}
+              handleChange={pageIndex => handlePageChange(pageIndex)}
             />
           </div>
         </div>
@@ -57,7 +57,7 @@ SectionHeading.propTypes = {
   pagesCount: PropTypes.number,
   title: PropTypes.string,
   handleCategoryChange: PropTypes.func,
-  handleChange: PropTypes.func,
+  handlePageChange: PropTypes.func,
   activeButton: PropTypes.string,
   buttonsData: PropTypes.array,
 };
