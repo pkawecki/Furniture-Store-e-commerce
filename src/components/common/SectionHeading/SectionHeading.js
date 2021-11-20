@@ -1,13 +1,15 @@
+import React, { useState } from 'react';
+
 import PaginationDots from '../../common/PaginationDots/PaginationDots';
 import PropTypes from 'prop-types';
-import React from 'react';
 import styles from './SectionHeading.module.scss';
 
 const SectionHeading = ({
   title,
   pagesCount,
   buttonsData,
-  handleChange,
+  handleChange = () => null,
+  handleCategoryChange,
   activeButton,
 }) => {
   function generateMenuButtons(inputArray = [], activeItem = null) {
@@ -16,10 +18,9 @@ const SectionHeading = ({
         <ul>
           {inputArray.map(item => (
             <li key={item.id}>
-              {/* eslint-disable-next-line */}
               <a
                 className={item.id === activeItem ? styles.active : null}
-                onClick={() => handleChange(item.id)}
+                onClick={() => handleCategoryChange(item.id)}
               >
                 {item.name}
               </a>
@@ -41,7 +42,10 @@ const SectionHeading = ({
         </div>
         <div className={styles.paginationWrapper}>
           <div className={'flex-shrink'}>
-            <PaginationDots dotsCount={pagesCount} />
+            <PaginationDots
+              dotsCount={pagesCount}
+              handleChange={pageIndex => handleChange(pageIndex)}
+            />
           </div>
         </div>
       </div>
@@ -52,6 +56,7 @@ const SectionHeading = ({
 SectionHeading.propTypes = {
   pagesCount: PropTypes.number,
   title: PropTypes.string,
+  handleCategoryChange: PropTypes.func,
   handleChange: PropTypes.func,
   activeButton: PropTypes.string,
   buttonsData: PropTypes.array,

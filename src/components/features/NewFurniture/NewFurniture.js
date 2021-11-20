@@ -24,14 +24,7 @@ class NewFurniture extends React.Component {
       activePage: newPage,
       activeFade: true,
     });
-    if (this.state.activeFade === false) {
-      setTimeout(
-        function() {
-          this.setState({ activeFade: false });
-        }.bind(this),
-        1000
-      );
-    }
+    this.handleFade(this.state.activeFade);
   }
 
   handleCategoryChange(newActiveCategory) {
@@ -39,7 +32,11 @@ class NewFurniture extends React.Component {
       activeCategory: newActiveCategory,
       activeFade: true,
     });
-    if (this.state.activeFade === false) {
+    this.handleFade(this.state.activeFade);
+  }
+
+  handleFade(isFadeActive) {
+    if (!isFadeActive) {
       setTimeout(
         function() {
           this.setState({ activeFade: false });
@@ -145,7 +142,10 @@ class NewFurniture extends React.Component {
             title={'New furniture'}
             pagesCount={pagesCount}
             buttonsData={categories}
-            handleChange={activeCategory => this.handleCategoryChange(activeCategory)}
+            handleCategoryChange={activeCategory =>
+              this.handleCategoryChange(activeCategory)
+            }
+            handleChange={activePage => this.handlePageChange(activePage)}
             activeButton={activeCategory}
           />
 >>>>>>> ceebde9 (Fix css bugs in PC mode)

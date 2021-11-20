@@ -8,27 +8,41 @@ import styles from './Feedback.module.scss';
 class Feedback extends React.Component {
   state = {
     activePage: 0,
+    activeFade: false,
   };
+
+  handlePageChange(newPage) {
+    this.setState({
+      activePage: newPage,
+      activeFade: true,
+    });
+    this.handleFade(this.state.activeFade);
+  }
+
+  handleFade(isFadeActive) {
+    if (!isFadeActive) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        1000
+      );
+    }
+  }
 
   render() {
     const { activePage } = this.state;
     const { feedbacks } = this.props;
     const pagesCount = Math.ceil(feedbacks.length);
 
-    const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
-      dots.push(
-        <li key={i}>
-          {/* eslint-disable-next-line */}
-          <a className={i === activePage ? styles.active : ''}>page {i}</a>
-        </li>
-      );
-    }
-
     return (
       <div className={styles.root}>
         <div className='container'>
-          <SectionHeading title={'client feedback'} pagesCount={pagesCount} />
+          <SectionHeading
+            title={'client feedback'}
+            pagesCount={pagesCount}
+            handleChange={activePage => this.handlePageChange(activePage)}
+          />
           <div className={styles.icon}>
             <FontAwesomeIcon icon={faQuoteRight} />
           </div>
