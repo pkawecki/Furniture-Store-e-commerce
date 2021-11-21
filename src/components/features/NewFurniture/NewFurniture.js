@@ -46,7 +46,7 @@ class NewFurniture extends React.Component {
     const {
       categories,
       products,
-      mode,
+      mode, //nie działa po mergu
       /*productsPage*/ addRating,
       subpage,
     } = this.props;
