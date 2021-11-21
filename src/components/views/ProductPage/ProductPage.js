@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Banner from '../../features/Banner/Banner';
+import Chatbox from '../../features/Chatbox/Chatbox';
 import NavBar from '../../features/NavBar/NavBar';
 import styles from './ProductPage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,9 +23,12 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import Button from '../../common/Button/Button';
 import RatingStars from '../../common/RatingStars/RatingStarsContainer';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+import ProductReviews from '../../features/ProductReviews/ProductReviews';
 
 const ProductPage = (id, stars, userRating) => (
   <div className={styles.root}>
+    <Chatbox />
     <Banner />
     <NavBar />
     <div className={'container ' + styles.pageWrapper}>
@@ -140,6 +144,7 @@ const ProductPage = (id, stars, userRating) => (
               <p>Availability:</p>
               <div>In Stock</div>
             </div>
+
             <div className={'row ' + styles.availabilityContainer}>
               <p>Category:</p>
               <div>Furniture</div>
@@ -194,6 +199,10 @@ const ProductPage = (id, stars, userRating) => (
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <NewFurniture productsPage='4' />
+        <ProductReviews />
       </div>
     </div>
   </div>

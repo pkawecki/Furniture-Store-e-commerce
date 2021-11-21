@@ -7,7 +7,7 @@
   height: calc(var(--vh, 1vh) * 10);
   margin: 0 auto;
   padding: 0;
-    background: {
+  background: {
     color: $product-box-photo-background;
     size: contain;
     position: center;
@@ -32,7 +32,8 @@
     height: 100%;
   }
 
-  .iconContainer, img {
+  .iconContainer,
+  img {
     transition: $transition;
   }
 
@@ -44,5 +45,51 @@
     img {
       opacity: 0.8;
     }
+  }
+}
+
+.description {
+  background-color: $mercury;
+  margin: 5px 0;
+  padding: 0 5px;
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  > * {
+    margin: 5px 0;
+  }
+
+  h5 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .favIcon {
+    text-align: center;
+  }
+
+  .favorites {
+    background-color: $primary;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .oldPrice {
+    color: #a5a5a5;
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: line-through #292929;
+    padding-right: 6px;
+  }
+
+  .newPrice {
+    font-size: 18px;
   }
 }

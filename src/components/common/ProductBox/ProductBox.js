@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import React, { useState } from 'react';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,7 +27,6 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
-  // heart,
   viewPromoted,
   isHovered = () => null,
   category,
@@ -126,7 +127,7 @@ const ProductBox = ({
           </Button>
         </div>
         <div className={styles.price}>
-          <div className={styles.oldPrice}>$ {oldPrice}</div>
+          <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
           <Button noHover variant='small' className={styles.newPrice}>
             $ {price}
           </Button>

@@ -1,6 +1,7 @@
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 
 const NavBar = () => (
@@ -8,7 +9,7 @@ const NavBar = () => (
     <div className='col-12'>
       <div className={'row ' + styles.NavBar}>
         <div>
-          <a href='/'>Home</a>
+          <NavLink to='/'>Home</NavLink>
         </div>
         <div>
           <p>

@@ -19,7 +19,6 @@ const Homepage = () => (
     <NewFurniture />
     <Gallery />
     <BlogHomepage />
-    {/* <Brands />  nie działa poprawnie*/}
     <Feedback />
     <Chatbox />
   </div>
