@@ -20,7 +20,7 @@ class ProductCompareBar extends React.Component {
             <div className='row'>
               <div className='row col-10'>
                 {compareList.map(product => (
-                  <div key={product.id} className='col-3'>
+                  <div key={product.id} className={`col-3 ${styles.compareListColumn}`}>
                     <ProductCompareBox {...product} remove={removeFromCompare} />
                   </div>
                 ))}

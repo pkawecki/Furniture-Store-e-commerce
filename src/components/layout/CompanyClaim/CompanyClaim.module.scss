@@ -5,6 +5,11 @@
   padding: 1rem 0;
 }
 
+img {
+  object-fit: contain;
+  image-rendering: auto;
+}
+
 .root {
   background-color: $header-bg;
 
@@ -29,6 +34,10 @@
         margin-right: 0.8rem;
       }
     }
+  }
+
+  img {
+    max-width: 220px;
   }
 
   .cart {
@@ -79,7 +88,6 @@
         .cartIcon {
           background-color: lighten($primary, $onhover-background-lighten-percentage);
           @extend %hover;
-
         }
       }
     }

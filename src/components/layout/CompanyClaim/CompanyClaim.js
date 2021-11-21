@@ -2,6 +2,7 @@ import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './CompanyClaim.module.scss';
 
 const CompanyClaim = () => (
@@ -9,9 +10,9 @@ const CompanyClaim = () => (
     <div className='container'>
       <div className='row' id={styles.rowCompanyClaim}>
         <div className='col-6 col-md-4 text-center'>
-          <a href='#top'>
+          <NavLink to='/'>
             <img src='/images/logo.png' alt='Bazar' />
-          </a>
+          </NavLink>
         </div>
         <div className={`col text-right ${styles.cart}`}>
           <a href='/cart' className={styles.cartBox}>

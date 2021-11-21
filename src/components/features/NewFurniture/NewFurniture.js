@@ -13,22 +13,35 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, mode } = this.props;
+    const { categories, products, mode, subpage } = this.props;
     const { activeCategory, activePage } = this.state;
+    let columnNumber;
     let productsPerPage;
+    let styleMenu;
 
     switch (mode) {
       case 'mobile':
+        columnNumber = 'col-6';
         productsPerPage = 1;
         break;
       case 'tablet':
+        columnNumber = 'col-4';
         productsPerPage = 2;
         break;
       case 'desktop':
+        columnNumber = 'col-3';
         productsPerPage = 8;
         break;
       default:
         productsPerPage = 4;
+    }
+
+    if (subpage === 'homePage') {
+      columnNumber = 'col-lg-3 col-sm-6 mb-5';
+      productsPerPage = 4;
+    } else if (subpage === 'pageShop') {
+      columnNumber = 'col-lg-4 col-sm-6';
+      productsPerPage = 12;
     }
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -39,7 +52,7 @@ class NewFurniture extends React.Component {
         categoryProducts
           .slice(i * productsPerPage, (i + 1) * productsPerPage)
           .map(item => (
-            <div key={item.id} className='col-lg-3 col-sm-6'>
+            <div key={item.id} className={columnNumber}>
               <ProductBox {...item} />
             </div>
           ))
@@ -57,6 +70,7 @@ class NewFurniture extends React.Component {
             handlePageChange={activePage => this.setState({ activePage })}
             activeCategory={activeCategory}
             activePage={activePage}
+            subpage={subpage}
           />
           <Swipeable
             activePage={activePage}
@@ -72,6 +86,8 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  productsPage: PropTypes.string,
+  subpage: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

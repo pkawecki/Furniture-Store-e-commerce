@@ -12,7 +12,9 @@ const SectionHeading = ({
   handleCategoryChange,
   activeCategory,
   activePage,
+  subpage,
 }) => {
+  let styleMenu;
   function generateMenuButtons(inputArray = [], activeItem = null) {
     return (
       <div className={'col-md-9 col-sm-12 ' + styles.menu}>
@@ -32,11 +34,17 @@ const SectionHeading = ({
     );
   }
 
+  if (subpage === 'homePage') {
+    styleMenu = styles.panelBarDiv;
+  } else if (subpage === 'pageShop') {
+    styleMenu = styles.hiddenMenu;
+  }
+
   return (
     <div className={styles.root}>
-      <div className={'row no-gutters align-items-end'}>
-        <div className={'col-9 d-flex ' + styles.titleWrapper}>
-          <div className={'col-md-4 col-sm-12 ' + styles.title}>
+      <div className={`row no-gutters align-items-end ${styleMenu}`}>
+        <div className={`col-9 d-flex ${styles.titleWrapper}`}>
+          <div className={`col-md-4 col-sm-12 ${styles.title}`}>
             <h3>{title}</h3>
           </div>
           {generateMenuButtons(categories, activeCategory)}
@@ -63,6 +71,7 @@ SectionHeading.propTypes = {
   handlePageChange: PropTypes.func,
   activeCategory: PropTypes.string,
   categories: PropTypes.array,
+  subpage: PropTypes.string,
 };
 
 SectionHeading.defaultProps = {
@@ -70,6 +79,7 @@ SectionHeading.defaultProps = {
   activePage: 0,
   title: 'Default title',
   categories: [],
+  subpage: 'homePage',
   activeCategory: 'Default category',
   handleCategoryChange: () => null,
   handlePageChange: () => null,

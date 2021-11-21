@@ -7,11 +7,13 @@
     padding-right: 10px;
     padding-top: 20px;
     font-size: 16px;
-    a{
+    a,
+    NavLink {
       color: $navbar-link;
     }
 
-    a.active{
+    a.active,
+    NavLink {
       font-weight: 500;
       color: $navbar-active-link;
     }
@@ -20,5 +22,4 @@
   div:first-child {
     padding-left: 20px;
   }
-
 }
