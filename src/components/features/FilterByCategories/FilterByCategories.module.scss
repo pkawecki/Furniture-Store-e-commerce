@@ -1,0 +1,34 @@
+@import "../../../styles/settings.scss";
+
+h4 {
+  border-bottom: 1px solid $mine-shaft-light;
+  line-height: 1.8;
+}
+
+.lineWrapper:hover {
+  color: $brandy-punch;
+  cursor: pointer;
+  padding-left: 10px;
+
+  .number {
+    background: $brandy-punch;
+  }
+}
+
+.number {
+  background-color: $mine-shaft-light;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  color: $white;
+  padding: 2px 0 0 7px;
+}
+
+.icon {
+  padding-top: 5px;
+}
+
+.text {
+  padding: 0 10px 0 10px;
+  text-align: left;
+}
