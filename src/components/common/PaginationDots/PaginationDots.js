@@ -2,18 +2,17 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './PaginationDots.module.scss';
 
-const PaginationDots = ({ dotsCount = 0 }) => {
-  function generateDotsList(dotsNum) {
+const PaginationDots = ({ activeDot, dotsCount, handleChange }) => {
+  function generateDotsList({ dotsCount, activeDot }) {
     let dotsList = [];
-    for (let i = 0; i < dotsNum; i++) {
+    for (let dotNum = 0; dotNum < dotsCount; dotNum++) {
       dotsList.push(
-        <li key={i}>
-          {/* eslint-disable-next-line */}
+        <li key={dotNum}>
           <a
-          /* onClick={() => this.handlePageChange(i)}
-            className={i === activePage ? styles.active : undefined} */
+            onClick={() => handleDotClick(dotNum)}
+            className={dotNum === activeDot ? styles.active : null}
           >
-            page {i}
+            page {dotNum}
           </a>
         </li>
       );
@@ -21,16 +20,28 @@ const PaginationDots = ({ dotsCount = 0 }) => {
     return dotsList;
   }
 
+  function handleDotClick(index) {
+    handleChange(index);
+    generateDotsList({ dotsCount, index });
+  }
+
   return (
     <div className={styles.root}>
-      <ul>{generateDotsList(dotsCount)}</ul>
+      <ul>{generateDotsList({ dotsCount, activeDot })}</ul>
     </div>
   );
 };
 
 PaginationDots.propTypes = {
+  activeDot: PropTypes.number,
   dotsCount: PropTypes.number,
-  handlePageChange: PropTypes.func,
+  handleChange: PropTypes.func,
+};
+
+PaginationDots.defaultProps = {
+  activeDot: 0,
+  dotsCount: 1,
+  handleChange: () => null,
 };
 
 export default PaginationDots;

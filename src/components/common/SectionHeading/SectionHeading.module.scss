@@ -41,6 +41,10 @@
     }
   }
 
+  .hiddenMenu {
+    display: none;
+  }
+
   .menu {
     ul {
       float: right;
@@ -107,6 +111,37 @@
           &:hover {
             background-color: $new-fur-active-dot;
             @extend %hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .root{
+    div{
+      padding: 10px 0 10px 0;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .root {
+    .panelBarDiv {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .root {
+    .menu {
+      ul {
+        li {
+          a {
+            font-size: 14px;
           }
         }
       }

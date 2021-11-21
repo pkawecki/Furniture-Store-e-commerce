@@ -1,25 +1,29 @@
+import React, { useState } from 'react';
+
 import PaginationDots from '../../common/PaginationDots/PaginationDots';
 import PropTypes from 'prop-types';
-import React from 'react';
 import styles from './SectionHeading.module.scss';
 
 const SectionHeading = ({
   title,
   pagesCount,
-  buttonsData,
-  handleChange,
-  activeButton,
+  categories,
+  handlePageChange,
+  handleCategoryChange,
+  activeCategory,
+  activePage,
+  subpage,
 }) => {
+  let styleMenu;
   function generateMenuButtons(inputArray = [], activeItem = null) {
     return (
       <div className={'col-md-9 col-sm-12 ' + styles.menu}>
         <ul>
           {inputArray.map(item => (
             <li key={item.id}>
-              {/* eslint-disable-next-line */}
               <a
                 className={item.id === activeItem ? styles.active : null}
-                onClick={() => handleChange(item.id)}
+                onClick={() => handleCategoryChange(item.id)}
               >
                 {item.name}
               </a>
@@ -30,18 +34,28 @@ const SectionHeading = ({
     );
   }
 
+  if (subpage === 'homePage') {
+    styleMenu = styles.panelBarDiv;
+  } else if (subpage === 'pageShop') {
+    styleMenu = styles.hiddenMenu;
+  }
+
   return (
     <div className={styles.root}>
-      <div className={'row no-gutters align-items-end'}>
-        <div className={'col-9 d-flex ' + styles.titleWrapper}>
-          <div className={'col-md-4 col-sm-12 ' + styles.title}>
+      <div className={`row no-gutters align-items-end ${styleMenu}`}>
+        <div className={`col-9 d-flex ${styles.titleWrapper}`}>
+          <div className={`col-md-4 col-sm-12 ${styles.title}`}>
             <h3>{title}</h3>
           </div>
-          {generateMenuButtons(buttonsData, activeButton)}
+          {generateMenuButtons(categories, activeCategory)}
         </div>
         <div className={styles.paginationWrapper}>
           <div className={'flex-shrink'}>
-            <PaginationDots dotsCount={pagesCount} />
+            <PaginationDots
+              dotsCount={pagesCount}
+              activeDot={activePage}
+              handleChange={pageIndex => handlePageChange(pageIndex)}
+            />
           </div>
         </div>
       </div>
@@ -52,9 +66,23 @@ const SectionHeading = ({
 SectionHeading.propTypes = {
   pagesCount: PropTypes.number,
   title: PropTypes.string,
-  handleChange: PropTypes.func,
-  activeButton: PropTypes.string,
-  buttonsData: PropTypes.array,
+  activePage: PropTypes.number,
+  handleCategoryChange: PropTypes.func,
+  handlePageChange: PropTypes.func,
+  activeCategory: PropTypes.string,
+  categories: PropTypes.array,
+  subpage: PropTypes.string,
+};
+
+SectionHeading.defaultProps = {
+  pagesCount: 1,
+  activePage: 0,
+  title: 'Default title',
+  categories: [],
+  subpage: 'homePage',
+  activeCategory: 'Default category',
+  handleCategoryChange: () => null,
+  handlePageChange: () => null,
 };
 
 export default SectionHeading;
