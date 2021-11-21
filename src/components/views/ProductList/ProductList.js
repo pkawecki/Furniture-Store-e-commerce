@@ -1,8 +1,8 @@
 import Brands from '../../layout/Brands/BrandsContainer';
 import React from 'react';
 import FilterByPrice from '../../features/FilterByPrice/FlterByPrice';
-// import PropTypes from 'prop-types';
 import FilterByColor from '../../features/FilterByColor/FilterByColor';
+import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
 import styles from './ProductList.module.scss';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 
@@ -24,11 +24,10 @@ const ProductList = () => (
           <div className={styles.filters}>
             <span>Filters</span>
             <div className='col-12'>
+              <FilterByCategories />
               <FilterByPrice />
-            </div>  
-            <div className='col-12'>
               <FilterByColor />
-            </div>
+            </div>  
           </div>
         </div>
         <div className='col-12'>
