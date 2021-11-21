@@ -3,7 +3,8 @@
 .root {
   background-color: $product-box-background;
   border: 1px solid $product-box-border;
-  margin-bottom: 2rem;
+  margin-top: 28px;
+
 
   .photo {
     position: relative;
@@ -49,6 +50,11 @@
       width: 100%;
       padding: 1px 5px;
     }
+
+    .hotDealButtons {
+      margin-bottom: 110px;
+      justify-content: center;
+    }
   }
 
   .content {
@@ -61,6 +67,7 @@
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
+      word-spacing: 1.8px;
     }
   }
 

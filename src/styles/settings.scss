@@ -6,6 +6,7 @@ $mine-shaft: #363636;
 $brandy-punch: #d58e32;
 $white: #ffffff;
 $nobel: #b6b6b6;
+$blue: #4169E1;
 $mercury: #e1e1e1;
 $athens-gray: #f4f5f7;
 $alto: #d8d8d8;
@@ -54,6 +55,11 @@ $product-box-sale-icon-font: $white;
 $stars-color: $mine-shaft-light;
 $under-stars-line-color: $mine-shaft-light;
 $under-stars-thick-line-color: $brandy-punch;
+
+/*Product Page*/
+$product-page-bg-dark: $tundora;
+$product-page-bg-light: $mercury;
+$product-page-bg-photo: $nobel;
 
 /* Promotion Product*/
 $topper-background: $darkGray;
@@ -112,6 +118,14 @@ $chatbox-bg: $mine-shaft;
 /*Topbar*/
 $topbar-font-color: $white;
 
+/* SEARCH */
+$search-border-bottom: $mercury;
+$search-header: $brandy-punch;
+$search-underscore: $brandy-punch;
+$search-inactive-dot: $mercury;
+$search-active-dot: $brandy-punch;
+$search-background: $white;
+
 /* POPUP */
 $popup-name-color: $brandy-punch;
 $popup-background-color: $mercury;
@@ -140,6 +154,17 @@ $lastest-blog-inactive-dot: $mercury;
 $lastest-blog-active-dot: $brandy-punch;
 $lastest-blog-background: $white;
 $lastest-blog-title: $brandy-punch;
+
+/* NAVBAR PRODUCT PAGE*/
+$navbar-backgroung: $mercury;
+$navbar-link: $darkGray;
+$navbar-active-link: $brandy-punch;
+
+/* BANNER PRODUCT PAGE */
+$banner-background: $tundora;
+$banner-title: $white;
+$banner-subtitle: $white;
+$banner-discount: $brandy-punch;
 
 /* Global hover animations*/
 %hover {

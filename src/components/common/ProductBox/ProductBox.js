@@ -1,14 +1,14 @@
+import React, { useState } from 'react';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import styles from './ProductBox.module.scss';
-import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
 import { Link } from 'react-router-dom';
+import ProductPopup from '../../features/ProductPopup/ProcuctPopup';
+import PropTypes from 'prop-types';
 import RatingStars from '../RatingStars/RatingStarsContainer';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import styles from './ProductBox.module.scss';
 
 const ProductBox = ({
   name,
@@ -25,7 +25,8 @@ const ProductBox = ({
   addToCompare,
   compareCount,
   compareList,
-  heart,
+  viewPromoted,
+  isHovered = () => null,
   category,
   userRating,
 }) => {
@@ -37,6 +38,23 @@ const ProductBox = ({
     }
   };
 
+  const setFavorite = favorites => {
+    favorites && localStorage.setItem(id + '.fav', true);
+  };
+  setFavorite(favorites);
+
+  const handleFavClick = e => {
+    e.preventDefault();
+    if (Object.keys(localStorage).indexOf(id + '.fav') > -1) {
+      console.log('been present, is removed', id);
+      removeFromFavorites({ id });
+      localStorage.removeItem(id + '.fav');
+    } else {
+      console.log('been absent, is added', id);
+      addToFavorites({ id });
+    }
+  };
+
   const [showPopup, togglePopup] = useState(false);
 
   const handlePopup = event => {
@@ -45,16 +63,20 @@ const ProductBox = ({
   };
 
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => isHovered(true)}
+      onMouseLeave={() => isHovered(false)}
+    >
       <div className={styles.photo}>
         <Link to={`/product/${id}`}>
           <img src={image} alt='arb bed' />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small' onClick={event => handlePopup(event)}>
-            Quick View
-          </Button>
+        <div
+          className={`${styles.buttons} ${viewPromoted ? styles.hotDealButtons : null}`}
+        >
+          {!viewPromoted ? <Button variant='small'>Quick View</Button> : null}
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -84,10 +106,11 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            className={favorites ? styles.favorites : styles.outlines}
+            className={
+              localStorage.getItem(id + '.fav') ? styles.favorites : styles.outlines
+            }
             onClick={e => {
-              e.preventDefault();
-              favorites ? removeFromFavorites({ id }) : addToFavorites({ id });
+              handleFavClick(e);
             }}
             variant='outline'
           >
@@ -102,7 +125,7 @@ const ProductBox = ({
           </Button>
         </div>
         <div className={styles.price}>
-          <div className={styles.oldPrice}>{oldPrice}</div>
+          <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
           <Button noHover variant='small' className={styles.newPrice}>
             $ {price}
           </Button>
@@ -124,10 +147,12 @@ ProductBox.propTypes = {
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
   id: PropTypes.string,
-  oldPrice: PropTypes.string,
+  oldPrice: PropTypes.number,
   addToCompare: PropTypes.func,
   compareCount: PropTypes.number,
   compareList: PropTypes.array,
+  isHovered: PropTypes.func,
+  viewPromoted: PropTypes.bool,
   category: PropTypes.string,
   userRating: PropTypes.number,
   heart: PropTypes.node,

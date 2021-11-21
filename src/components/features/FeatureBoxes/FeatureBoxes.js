@@ -13,7 +13,7 @@ import styles from './FeatureBoxes.module.scss';
 const FeatureBoxes = () => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row'>
+      <div className={`row ${styles.rowOfFeatureBoxes}`}>
         <div className={`col-6 col-md-3 ${styles.featureCol}`}>
           <a href='#top'>
             <FeatureBox icon={faTruck}>
