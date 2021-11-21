@@ -1,0 +1,39 @@
+@import "../../../styles/settings.scss";
+
+@media (max-width: 768px){
+  .root{
+    .panelBar{
+      div{
+        padding: 10px 0 10px 0;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 568px) {
+  .root{
+    .panelBar{
+      .panelBarDiv{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px){
+  .root{
+    .panelBar{
+      .menu{
+        ul{
+          li{
+            a{
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
