@@ -44,8 +44,8 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products, mode, subpage } = this.props;
-    const { activeCategory, activePage, activeFade  } = this.state;
+    const { categories, products, mode, productsPage, subpage } = this.props;
+    const { activeCategory, activePage, activeFade } = this.state;
     let columnNumber;
     let productsPerPage;
     let styleMenu;
@@ -152,6 +152,7 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  productsPage: PropTypes.string,
   subpage: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({

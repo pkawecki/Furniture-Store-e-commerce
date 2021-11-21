@@ -22,6 +22,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import Button from '../../common/Button/Button';
 import RatingStars from '../../common/RatingStars/RatingStarsContainer';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import ProductReviews from '../../features/ProductReviews/ProductReviews';
 
 const ProductPage = (id, stars, userRating) => (
@@ -198,6 +199,7 @@ const ProductPage = (id, stars, userRating) => (
         </div>
       </div>
       <div>
+        <NewFurniture productsPage='4' />
         <ProductReviews />
       </div>
     </div>
