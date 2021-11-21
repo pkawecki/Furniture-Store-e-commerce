@@ -155,6 +155,7 @@ ProductBox.propTypes = {
   viewPromoted: PropTypes.bool,
   category: PropTypes.string,
   userRating: PropTypes.number,
+  heart: PropTypes.node,
 };
 
 export default ProductBox;
