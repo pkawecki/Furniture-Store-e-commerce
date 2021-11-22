@@ -7,6 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import styles from './Cart.module.scss';
@@ -21,13 +22,12 @@ const Button = styled.button`
   font-family: monospace;
 `;
 
-//dfg
-const CompanyClaim = () => (
+const Cart = ({ cartProducts }) => (
   <div className={styles.root}>
     <div className={styles.containerWrapper}>
       <div className='container'>
         <div className={`row ${styles.row}`}>
-          <p>The Templace</p>
+          <p>The Template</p>
         </div>
       </div>
     </div>
@@ -199,4 +199,8 @@ const CompanyClaim = () => (
   </div>
 );
 
-export default CompanyClaim;
+Cart.propTypes = {
+  cartProducts: PropTypes.array,
+};
+
+export default Cart;
