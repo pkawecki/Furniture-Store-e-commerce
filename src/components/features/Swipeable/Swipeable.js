@@ -27,5 +27,6 @@ Swipeable.propTypes = {
   activePage: PropTypes.number,
   handlePageChange: PropTypes.func,
   pages: PropTypes.array,
+  // pages.map: PropTypes.node,
 };
 export default Swipeable;
