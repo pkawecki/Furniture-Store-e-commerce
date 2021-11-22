@@ -3,6 +3,7 @@
 .root {
   padding: $base-padding;
   height: 600px;
+  margin-bottom: 150px;
 
   .panelBar {
     margin-bottom: 30px;
@@ -68,7 +69,7 @@
       }
     }
   }
-  
+
   .blogPhoto{
     height: 300px;
 
@@ -109,7 +110,7 @@
         color: $lastest-blog-title;
       }
     }
-    
+
     .articleDescription{
       text-align: left;
       //padding-top: 10px;
