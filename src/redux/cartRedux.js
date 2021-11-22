@@ -25,8 +25,8 @@ export default function reducer(statePart = [], action = {}) {
     }
     case REMOVE_PRODUCT: {
       return {
-        statePart,
-        //products: filter(statePart.products => statePart.products.id !== actionPayload.id)
+        ...statePart,
+        products: statePart.products.filter(product => product.id !== action.payload),
       };
     }
     default:
