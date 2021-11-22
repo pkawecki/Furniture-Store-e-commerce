@@ -1,30 +1,33 @@
+# Project \#WDP211101
 
 
+## Introduction
+This project is an example of the e-commerce webpage build during the bootcamp for Frontend Web Developers provided by [Kodilla](https://kodilla.com/).
 
-# WDP Projekt Zespołowy
+A freeware PSD graphic template and an issue tracking tool were used by a group of **_junior devs_** led by a **_mentor-product owner_** to mimick commercial programming environment in *Kanban* methodology.
 
-## Inicjacja projektu
 
-Po sklonowaniu projektu, zainstaluj wymagane paczki komendą `yarn install` (lub `npm install`).
+## Getting started
+Download the project to your computer and initialize the project with CLI:
+```
+npm install
+```
 
-Teraz możesz zacząć pracę, korzystając z przygotowanych taska `yarn start` (lub `npm start`).
+To start the live developing version:
+```
+npm run start
+```
 
-Wszystkie potrzebne do pracy pliki źródłowe znajdują się w folderach `src` oraz `public`.
+To build the production version:
+```
+npm run build
+```
 
-## NPM Scripts
 
-Dostępne są 3 główne skrypty przyspieszające pracę:
+## Demo version
 
-- `build`: na bazie plików z folderów `src` i `public` buduje project w folderze `build`
-- `start`: obserwuje zmiany w folderze `src` i uruchamia podgląd roboczy
-- `test`: uruchomienie testów jednostkowych
-- `refactor`: skrypt dokonuje automatycznego formatowania plików w folderze `src/`
-  zgodnie z przyjętą konwencją formatowania kodu, a także sprawdza błędy za pomocą ESLinta
+[Link to heroku](http://heroku.com)
 
-## Git Hooks
+ Please note that this web app was build mainly for demo purposes on a viewport with `1200 px min-width`. The tablet and mobile platforms will not provide optimal user experience.
 
-Projekt korzysta z Git Hooks - możliwości uruchamiania skryptów w reakcji na wybrane zdarzenia programu Git.
-
-Za każdym razem gdy wykonasz komendę `git commit` zostaną uruchomione testy jednostkowe, formatowanie oraz lintowanie
-dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane w commicie.
 
