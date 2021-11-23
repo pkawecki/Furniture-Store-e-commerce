@@ -113,3 +113,40 @@ img {
     font-size: 26px;
   }
 }
+
+@media (max-width: 992px){ 
+  .root {
+    .imgRight{
+      margin: 10px 0;
+    }
+  }
+}
+
+@media (max-width: 480px){
+  .root{
+    .imgRight{
+      .contentWrapperRightUp{
+        left: 5%;
+
+        p{
+          font-size: 30px;
+        }
+
+        p:last-child{
+          font-size: 20px;
+        }
+      }
+
+      .contentWrapperRightDown{
+        left: 5%;
+        
+        p{
+          font-size: 30px;
+        }
+        p:last-child{ 
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

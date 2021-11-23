@@ -18,6 +18,7 @@ const reducers = {
   mode: modeReducer,
   brands: brandsReducer,
   feedbacks: feedbacksReducer,
+  compare: compareReducer,
 };
 
 // add blank reducers for initial state properties without reducers
