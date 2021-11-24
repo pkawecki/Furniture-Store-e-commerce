@@ -1,5 +1,8 @@
 @import "../../../styles/settings.scss";
 
+:export {
+  $timeoutMilis: 500;
+}
 .root {
   .panelBar {
     margin-bottom: 30px;
@@ -132,13 +135,35 @@
       }
     }
   }
+  // .row {
+  //   transition: opacity 500ms ease-in-out;
+  // }
 
+  .fadeIn {
+    opacity: 0;
+    transition: opacity 700ms; //ease-in-out;
+  }
+
+  .fadeOut {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .panelBar {
+      div {
+        padding: 10px 0 10px 0;
+      }
+    }
+  }
 }
 
 @media (max-width: 568px) {
-  .root{
-    .panelBar{
-      .panelBarDiv{
+  .root {
+    .panelBar {
+      .panelBarDiv {
         display: flex;
         flex-direction: column;
       }
@@ -146,13 +171,13 @@
   }
 }
 
-@media (max-width: 360px){
-  .root{
-    .panelBar{
-      .menu{
-        ul{
-          li{
-            a{
+@media (max-width: 360px) {
+  .root {
+    .panelBar {
+      .menu {
+        ul {
+          li {
+            a {
               font-size: 14px;
             }
           }

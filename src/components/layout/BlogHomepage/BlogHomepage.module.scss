@@ -10,7 +10,7 @@
     position: relative;
 
     :global(.row) > * {
-      border-bottom: 4px solid $lastest-blog-border-bottom;
+      border-bottom: 4px solid $lastest-blog-border;
     }
 
     .heading {
