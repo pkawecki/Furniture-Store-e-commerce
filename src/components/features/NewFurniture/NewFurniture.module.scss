@@ -92,6 +92,7 @@
             border-radius: 6px;
             background-color: $new-fur-inactive-dot;
             font-size: 0;
+            text-decoration: none;
 
             &.active,
             &:hover {
@@ -100,6 +101,37 @@
             }
           }
         }
+      }
+    }
+  }
+  .fadeIn {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+
+  .fadeOut {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+  }
+}
+
+.hiddenMenu {
+  display: none;
+}
+
+.row{
+  margin-top: -27px;
+}
+
+@media (max-width: 768px) {
+  .root {
+    .panelBar {
+      div {
+@media (max-width: 768px){
+  .root{
+    .panelBar{
+      div{
+        padding: 10px 0 10px 0;
       }
     }
   }

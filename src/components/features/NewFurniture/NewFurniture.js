@@ -3,8 +3,8 @@ import ProductCompareBar from '../ProductCompareBar/ProductCompareBarContainer';
 import PropTypes from 'prop-types';
 import React from 'react';
 import SectionHeading from '../../common/SectionHeading/SectionHeading';
-import Swipeable from '../Swipeable/Swipeable';
 import styles from './NewFurniture.module.scss';
+import Swipeable from '../Swipeable/Swipeable';
 import variables from './NewFurniture.module.scss';
 
 class NewFurniture extends React.Component {
@@ -51,8 +51,16 @@ class NewFurniture extends React.Component {
   }
 
   render() {
+    const {
+      categories,
+      products,
+      mode, 
+      /*productsPage*/ //nie działa po mergu
+      addRating,
+      subpage,
+    } = this.props;
+    const { activeCategory, activePage, activeFade } = this.state;
     const { categories, products, mode, subpage } = this.props;
-    const { activeCategory, activePage } = this.state;
     let columnNumber;
     let productsPerPage;
     let styleMenu;
@@ -97,9 +105,60 @@ class NewFurniture extends React.Component {
       );
     }
 
+    const pages = [];
+    for (let i = 0; i < pagesCount; i++) {
+      pages.push(
+        categoryProducts
+          .slice(i * productsPerPage, (i + 1) * productsPerPage)
+          .map(item => (
+            <div key={item.id} className={columnNumber}>
+              <ProductBox {...item} addRating={addRating} />
+            </div>
+          ))
+      );
+    }
+
     return (
       <div className={styles.root}>
         <div className='container'>
+          <div className={styles.panelBar}>
+            <div className={'row no-gutters align-items-end ' + styleMenu}>
+              <div className={'col-md-3 col-sm-12 ' + styles.heading}>
+                <h3>New furniture</h3>
+              </div>
+              <div className={'col ' + styles.menu}>
+                <ul>
+                  {categories.map(item => (
+                    <li key={item.id}>
+                      {/* eslint-disable-next-line */}
+                      <a
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
+                        onClick={() => this.handleCategoryChange(item.id)}
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={'col-auto ' + styles.dots}>
+                <ul>{dots}</ul>
+              </div>
+            </div>
+          </div>
+          <div
+            className={`row ${styles.row} ${
+              activeFade ? styles.fadeIn : styles.fadeOut
+            }`}
+          >
+            <Swipeable
+              activePage={activePage}
+              handlePageChange={this.handlePageChange.bind(this)}
+              pages={pages}
+            />
+          </div
           <SectionHeading
             title={'New furniture'}
             pagesCount={pagesCount}
@@ -124,7 +183,7 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
-  productsPage: PropTypes.string,
+  //productsPage: PropTypes.string,
   subpage: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
@@ -145,6 +204,7 @@ NewFurniture.propTypes = {
   ),
   mode: PropTypes.string,
   activeFade: PropTypes.bool,
+  addRating: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {
