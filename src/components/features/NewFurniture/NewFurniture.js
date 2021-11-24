@@ -5,12 +5,50 @@ import React from 'react';
 import SectionHeading from '../../common/SectionHeading/SectionHeading';
 import Swipeable from '../Swipeable/Swipeable';
 import styles from './NewFurniture.module.scss';
+import variables from './NewFurniture.module.scss';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
   };
+
+  handlePageChange(newPage) {
+    this.setState({
+      activePage: newPage,
+      activeFade: true,
+    });
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        1000
+      );
+    }
+  }
+
+  handleCategoryChange(newCategory) {
+    console.log('variables', variables);
+    this.setState({
+      activeFade: true,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        activeCategory: newCategory,
+      });
+    }, 500);
+
+    if (this.state.activeFade === false) {
+      setTimeout(
+        function() {
+          this.setState({ activeFade: false });
+        }.bind(this),
+        1000
+      );
+    }
+  }
 
   render() {
     const { categories, products, mode, subpage } = this.props;
