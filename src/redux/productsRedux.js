@@ -5,6 +5,8 @@ export const getPromoted = ({ products }) =>
   products.filter(item => item.price > item.oldPrice);
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+export const getById = ({ products }) => id =>
+  products.filter(item => item.id === id)[0];
 
 /* action name creator */
 const reducerName = 'products';

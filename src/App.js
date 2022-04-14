@@ -8,7 +8,7 @@ import Cart from './components/layout/Cart/CartContainer';
 import Homepage from './components/views/Homepage/Homepage';
 import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import ProductList from './components/views/ProductList/ProductList';
-import ProductPage from './components/views/ProductPage/ProductPage';
+import ProductPage from './components/views/ProductPage/ProductPageContainer';
 import React from 'react';
 import Register from './components/views/Register/Register';
 import Search from './components/views/Search/Search';

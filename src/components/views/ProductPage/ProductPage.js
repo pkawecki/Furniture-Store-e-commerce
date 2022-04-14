@@ -25,7 +25,7 @@ import Button from '../../common/Button/Button';
 import RatingStars from '../../common/RatingStars/RatingStarsContainer';
 import ProductReviews from '../../features/ProductReviews/ProductReviews';
 
-const ProductPage = (id, stars, userRating) => (
+const ProductPage = (id, stars, userRating, image) => (
   <div className={styles.root}>
     <Chatbox />
     <Banner />
@@ -41,16 +41,16 @@ const ProductPage = (id, stars, userRating) => (
           </div>
           <div className={'row ' + styles.sliderBox}>
             <div className={'col ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={''} alt='' />
+              <img className={styles.photoMini} src={image} alt='' />
             </div>
             <div className={'col ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={''} alt='' />
+              <img className={styles.photoMini} src={image} alt='' />
             </div>
             <div className={'col ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={''} alt='' />
+              <img className={styles.photoMini} src={image} alt='' />
             </div>
             <div className={'col ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={''} alt='' />
+              <img className={styles.photoMini} src={image} alt='' />
             </div>
 
             <div className={'col-12 ' + styles.sideArrow}>
