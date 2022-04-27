@@ -28,7 +28,7 @@ npm run build
 
 ## Demo version
 
- [Tu dodaj swój link do Heroku/GH pages](http://heroku.com)
+ https://furniture-store-d20d0-e2011.web.app/
 
 
 ## Built with
