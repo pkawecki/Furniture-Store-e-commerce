@@ -82,7 +82,7 @@ class ProductSlider extends React.Component {
         );
       } else if (sliderId === 'right') {
         overlay = (
-          <div className={styles.overlayLeft}>
+          <div className={styles.overlayRight}>
             <div className={styles.shadowWrapper}></div>
             <div className={styles.shadowTitle}>
               INDOOR <span>FURNITURE</span>

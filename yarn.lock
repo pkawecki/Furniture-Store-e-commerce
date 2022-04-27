@@ -1808,6 +1808,11 @@
   "resolved" "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz"
   "version" "1.1.0"
 
+"@przemo41/randomid-generator@^1.0.2":
+  "integrity" "sha512-5bIE4RidapIGPD5LbEgx3ErhtZzUgYxRemCPlMkZ1BSzg1nanxBk4bdxCebNFNwI/iKGCZCRmIBiMEGrqQy7Qg=="
+  "resolved" "https://registry.npmjs.org/@przemo41/randomid-generator/-/randomid-generator-1.0.2.tgz"
+  "version" "1.0.2"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   "integrity" "sha512-MI4Xx6LHs4Webyvi6EbspgyAb4D2Q2VtnCQ1blOJcoLS6mVa8lNN2rkIy1CVxfTUpoyIbCTkXES1rLXztFD1lg=="
   "resolved" "https://registry.npmjs.org/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz"

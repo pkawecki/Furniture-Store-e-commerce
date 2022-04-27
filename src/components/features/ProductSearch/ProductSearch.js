@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './ProductSearch.module.scss';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const ProductSearch = () => (
   <form action='' className={styles.root}>
@@ -16,25 +17,21 @@ const ProductSearch = () => (
         </div>
         <div className={styles.dropdownContent}>
           <ul>
+            {}
             <li>
-              <a href='#'>furniture</a>
+              <NavLink to='/category/furniture'>furniture</NavLink>
             </li>
             <li>
-              <a href='#'>chair</a>
+              <NavLink to='/category/chair'>chair</NavLink>
             </li>
             <li>
-              <a href='#'>table</a>
+              <NavLink to='/category/table'>table</NavLink>
             </li>
             <li>
-              <a href='#'>sofa</a>
+              <NavLink to='/category/sofa'>sofa</NavLink>
             </li>
             <li>
-              <a href='#'>bedroom</a>
-              <ul>
-                <li>
-                  <a href='#'>bed</a>
-                </li>
-              </ul>
+              <NavLink to='/category/bed'>bed</NavLink>
             </li>
           </ul>
         </div>

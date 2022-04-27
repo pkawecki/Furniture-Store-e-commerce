@@ -12,7 +12,7 @@ class Promoted extends React.Component {
           id: 'left',
           dots: true,
           slidesToShow: 1,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           autoplay: true,
           autoplaySpeed: 3000,
@@ -26,6 +26,7 @@ class Promoted extends React.Component {
             </div>
           ),
           customPaging: () => {
+            /* eslint-disable no-console */
             return <a> </a>;
           },
         },
@@ -51,13 +52,13 @@ class Promoted extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className={'col-4 ' + styles.left}>
+            <div className={'col-lg-6 col-xl-4 ' + styles.left}>
               <ProductSlider
-                promotedProducts={this.props.promotedProducts}
+                promotedProducts={this.props.promotedProducts.slice(0, 3)}
                 settings={this.state.settings.sliderLeft}
               />
             </div>
-            <div className={'col-8 ' + styles.right}>
+            <div className={'col-lg-6 col-xl-8 ' + styles.right}>
               <ProductSlider
                 promotedProducts={this.props.promotedProducts}
                 settings={this.state.settings.sliderRight}

@@ -57,7 +57,6 @@
   }
 }
 
-
 @media (max-width: 1200px) {
   .root {
     height: 130px;
@@ -92,23 +91,22 @@
 
         ul {
           margin: 0;
-          a{
+          a {
             font-size: 18px;
           }
         }
-
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .root{
+  .root {
     .wrapper {
       padding: 0;
 
       div.menu {
-        ul{
+        ul {
           a {
             padding: 10px;
             font-size: 14px;
@@ -116,7 +114,7 @@
         }
       }
       .search {
-        form{
+        form {
           max-width: 460px;
         }
       }
@@ -125,8 +123,8 @@
 }
 
 @media (max-width: 576px) {
-  .root{
-    .wrapper{
+  .root {
+    .wrapper {
       flex-direction: row;
       position: relative;
       display: flex;
@@ -138,14 +136,14 @@
         top: 0;
         z-index: 111;
 
-        ul{
+        ul {
           flex-direction: column;
           padding-left: 20px;
 
-          li{
+          li {
             z-index: 1;
 
-            a{
+            a {
               width: 100%;
             }
           }
@@ -156,7 +154,7 @@
           display: block;
           position: absolute;
           z-index: 0;
-          content: ' ';
+          content: " ";
           background-color: $feature-box-background;
           box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
         }
@@ -164,7 +162,7 @@
       .search {
         order: 1;
         padding-left: 20px;
-        form{
+        form {
           width: 100%;
 
           button {
@@ -173,10 +171,10 @@
         }
       }
       .dropdown {
-        display: block;
+        // display: block;
         order: 2;
         z-index: 111;
-        font-size: 60px;
+        font-size: 30px;
         padding-top: 15px;
         padding-right: 30px;
         text-align: center;
@@ -185,29 +183,26 @@
       .activeMenu {
         visibility: visible;
       }
-
     }
   }
-
 }
 
 @media (max-width: 400px) {
+  .root {
+    .wrapper {
+      .search {
+        width: 86%;
 
-.root{
-  .wrapper{
-    .search {
-      width: 86%;
+        from {
+          button {
+            padding-left: 0;
+          }
 
-      from{
-        button {
-          padding-left: 0;
-        }
-
-        svg {
-          transform: scale(0.8);
+          svg {
+            transform: scale(0.8);
+          }
         }
       }
     }
   }
-}
 }

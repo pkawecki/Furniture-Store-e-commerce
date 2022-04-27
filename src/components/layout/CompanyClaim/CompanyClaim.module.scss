@@ -42,6 +42,8 @@ img {
   }
 
   .cart {
+    margin: auto;
+    text-align: end;
     .cartBox {
       display: inline-block;
       position: relative;
@@ -92,6 +94,12 @@ img {
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .phoneNumber {
+    display: none;
   }
 }
 

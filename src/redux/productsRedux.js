@@ -2,7 +2,12 @@
 export const getAllProducts = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 export const getPromoted = ({ products }) =>
-  products.filter(item => item.price > item.oldPrice);
+  products.filter(
+    item =>
+      item.id === 'aenean-ru-bristique-1' ||
+      item.id === 'aenean-ru-bristique-2' ||
+      item.id === 'aenean-ru-bristique-6'
+  );
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 export const getById = ({ products }) => id =>

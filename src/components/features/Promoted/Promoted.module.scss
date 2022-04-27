@@ -1,8 +1,8 @@
 @import "../../../styles//settings.scss";
 
-.root{
+.root {
   padding-top: 40px;
-  .left{
+  .left {
     .sliderdots {
       position: absolute;
       right: 10px;
@@ -37,8 +37,8 @@
     }
   }
 
-  .right{
-    max-width: 750px;
+  .right {
+    // max-width: 750px;
     padding: 0;
   }
 }

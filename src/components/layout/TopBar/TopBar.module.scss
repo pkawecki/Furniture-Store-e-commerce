@@ -43,7 +43,11 @@
 }
 
 @media (max-width: 575px) {
-  .topMenu a span {
+  .topMenu {
+    text-align: center !important;
+  }
+
+  .topOptions {
     display: none;
   }
 }

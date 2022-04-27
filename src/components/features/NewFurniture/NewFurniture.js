@@ -28,6 +28,7 @@ class NewFurniture extends React.Component {
   }
 
   handleCategoryChange(newCategory) {
+    console.log('Category change to:', newCategory);
     this.setState({
       activeFade: true,
     });
@@ -49,17 +50,11 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const {
-      categories,
-      products,
-      mode, //nie działa po mergu
-      /*productsPage*/ addRating,
-      subpage,
-    } = this.props;
-    const { activeCategory, activePage, activeFade } = this.state;
-    let columnNumber;
+    const { categories, products, mode, subpage } = this.props;
+    const { activeCategory, activePage } = this.state;
+    /* eslint-disable  */
+    let columnNumber = 0;
     let productsPerPage;
-    let styleMenu;
 
     switch (mode) {
       case 'mobile':
@@ -88,7 +83,7 @@ class NewFurniture extends React.Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
-    /*     const pages = [];
+    const pages = [];
     for (let i = 0; i < pagesCount; i++) {
       pages.push(
         categoryProducts
@@ -99,67 +94,20 @@ class NewFurniture extends React.Component {
             </div>
           ))
       );
-    } */
-
-    const pages = [];
-    for (let i = 0; i < pagesCount; i++) {
-      pages.push(
-        categoryProducts
-          .slice(i * productsPerPage, (i + 1) * productsPerPage)
-          .map(item => (
-            <div key={item.id} className={columnNumber}>
-              <ProductBox {...item} addRating={addRating} />
-            </div>
-          ))
-      );
     }
 
     return (
       <div className={styles.root}>
         <div className='container'>
-          <div className={styles.panelBar}>
-            <div className={'row no-gutters align-items-end ' + styleMenu}>
-              <div className={'col-md-3 col-sm-12 ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      {/* eslint-disable-next-line */}
-                      <a
-                        className={
-                          item.id === activeCategory ? styles.active : undefined
-                        }
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/*               <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
-              </div> */}
-            </div>
-          </div>
-          <div
-            className={`row ${styles.row} ${
-              activeFade ? styles.fadeIn : styles.fadeOut
-            }`}
-          >
-            <Swipeable
-              activePage={activePage}
-              handlePageChange={this.handlePageChange.bind(this)}
-              pages={pages}
-            />
-          </div>
           <SectionHeading
             title={'New furniture'}
             pagesCount={pagesCount}
             categories={categories}
-            handleCategoryChange={activeCategory => this.setState({ activeCategory })}
+            // handleCategoryChange={activeCategory => this.setState({ activeCategory })}
+            handleCategoryChange={activeCategory =>
+              this.handleCategoryChange(activeCategory)
+            }
+            // handlePageChange={activePage => this.handleClick()}
             handlePageChange={activePage => this.setState({ activePage })}
             activeCategory={activeCategory}
             activePage={activePage}
@@ -200,7 +148,6 @@ NewFurniture.propTypes = {
   ),
   mode: PropTypes.string,
   activeFade: PropTypes.bool,
-  addRating: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {

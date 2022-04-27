@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Login.module.scss';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const LoginForm = ({ Login, errorMail, errorPass }) => {
   const [details, setDetails] = useState({ email: '', password: '' });
@@ -39,7 +40,7 @@ const LoginForm = ({ Login, errorMail, errorPass }) => {
               value={details.password}
             />
             <p className={'m-2 ' + styles.forgotPassword}>
-              Nie pamiętasz hasła? <a href='#'>Przypomnij hasło.</a>
+              Nie pamiętasz hasła? <NavLink href='#'>Przypomnij hasło.</NavLink>
             </p>
             {errorMail !== '' ? (
               <div

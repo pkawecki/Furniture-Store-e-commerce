@@ -9,9 +9,10 @@ import styles from './BlogHomepage.module.scss';
 const BlogHomepage = () => {
   function renderBlogEntries(entriesNum) {
     const entries = [];
-    for (let i = 0; i < entriesNum; i++) {
+    // for (let i = 0; i < entriesNum; i++) {
+    for (let i = 0; i < 1; i++) {
       entries.push(
-        <div className='col-4'>
+        <div key={i} className='col-sm'>
           <div className={styles.blogPhoto}>
             <img src='src=../../images/chairs.jpg' alt='promotions chair' />
             <div className={styles.blogArticle}>

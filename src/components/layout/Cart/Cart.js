@@ -33,7 +33,7 @@ const Cart = ({ cartProducts, removeFromCart }) => {
         </td>
         <td>
           <div style={{ width: '60px', height: '60px' }}>
-            <img src={cartProduct.image} />
+            <img src={cartProduct.image} alt='no pic' />
           </div>
         </td>
         <td>{cartProduct.name}</td>

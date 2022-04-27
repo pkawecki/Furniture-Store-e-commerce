@@ -3,12 +3,19 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faStar, faHeart, faExchangeAlt, faEye, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import {
+  faStar,
+  faHeart,
+  faExchangeAlt,
+  faEye,
+  faShoppingBasket,
+} from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import Button from '../../common/Button/Button';
 import ReactTooltip from 'react-tooltip';
 import initialState from '../../../redux/initialState';
 import Slider from 'react-slick';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 class Gallery extends React.Component {
   state = {
@@ -32,23 +39,21 @@ class Gallery extends React.Component {
     }
   }
 
-
   render() {
     const { products } = this.props;
-    const { activeCategory} = this.state;
+    const { activeCategory } = this.state;
     const categories = [
       { id: 'featured', name: 'FEATURED' },
-      { id: 'topSeller', name: 'TOP SELLER'},
-      { id: 'saleOff', name: 'SALE OFF'},
-      { id: 'topRated', name: 'TOP RATED'},
+      { id: 'topSeller', name: 'TOP SELLER' },
+      { id: 'saleOff', name: 'SALE OFF' },
+      { id: 'topRated', name: 'TOP RATED' },
     ];
     const settings = {
-      customPaging: function () {
+      customPaging: function() {
         return (
-          <a className={styles.boximage}>
-            {/* <img src={`${initialState.products.image}`} alt='' /> */}
+          <NavLink to={'/'} className={styles.boximage}>
             <img src='https://i.ibb.co/p3jjsP6/chairs.jpg' alt='' />
-          </a>
+          </NavLink>
         );
       },
       dots: true,
@@ -63,96 +68,140 @@ class Gallery extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6 '>
-              <div className={styles.heading}>
-                <h3>Furniture gallery</h3>
-              </div>
-              {/* Gallery tabs */}
-              <div className={styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      {/* eslint-disable-next-line */}
-                      <span
-                        className={
-                          item.id === activeCategory ? styles.active : null }
-                        onClick={event => this.handleCategoryChange(event, item.id, categories.catgory)}
-                      >
-                        {item.name}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/*Left side of the gallery*/}
-              <div className={styles.product}>
-                <div className={styles.buttons}>
-                  <Button data-for='btn' data-tip='Add to favorites' variant='outline' className={styles.icon}>
-                    <FontAwesomeIcon icon={faHeart}>Add to favorites</FontAwesomeIcon>
-                  </Button>
-                  <ReactTooltip id='btn' place='right' getContent={(dataTip) => `${dataTip}`}/>
-                  <Button data-for='btn' data-tip='Add to compare' variant='outline' className={styles.icon}>
-                    <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-                  </Button>
-                  <ReactTooltip id='btn' place='right' getContent={(dataTip) => `${dataTip}`}/>
-                  <Button data-for='btn' data-tip='View details' variant='outline' className={styles.icon}>
-                    <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
-                  </Button>
-                  <ReactTooltip id='btn' place='right' getContent={(dataTip) => `${dataTip}`}/>
-                  <Button data-for='btn' data-tip='Add to basket' variant='outline' className={styles.icon}>
-                    <FontAwesomeIcon icon={faShoppingBasket}>Add to basket</FontAwesomeIcon>
-                  </Button>
-                  <ReactTooltip id='btn' place='right' getContent={(dataTip) => `${dataTip}`}/>
+            <div className='col-12 col-md-6 '>
+              <div className='leftContainer'>
+                <div className={styles.heading}>
+                  <h3>Furniture gallery</h3>
                 </div>
-                {/*Rating*/}
-
-              </div>
-              <div className={styles.slider}>
-                <Slider {...settings}>
-                  {products.slice(0, 6).map((product, index) => (
-                    <div key={product.id}><div className={styles.box}>
-                      <img
-                        src={product.image}
-                        alt=''
-                        onClick={() => this.handleProductChange(product)}
-                        className={
-                          index === 0
-                            ? styles.thumbnail + ' ' + styles.active
-                            : styles.thumbnail
-                        }
-                      /></div>
-                    <div className={styles.content}>
-                      <div className={styles.cornerTopLeft} />
-                      <h5>{product.name}</h5>
-                      <div className={styles.stars}>
-                        <span>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                {/* Gallery tabs */}
+                <div className={styles.menu}>
+                  <ul>
+                    {categories.map(item => (
+                      <li key={item.id}>
+                        {/* eslint-disable-next-line */}
+                        <span
+                          className={item.id === activeCategory ? styles.active : null}
+                          onClick={event =>
+                            this.handleCategoryChange(
+                              event,
+                              item.id,
+                              categories.catgory
+                            )
+                          }
+                        >
+                          {item.name}
                         </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/*Left side of the gallery*/}
+                <div className={styles.product}>
+                  <div className={styles.buttons}>
+                    <Button
+                      data-for='btn'
+                      data-tip='Add to favorites'
+                      variant='outline'
+                      className={styles.icon}
+                    >
+                      <FontAwesomeIcon icon={faHeart}>Add to favorites</FontAwesomeIcon>
+                    </Button>
+                    <ReactTooltip
+                      id='btn'
+                      place='right'
+                      getContent={dataTip => `${dataTip}`}
+                    />
+                    <Button
+                      data-for='btn'
+                      data-tip='Add to compare'
+                      variant='outline'
+                      className={styles.icon}
+                    >
+                      <FontAwesomeIcon icon={faExchangeAlt}>
+                        Add to compare
+                      </FontAwesomeIcon>
+                    </Button>
+                    <ReactTooltip
+                      id='btn'
+                      place='right'
+                      getContent={dataTip => `${dataTip}`}
+                    />
+                    <Button
+                      data-for='btn'
+                      data-tip='View details'
+                      variant='outline'
+                      className={styles.icon}
+                    >
+                      <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
+                    </Button>
+                    <ReactTooltip
+                      id='btn'
+                      place='right'
+                      getContent={dataTip => `${dataTip}`}
+                    />
+                    <Button
+                      data-for='btn'
+                      data-tip='Add to basket'
+                      variant='outline'
+                      className={styles.icon}
+                    >
+                      <FontAwesomeIcon icon={faShoppingBasket}>
+                        Add to basket
+                      </FontAwesomeIcon>
+                    </Button>
+                    <ReactTooltip
+                      id='btn'
+                      place='right'
+                      getContent={dataTip => `${dataTip}`}
+                    />
+                  </div>
+                  {/*Rating*/}
+                </div>
+                <div className={styles.slider}>
+                  <Slider {...settings}>
+                    {products.slice(0, 6).map((product, index) => (
+                      <div key={product.id}>
+                        <div className={styles.box}>
+                          <img
+                            src={product.image}
+                            alt=''
+                            onClick={() => this.handleProductChange(product)}
+                            className={
+                              index === 0
+                                ? styles.thumbnail + ' ' + styles.active
+                                : styles.thumbnail
+                            }
+                          />
+                        </div>
+                        <div className={styles.content}>
+                          <div className={styles.cornerTopLeft} />
+                          <h5>{product.name}</h5>
+                          <div className={styles.stars}>
+                            <span>
+                              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                            </span>
+                          </div>
+                          <div className={styles.cornerBottomRight} />
+                          <div className={styles.price}>
+                            <h3>${product.price}</h3>
+                            <h3>
+                              <s>${product.oldPrice}</s>
+                            </h3>
+                          </div>
+                        </div>
                       </div>
-                      <div className={styles.cornerBottomRight} />
-                      <div className={styles.price}>
-                        <h3>${product.price}</h3>
-                        <h3>
-                          <s>${product.oldPrice}</s>
-                        </h3>
-                      </div>
-                    </div>
-                    </div>
-                  ))}
-                </Slider>
+                    ))}
+                  </Slider>
+                </div>
               </div>
             </div>
             {/*Right side of the gallery*/}
-            <div className={'col-6 ' + styles.picture}>
-              <img
-                src={initialState.products[3].image}
-                alt='product-3'
-              />
+            <div className={'col-12 col-md-6 ' + styles.picture}>
+              <img src={initialState.products[3].image} alt='product-3' />
               <div className={styles.details}>
                 <h3>
                   from <span>$ {products[3].price}</span>

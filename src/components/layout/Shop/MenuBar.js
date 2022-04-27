@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './MenuBar.module.scss';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const MenuBar = ({ children }) => {
   const [open, setOpen] = useState(false);
@@ -19,11 +20,7 @@ const MenuBar = ({ children }) => {
           </div>
           <div className={'col ' + styles.menu + (open ? ' ' + styles.activeMenu : '')}>
             <ul>
-              <li>
-                <a href='/home' className={styles.active}>
-                  Home
-                </a>
-              </li>
+              {/* <NavLink /> */}
               <li>
                 <a href='/shop/furniture'>Furniture</a>
               </li>

@@ -7,7 +7,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import BrandsSlider from '../../features/BrandsSlider/BrandsSlider';
 
 const Brands = ({ brands }) => {
-  const [brand] = useState(6);
+  // const [brand] = useState(6);
   const [activePage, ActivePage] = useState(0);
 
   let newRwd = 0;

@@ -49,7 +49,7 @@ const SectionHeading = ({
           </div>
           {generateMenuButtons(categories, activeCategory)}
         </div>
-        <div className={styles.paginationWrapper}>
+        <div className={`col-3 ${styles.paginationWrapper}`}>
           <div className={'flex-shrink'}>
             <PaginationDots
               dotsCount={pagesCount}
