@@ -5,7 +5,7 @@ import styles from './PaginationDots.module.scss';
 const PaginationDots = ({ activeDot, dotsCount, handleChange }) => {
   function generateDotsList({ dotsCount, activeDot }) {
     let dotsList = [];
-    for (let dotNum = 0; dotNum < dotsCount; dotNum++) {
+    for (let dotNum = 0; dotNum < (dotsCount > 3 ? 3 : dotsCount); dotNum++) {
       dotsList.push(
         <li key={dotNum}>
           <a
