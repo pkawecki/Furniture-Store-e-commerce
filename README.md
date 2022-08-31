@@ -1,9 +1,8 @@
-# Project \#WDP211101
+# Furniture Store
 
 
 ## Introduction
 
-This project is an example of the e-commerce webpage build during the bootcamp for Frontend Web Developers provided by [Kodilla](https://kodilla.com/).
 
 A freeware PSD graphic template and an issue tracking tool were used by a group of **_junior devs_** led by a **_mentor-product owner_** to mimick commercial programming environment in *Kanban* methodology.
 
@@ -57,13 +56,6 @@ Please note that this web app was build mainly for demo purposes on a viewport w
 - add and remove products from the basket
 - sort products by price & colors
 
-
-### What we have learnt
-
-1. JavaScript seems easy to understand, when code is readable to other developers. Components make sense when are broken down line by line.
-2. Planning: best practices to break the project down into small enough components.
-3. Use of the inspector tool: fastly mind-set when searching for the bugs.
-4. Application State Management: used localstorage and Redux.
 
 
 ## Troubleshooting
